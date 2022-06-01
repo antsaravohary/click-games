@@ -12,7 +12,7 @@ const Seo = () => {
           content: "width=device-width, initial-scale=1 maximum-scale=1",
         },
       ]}
-      title={settings?.siteTitle ?? "Click Univers "}
+      title={settings?.siteTitle ?? "CLICK GAMES "}
       titleTemplate={`%s | ${settings?.seo?.metaTitle ?? "Marketplace"}`}
       description={settings?.seo?.metaDescription || settings?.siteSubtitle}
       canonical={settings?.seo?.canonicalUrl}

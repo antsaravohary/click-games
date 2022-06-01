@@ -32,7 +32,7 @@ const MessageItem = ({ message, user, is_shop }: MessageProps) => {
           <div className="px-4  rounded-lg w-full flex flex-col  rounded-bl-none w-full ">
             <div className="flex justify-between w-full">
               <span className="font-bold mb-2">
-                {is_shop ? `[Support Click Univers]` : message?.user?.name}</span>
+                {is_shop ? `[Support CLICK GAMES]` : message?.user?.name}</span>
               <span className="text-gray-600">
                 {" "}
                 {dayjs(message.created_at).fromNow()}

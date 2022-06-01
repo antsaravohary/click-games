@@ -22,7 +22,7 @@ const FooterOne = () => {
   return (
     <div className="flex flex-col items-center content-center  bg-black w-full py-8 px-4">
       <a className="text-white mb-4 bg-accent p-2 rounded hidden" href="/portal-vendor">
-      Vendre sur Click Univers
+      Vendre sur CLICK GAMES
       </a>
       <div className="flex  ">
         <Link href="https://admin.click-univers.com" className="text-white hidden mx-2">

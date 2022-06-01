@@ -20,7 +20,7 @@ const Items1 = [
     id: 1,
     title: "Vos opérations marketing simplifiées",
     content:
-      "Avec les fonctionnalités de référencement intégrées de Click Univers, vous pouvez facilement améliorer le référencement de votre boutique en ligne. L'automatisation du marketing digital vous offrent un avantage concurrentiel.",
+      "Avec les fonctionnalités de référencement intégrées de CLICK GAMES, vous pouvez facilement améliorer le référencement de votre boutique en ligne. L'automatisation du marketing digital vous offrent un avantage concurrentiel.",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const Items1 = [
     id: 2,
     title: "Optimisation de référencement produit",
     content:
-      "Aidez les clients potentiels à trouver vos produits sur les moteurs de recherche. Click Univers référence vos produits le tout en seulement quelques clics.",
+      "Aidez les clients potentiels à trouver vos produits sur les moteurs de recherche. CLICK GAMES référence vos produits le tout en seulement quelques clics.",
   },
 ];
 const Items2 = [
@@ -60,7 +60,7 @@ const Item3=[
   {
     id:1,
     title:"Gestion des stocks",
-    content:"Gérez l'ensemble de vos stocks avec Click Univers. Faites le suivi des comptages et arrêtez automatiquement de vendre des produits qui tombent en rupture de stock.",
+    content:"Gérez l'ensemble de vos stocks avec CLICK GAMES. Faites le suivi des comptages et arrêtez automatiquement de vendre des produits qui tombent en rupture de stock.",
   },
   {
     id:2,
@@ -96,7 +96,7 @@ export default function PortalVendor() {
                     </h2>
                     <p className="mt-4 text-lg text-gray-500">
                       Créez votre compte vendeur et vendez en quelques clics sur
-                      Click Univers
+                      CLICK GAMES
                     </p>
                     <div className="sm:grid sm:grid-cols-2 sm:gap-px mt-8">
                       {Items1.map((item) => (
@@ -198,7 +198,7 @@ export default function PortalVendor() {
         <div className="bg-white">
           <div className="max-w-4xl mx-auto py-16 px-4 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 lg:flex lg:items-center lg:justify-between">
             <h2 className="text-4xl font-extrabold tracking-tight text-gray-600 sm:text-4xl">
-              <span className="block">Commencez à vendre avec Click Univers</span>
+              <span className="block">Commencez à vendre avec CLICK GAMES</span>
               <span className="block"> dès aujourd'hui</span>
             </h2>
             <div className="mt-6 space-y-4 sm:space-y-0 sm:flex sm:space-x-5">

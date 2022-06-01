@@ -7,9 +7,9 @@ export const cga = {
                         id: '1',
                         title: `Préambule`,
                         description:
-                                `<p>Click Univers, Siège social : 8 rue louis aragon 25400 Audincourt, RCS 887 683
+                                `<p>CLICK GAMES, Siège social : 8 rue louis aragon 25400 Audincourt, RCS 887 683
                                 647, n° de TVA FR 52887683647
-                                Click Univers met en place, sur www.click-univers.com (ci-après le "Site"), une
+                                CLICK GAMES met en place, sur www.click-univers.com (ci-après le "Site"), une
                                 Place de Marché permettant à des acheteurs majeurs (ci-après "Acheteurs" ou
                                 "Vous"), après inscription, de rentrer, par son intermédiaire, en relation avec des
                                 Vendeurs, professionnels, également inscrits sur le Site (ci-après "Vendeurs"),
@@ -31,7 +31,7 @@ export const cga = {
                                 Vendeurs sont quant à elles régies par les Conditions Générales de Vente du
                                 Service (ci-après les "CGV"), qui doivent également être acceptées par l'Acheteur
                                 lors de chaque achat, elles complètent les présentes CGU Acheteur.
-                                Click Univers Vous invite à prendre connaissance des CGV en cliquant sur les
+                                CLICK GAMES Vous invite à prendre connaissance des CGV en cliquant sur les
                                 Conditions Générales de Vente</p>`
                 },
                 {
@@ -39,7 +39,7 @@ export const cga = {
                         title: `1. Objet`,
                         description:
                                 ` <p>Les présentes CGU Acheteur ont pour objet de déﬁnir les conditions dans
-                                lesquelles CLICK UNIVERS met à la disposition des Acheteurs, dans le cadre du
+                                lesquelles CLICK GAMES met à la disposition des Acheteurs, dans le cadre du
                                 Service, des outils technologiques utilisés pour acheter des Produits auprès des
                                 Vendeurs</p>`
                 },
@@ -56,7 +56,7 @@ export const cga = {
                                 Produits sont conclues directement entre l'Acheteur et le Vendeur. CLICK
                                 UNIVERS n'est en aucun cas Vendeur des Produits proposés par les Vendeurs par
                                 l'intermédiaire du Service.<br />
-                                Par ailleurs, en cas de non-respect des présentes CGU Vendeur, CLICK UNIVERS
+                                Par ailleurs, en cas de non-respect des présentes CGU Vendeur, CLICK GAMES
                                 se réserve le droit d'interrompre de manière temporaire ou déﬁnitive l'accès au
                                 Service au Vendeur concerné, en suspendant ou en résiliant les présentes dans
                                 les conditions prévues à l’article 8.<br />
@@ -66,25 +66,25 @@ export const cga = {
                                 entre un Acheteur agissant à titre privé établi en France ou à Monaco et (i) un
                                 Vendeur établi hors de l’Union Européenne ou (ii) un Vendeur établi dans l’Union
                                 Européenne mais important les Produits depuis un pays hors Union Européenne,
-                                CLICK UNIVERS est redevable de la TVA afférente à la transaction conclue entre
+                                CLICK GAMES est redevable de la TVA afférente à la transaction conclue entre
                                 le Vendeur et l’Acheteur conformément à l’article 147 de la loi de ﬁnances pour
                                 2021 transposant la directive 2017/2455/UE.<br />
                                 Dans ces hypothèses, le Vendeur n’a aucune TVA à reverser à l’administration
-                                ﬁscale française, CLICK UNIVERS étant en charge de reverser directement la TVA
+                                ﬁscale française, CLICK GAMES étant en charge de reverser directement la TVA
                                 afférente à la transaction entre le Vendeur et l’Acheteur à l’administration ﬁscale.
-                                Cette somme sera déduite par CLICK UNIVERS des sommes à reverser au
+                                Cette somme sera déduite par CLICK GAMES des sommes à reverser au
                                 Vendeur.<br />
-                                La redevabilité par CLICK UNIVERS de la TVA afférente à la transaction ne
+                                La redevabilité par CLICK GAMES de la TVA afférente à la transaction ne
                                 s’applique pas aux transactions réalisées par un Vendeur lorsque celles-ci relèvent
                                 du régime de la TVA sur marge prévu aux articles 297 A et suivants du Code
                                 Général des Impôts (CGI). Toutefois, en raison du champ d’application très réduit
                                 du régime TVA de la marge prévue aux articles 297 A et suivants du CGI parmi les
-                                transactions où CLICK UNIVERS est redevable de la TVA, le Vendeur s’engage à
+                                transactions où CLICK GAMES est redevable de la TVA, le Vendeur s’engage à
                                 ne jamais proposer à la vente des Produits relevant de ce régime.
-                                Pour les transactions où CLICK UNIVERS est redevable de la TVA du fait que les
+                                Pour les transactions où CLICK GAMES est redevable de la TVA du fait que les
                                 Produits sont importés depuis un pays hors Union Européenne, le Vendeur
                                 reconnaît que l’exactitude du régime ﬁscal afférent à une transaction entre un
-                                Vendeur et un Acheteur dépend des informations communiquées par le Vendeur à CLICK UNIVERS. En conséquence, le Vendeur s’engage à fournir à CLICK
+                                Vendeur et un Acheteur dépend des informations communiquées par le Vendeur à CLICK GAMES. En conséquence, le Vendeur s’engage à fournir à CLICK
                                 UNIVERS pour chaque transaction avec un Acheteur le lieu d’expédition des
                                 Produits vendus à cet Acheteur. Le Vendeur reconnait expressément que la bonne
                                 réalisation de la transaction avec un Acheteur établi en France ou à Monaco
@@ -93,12 +93,12 @@ export const cga = {
                                 s’engage à apposer sur le colis contenant les Produits le numéro IOSS (commande
                                 d’une valeur hors taxes et hors frais de transport inférieure ou égale à 150 €) ou
                                 TVA (commande d’une valeur hors taxes et hors frais de transport supérieure à 150
-                                €) de CLICK UNIVERS aﬁn de permettre la remontée d’informations correctes
+                                €) de CLICK GAMES aﬁn de permettre la remontée d’informations correctes
                                 pour le traitement de la TVA des Produits. De plus, lorsqu’un Acheteur achète,
                                 dans le cadre d’une même commande, plusieurs Produits auprès d’un même
                                 Vendeur, le Vendeur s’engage à regrouper les Produits dans un seul colis.
                                 Par ailleurs, pour les commandes d’une valeur hors taxes et hors frais de transport
-                                supérieure à 150 €, CLICK UNIVERS n’est redevable de la TVA lorsque les
+                                supérieure à 150 €, CLICK GAMES n’est redevable de la TVA lorsque les
                                 Produits sont importés depuis un pays hors Union Européenne que si le lieu
                                 d’importation est situé en France. Dans la mesure où les Vendeurs ne peuvent
                                 livrer des marchandises qu’en France et qu’il n’est pas possible d’obtenir de
@@ -133,7 +133,7 @@ export const cga = {
                                 frauduleuse qui ne Vous serait pas imputable.<br />
                                 En cas de perte, de détournement ou d'utilisation frauduleuse de votre identiﬁant
                                 et/ou de votre mot de passe, Vous Vous engagez à en avertir immédiatement le
-                                service client CLICK UNIVERS.</p>`
+                                service client CLICK GAMES.</p>`
                 },
                 {
                         id: '5',
@@ -147,17 +147,17 @@ export const cga = {
                         id: '6',
                         title: `5. Données personnelles`,
                         description:
-                                ` <p>es données personnelles vous concernant sont traitées par CLICK UNIVERS
-                                PARTICIPATIONS ET SERVICES et CLICK UNIVERS en tant que responsables
+                                ` <p>es données personnelles vous concernant sont traitées par CLICK GAMES
+                                PARTICIPATIONS ET SERVICES et CLICK GAMES en tant que responsables
                                 conjoints de traitement.<br />
-                                <u>Finalités :</u><br /></p> <p>es données personnelles vous concernant sont traitées par CLICK UNIVERS
-                                PARTICIPATIONS ET SERVICES et CLICK UNIVERS en tant que responsables
+                                <u>Finalités :</u><br /></p> <p>es données personnelles vous concernant sont traitées par CLICK GAMES
+                                PARTICIPATIONS ET SERVICES et CLICK GAMES en tant que responsables
                                 conjoints de traitement.<br />
                                 <u>Finalités :</u><br /></p>
                         <p>Les informations relatives à votre compte et celles de vos commandes sont
                                 traitées pour créer et gérer votre compte, gérer vos commandes et leur
                                 suivi, ainsi qu’à des ﬁns de prévention de la fraude, d’analyses
-                                statistiques et de connaissance client. CLICK UNIVERS utilise également
+                                statistiques et de connaissance client. CLICK GAMES utilise également
                                 vos données à des ﬁns de marketing et publicité ciblée (envoi de
                                 communications électroniques, prospection postale ou téléphonique et
                                 proﬁlage publicitaire par combinaison de données) pour son propre
@@ -166,7 +166,7 @@ export const cga = {
                                 peuvent être transmises à des régies ou partenaires commerciaux à des
                                 ﬁns de prospection commerciale et ciblage publicitai</p>
                         <p>Sauf opposition de votre part votre numéro de téléphone peut être utilisé
-                                pour du démarchage téléphonique par CLICK UNIVERS ou par des
+                                pour du démarchage téléphonique par CLICK GAMES ou par des
                                 partenaires. Vous pouvez prendre connaissance et refuser à tous
                                 moment les usages de vos données liés à la prospection commerciale,
                                 au proﬁlage publicitaire dans la page Données personnelles.
@@ -177,13 +177,13 @@ export const cga = {
                                 la gestion des commandes que vous passez auprès d’eux, ainsi que pour
                                 leur permettre de répondre à leurs obligations légales et réglementaires
                                 le cas échéant. En fonction de vos choix, certaines informations pourront
-                                également être transmises aux entités du groupe CLICK UNIVERS à des
+                                également être transmises aux entités du groupe CLICK GAMES à des
                                 ﬁns de connaissance client et de personnalisation de nos services</p>
                         <p>Vos données sont transmises aux Vendeurs à des ﬁns strictement limitées à
                                 la gestion des commandes que vous passez auprès d’eux, ainsi que pour
                                 leur permettre de répondre à leurs obligations légales et réglementaires
                                 le cas échéant. En fonction de vos choix, certaines informations pourront
-                                également être transmises aux entités du groupe CLICK UNIVERS à des
+                                également être transmises aux entités du groupe CLICK GAMES à des
                                 ﬁns de connaissance client et de personnalisation de nos services un produit auprès de l’un d’eux. Ces transferts sont strictement
                                 nécessaires à l’exécution des commandes que vous passez auprès de
                                 ces Vendeurs.</p>
@@ -191,7 +191,7 @@ export const cga = {
                                 <u>Finalités :</u>
                         </p>
                         <p>Les informations nécessaires au marquage de votre vélo sont collectées
-                                CLICK UNIVERS ET CLICK UNIVERS PARTICIPATIONS ET SERVICES,
+                                CLICK GAMES ET CLICK GAMES PARTICIPATIONS ET SERVICES,
                                 agissant en qualité de sous-traitant pour le compte du Vendeur. Ces
                                 informations sont transmises par le Vendeur à l’opérateur agréé qui agit
                                 en tant que responsable de la mise à jour de vos informations sur le
@@ -210,13 +210,13 @@ export const cga = {
                                 limitation et portabilité le cas échéant) et déﬁnir le sort de vos données
                                 personnelles « post mortem » en utilisant l’agent conversationnel de la
                                 Politique de protection des données personnelles du site ici ou contacter
-                                le Délégué à la Protection des Données CLICK UNIVERS par email à
+                                le Délégué à la Protection des Données CLICK GAMES par email à
                                 l’adresse <a hre="mailto:support@click-univers.com">support@click-univers.com</a>  </p>
                         <p className="text-center">Pour plus d’information sur les conditions d’utilisation du compte click-
                                 univers.com, rendez-vous ici.</p>
                         <p className="text-center">Pour plus d’informations sur le traitement et la protection de vos données
                                 personnelles, nous vous invitons à consulter la politique de conﬁdentialité
-                                CLICK UNIVERS sur le site www.click-univers.com
+                                CLICK GAMES sur le site www.click-univers.com
                         </p>`
                 },
                 {
@@ -238,7 +238,7 @@ export const cga = {
                                 doit faire l'objet d'une autorisation écrite préalable du titulaire de la marque.<br />
                                 6.3 - Certains Produits font l'objet de droits d'utilisation personnels et spéciﬁques
                                 réglementant les copies, diffusions publiques, locations etc. Vous devez respecter
-                                les conditions contractuelles applicables à ces Produits et CLICK UNIVERS ne
+                                les conditions contractuelles applicables à ces Produits et CLICK GAMES ne
                                 saurait être responsable des utilisations qui pourraient être faites de ces Produits
                                 dans ce cadre</p>`
                 },
@@ -246,29 +246,29 @@ export const cga = {
                         id: '8',
                         title: `7. Responsabilité`,
                         description:
-                                ` <p>La responsabilité de CLICK UNIVERS envers l'Acheteur ne peut être engagée que
+                                ` <p>La responsabilité de CLICK GAMES envers l'Acheteur ne peut être engagée que
                                 pour des faits qui lui seraient directement imputables et qui lui causeraient un
                                 préjudice directement lié à ces faits. Elle ne peut être engagée pour les préjudices
-                                indirects. La responsabilité de CLICK UNIVERS ne peut non plus être engagée du
+                                indirects. La responsabilité de CLICK GAMES ne peut non plus être engagée du
                                 fait de la mauvaise utilisation du Service par l'Acheteur ou de toute faute de sa
                                 part. Elle ne saurait pas plus être engagée à raison de faits imputables à un tiers
                                 au Service.<br />
                                 En outre, conformément à l'article 6-I, 2 et 3 de la loi n° 2004-575 du 21 juin 2004
-                                pour la conﬁance dans l'économie numérique, CLICK UNIVERS ne saurait voir sa
+                                pour la conﬁance dans l'économie numérique, CLICK GAMES ne saurait voir sa
                                 responsabilité engagée à raison des contenus rendus disponibles sur le Site par
                                 les Acheteurs ou les Vendeurs, notamment en ce qui concerne la description des
                                 Produits ou les appréciations que les Acheteurs font des Vendeurs, sauf si elle ne
                                 les rendait pas promptement inaccessibles après avoir été informée de leur illicéité
                                 dans les conditions prévues par cette loi.<br />
-                                Enﬁn, CLICK UNIVERS décline toute responsabilité en ce qui concerne les ventes
+                                Enﬁn, CLICK GAMES décline toute responsabilité en ce qui concerne les ventes
                                 que concluent les Acheteurs par l'intermédiaire de son Service avec les Vendeurs,
                                 auxquelles elle reste étrangère. Toute plainte relative aux commentaires ﬁgurant
                                 sur le descriptif des Produits ou aux livraisons des Produits sera redirigée vers le
                                 Vendeur désigné, qui assumera l'entière et seule responsabilité à ce titre.
                                 L'Acheteur est seul responsable de l'utilisation qu'il fait du Service, notamment des
                                 appréciations qu'il fait sur le Site, et s'engage à garantir à première demande à
-                                indemniser et dédommager CLICK UNIVERS de tout dommage, perte, manque à
-                                gagner, que CLICK UNIVERS pourrait subir si sa responsabilité se trouvait engagée par un tiers, du fait d'une action liée à cette utilisation du Service par
+                                indemniser et dédommager CLICK GAMES de tout dommage, perte, manque à
+                                gagner, que CLICK GAMES pourrait subir si sa responsabilité se trouvait engagée par un tiers, du fait d'une action liée à cette utilisation du Service par
                                 l’Acheteur.</p>`
                 },
                 {
@@ -288,7 +288,7 @@ export const cga = {
                                 ` <p>Les présentes CGU Acheteur sont soumises au droit français. Tout litige relatif à
                                 leur interprétation et/ou à leur exécution relève des juridictions françaises.
                                 Pour toute réclamation au titre du Service merci de contacter le service en cliquant
-                                ici <br />CLICK UNIVERS adhère au Code Déontologique de la Fevad (Fédération du e-
+                                ici <br />CLICK GAMES adhère au Code Déontologique de la Fevad (Fédération du e-
                                 commerce et de la vente à distance) et au système de Médiation du e-commerce
                                 ; dont les coordonnées sont les suivantes : 60 Rue La Boétie – 75008 Paris –
                                 <a href="http://www.mediateurfevad.fr">www.mediateurfevad.fr</a>. <br />

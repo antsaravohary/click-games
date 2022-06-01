@@ -17,6 +17,7 @@ import { useRouter } from "next/router";
 import { useArticleQuery } from "@data/article/use-article.query";
 import Link from "next/link";
 import HomeLayout from "@components/layout/home-layout";
+import PageHeroSection from "@components/ui/page-hero-section";
 
 function makeTitleToDOMId(title: string) {
   return title.toLowerCase().split(" ").join("_");
@@ -39,7 +40,8 @@ export default function TermsPage() {
   return (
     <>
       <SEO title={"Mentions légale - " +terms?.title} />
-      <section className="max-w-1920 w-full mx-auto py-8 px-4 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20">
+      <PageHeroSection heroTitle={terms?.title} />
+      <section className="max-w-1920 w-full mx-auto py-8 px-4 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20 bg-white">
         <div className="flex">
           {/*articles &&
             articles.map((article) => (

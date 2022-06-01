@@ -7,19 +7,19 @@ export const cguv = {
       id: '1',
       title: 'Préambule',
       description:
-        `<p>CLICK UNIVERS met en place, sur www.click-univers.com (ci-après le "Site"), une Place de Marché permettant à des Vendeurs majeurs (ci-après "Vendeurs" ou "Vous"), après inscription, de rentrer, par son intermédiaire, en relation avec des acheteurs particuliers (ci-après "Acheteurs"), également inscrits sur le Site, dans le but de vendre des articles neufs et d'occasion (ci-après les "Produits") à prix fermes (ci-après le "Service").</p><p>Parmi les produits d’occasion, peuvent être vendus des produits dits reconditionnés à neuf. Il s’agit par exemple de produits d’exposition ou de retours clients qui auront été sortis de leur emballage d’origine et manipulés. Les produits d’occasion peuvent être dans un état comme neuf. Ils ont été testés en atelier et bénéﬁcient ainsi de la garantie déﬁnie par le Vendeur. Ils sont livrés avec l’ensemble de leurs accessoires dans un emballage neutre neuf ou dans l’emballage d’origine en état neuf. Pour utiliser le Service, le Vendeur accepte de se soumettre aux présentes Conditions Générales d'Utilisation Vendeur (ci-après les "CGU Vendeur ") sans restriction ni réserve. Cette acceptation se matérialise par un clic de validation lors de son inscription sur le Service. Les droits et obligations qui découlent de la relation entre CLICK UNIVERS et le Vendeur sont personnels, incessibles et non transférables. Les ventes réalisées par l'intermédiaire du Service entre les Acheteurs et les Vendeurs sont quant à elles régies par les Conditions Générales de Vente (ci-après les "CGV"), qui sont réputées acceptées par le Vendeur lors de chaque conﬁrmation de commande ; elles complètent les présentes CGU Vendeur. CLICK UNIVERS Vous invite à prendre connaissance des CGV en cliquant sur les Conditions Générales d'Utilisation Vendeurs. CLICK UNIVERS se réserve la possibilité de modiﬁer les présentes CGU. Toute modiﬁcation prendra effet dans le délai indiqué par CLICK UNIVERS pour les Produits en ligne lors de la notiﬁcation au Vendeur. Elles ne s'appliqueront pas pour les transactions en cours au moment de leur entrée en vigueur.</p>`
+        `<p>CLICK GAMES met en place, sur www.click-univers.com (ci-après le "Site"), une Place de Marché permettant à des Vendeurs majeurs (ci-après "Vendeurs" ou "Vous"), après inscription, de rentrer, par son intermédiaire, en relation avec des acheteurs particuliers (ci-après "Acheteurs"), également inscrits sur le Site, dans le but de vendre des articles neufs et d'occasion (ci-après les "Produits") à prix fermes (ci-après le "Service").</p><p>Parmi les produits d’occasion, peuvent être vendus des produits dits reconditionnés à neuf. Il s’agit par exemple de produits d’exposition ou de retours clients qui auront été sortis de leur emballage d’origine et manipulés. Les produits d’occasion peuvent être dans un état comme neuf. Ils ont été testés en atelier et bénéﬁcient ainsi de la garantie déﬁnie par le Vendeur. Ils sont livrés avec l’ensemble de leurs accessoires dans un emballage neutre neuf ou dans l’emballage d’origine en état neuf. Pour utiliser le Service, le Vendeur accepte de se soumettre aux présentes Conditions Générales d'Utilisation Vendeur (ci-après les "CGU Vendeur ") sans restriction ni réserve. Cette acceptation se matérialise par un clic de validation lors de son inscription sur le Service. Les droits et obligations qui découlent de la relation entre CLICK GAMES et le Vendeur sont personnels, incessibles et non transférables. Les ventes réalisées par l'intermédiaire du Service entre les Acheteurs et les Vendeurs sont quant à elles régies par les Conditions Générales de Vente (ci-après les "CGV"), qui sont réputées acceptées par le Vendeur lors de chaque conﬁrmation de commande ; elles complètent les présentes CGU Vendeur. CLICK GAMES Vous invite à prendre connaissance des CGV en cliquant sur les Conditions Générales d'Utilisation Vendeurs. CLICK GAMES se réserve la possibilité de modiﬁer les présentes CGU. Toute modiﬁcation prendra effet dans le délai indiqué par CLICK GAMES pour les Produits en ligne lors de la notiﬁcation au Vendeur. Elles ne s'appliqueront pas pour les transactions en cours au moment de leur entrée en vigueur.</p>`
     },
     {
       id: '2',
       title: '1. Objet',
       description:
-        `<p>Les présentes CGU Vendeur ont pour objet de déﬁnir les conditions dans lesquelles CLICK UNIVERS met à la disposition des Vendeurs, dans le cadre du Service, des outils technologiques permettant à ceux-ci de mettre en vente les Produits.</p>`
+        `<p>Les présentes CGU Vendeur ont pour objet de déﬁnir les conditions dans lesquelles CLICK GAMES met à la disposition des Vendeurs, dans le cadre du Service, des outils technologiques permettant à ceux-ci de mettre en vente les Produits.</p>`
     },
     {
       id: '3',
       title: '3. Accès au service ',
       description:
-        `<p>Outre l'acceptation des présentes CGU Vendeur, l'accès au Service est subordonné à l'ouverture d'un compte CLICK UNIVERS et au paiement d’un abonnement mensuel. Vous devez pour cela fournir les données permettant votre identiﬁcation ainsi que vos coordonnées. Lors de l'ouverture de ce compte, Vous vous engagez à ne fournir que des informations exactes, puis à informer CLICK UNIVERS sans délai de tout changement les affectant. L’utilisation du Service implique pour le Vendeur l’ouverture d’un compte de paiement auprès de sa banque, exclusivement dédié à l’encaissement des paiements effectués par l’Acheteur au Vendeur par l’intermédiaire de CLICK UNIVERS .</p><p>L’accès au service est limité à l’ouverture d’un seul compte, tout doublon de compte se verra immédiatement supprimé sauf validation préalable par CLICK UNIVERS. <br> CLICK UNIVERS se réserve la possibilité de résilier un compte si celui-ci présente un ou plusieurs éléments en commun avec un compte précédemment résilié pour manquement. <br> Pour utiliser le Service, vous devez utiliser l'identiﬁant et le mot de passe créés lors de l'ouverture de votre compte. Les identiﬁants et mots de passe sont placés sous l’entière et unique responsabilité du Vendeur. Le Vendeur s’engage à prendre toutes mesures utiles pour qu’ils ne soient pas connus de tiers ou utilisés par des personnes non autorisées. Le Vendeur a la responsabilité de la préservation de la conﬁdentialité des identiﬁants et mots de passe. Le Vendeur est à cet égard responsable des conséquences de la perte ou du détournement des identiﬁants et mots de passe. <br> En cas de perte, de détournement ou d'utilisation frauduleuse de votre identiﬁant et/ou de votre mot de passe, le Vendeur s’engage à en avertir immédiatement le service commercial depuis la page de connexion du compte Vendeur. Le vendeur est responsable des accès indus, dommages, perturbations et conséquences dommageables causés par votre manquement à la conﬁdentialité des identiﬁants.</p>`
+        `<p>Outre l'acceptation des présentes CGU Vendeur, l'accès au Service est subordonné à l'ouverture d'un compte CLICK GAMES et au paiement d’un abonnement mensuel. Vous devez pour cela fournir les données permettant votre identiﬁcation ainsi que vos coordonnées. Lors de l'ouverture de ce compte, Vous vous engagez à ne fournir que des informations exactes, puis à informer CLICK GAMES sans délai de tout changement les affectant. L’utilisation du Service implique pour le Vendeur l’ouverture d’un compte de paiement auprès de sa banque, exclusivement dédié à l’encaissement des paiements effectués par l’Acheteur au Vendeur par l’intermédiaire de CLICK GAMES .</p><p>L’accès au service est limité à l’ouverture d’un seul compte, tout doublon de compte se verra immédiatement supprimé sauf validation préalable par CLICK GAMES. <br> CLICK GAMES se réserve la possibilité de résilier un compte si celui-ci présente un ou plusieurs éléments en commun avec un compte précédemment résilié pour manquement. <br> Pour utiliser le Service, vous devez utiliser l'identiﬁant et le mot de passe créés lors de l'ouverture de votre compte. Les identiﬁants et mots de passe sont placés sous l’entière et unique responsabilité du Vendeur. Le Vendeur s’engage à prendre toutes mesures utiles pour qu’ils ne soient pas connus de tiers ou utilisés par des personnes non autorisées. Le Vendeur a la responsabilité de la préservation de la conﬁdentialité des identiﬁants et mots de passe. Le Vendeur est à cet égard responsable des conséquences de la perte ou du détournement des identiﬁants et mots de passe. <br> En cas de perte, de détournement ou d'utilisation frauduleuse de votre identiﬁant et/ou de votre mot de passe, le Vendeur s’engage à en avertir immédiatement le service commercial depuis la page de connexion du compte Vendeur. Le vendeur est responsable des accès indus, dommages, perturbations et conséquences dommageables causés par votre manquement à la conﬁdentialité des identiﬁants.</p>`
     },
     {
       id: '4',
@@ -49,16 +49,16 @@ export const cguv = {
            personne. <br /> Le Vendeur s'engage à mettre en œuvre tous les moyens de façon à satisfaire de
            manière optimale à ses obligations en délivrant un service de qualité vis-à-vis des
            Acheteurs. <br /> Il s'engage notamment pour cela à répondre aux emails du Service Client et du
-           Service Commercial de CLICK UNIVERS ainsi qu'aux emails des Acheteurs dans
+           Service Commercial de CLICK GAMES ainsi qu'aux emails des Acheteurs dans
            un délai de 2 jours ouvrés à compter de leur réception, et ce, en langue française.
-           Tout échange entre le Vendeur et CLICK UNIVERS est strictement conﬁdentiel. Le
+           Tout échange entre le Vendeur et CLICK GAMES est strictement conﬁdentiel. Le
            Vendeur s’engage donc à ne pas divulguer le contenu de ces échanges à un tiers.
            Le Vendeur s’interdit, et sans que cette liste soit limitative, d’utiliser des visuels ou
            des noms commerciaux, des pseudonymes ou de tenir des propos ou autres
            messages qui seraient injurieux, contraires à l‘ordre public ou aux bonnes mœurs,
            qui porteraient atteinte aux droits de personnes ou aux droits de propriété
            intellectuelle de tiers, aux lois et règlements et à l’image de marque CLICK
-           UNIVERS. A défaut , CLICK UNIVERS se réserve le droit d'interrompre de manière
+           UNIVERS. A défaut , CLICK GAMES se réserve le droit d'interrompre de manière
            temporaire ou déﬁnitive l'accès au Service au Vendeur concerné, en suspendant
            ou en résiliant les présentes dans les conditions prévues à l’article 8.
            Le Vendeur s’engage à détenir un solde positif sur son compte à tout moment
@@ -96,10 +96,10 @@ export const cguv = {
            descriptif associé aux offres de Produits qu'il propose (photographie, dessin, etc.)
            soient conformes aux Produits ainsi illustrés et respectent les droits des tiers et
            qu’ils ne portent pas atteinte à l‘ordre public ou aux bonnes mœurs. Il garantit
-           CLICK UNIVERS qu'il dispose des droits, en particulier de propriété intellectuelle,
+           CLICK GAMES qu'il dispose des droits, en particulier de propriété intellectuelle,
            afférents à ces illustrations, qui lui permettent de les utiliser aﬁn de présenter les
            Produits. <br /> Conformément aux dispositions de la loi du 21 juin 2004, dite « LCEN » (Loi pour la
-           Conﬁance en l’Économie Numérique) CLICK UNIVERS pourra supprimer toute
+           Conﬁance en l’Économie Numérique) CLICK GAMES pourra supprimer toute
            information mise en ligne sur le Site par un Vendeur en cas de notiﬁcation d’un
            tiers faisant état du caractère illicite de cette information ou d’une violation d’un
            droit.
@@ -118,7 +118,7 @@ export const cguv = {
            Ce prix doit être mentionné sur le Site toutes taxes et frais compris (notamment
            TVA, TVA à l'importation, frais d'emballage, eco-taxe, droits de douanes, le cas
            échéant la redevance pour copie privée, etc...), mais hors frais de livraison, ces
-           derniers étant ajoutés par CLICK UNIVERS au prix de la commande lorsque
+           derniers étant ajoutés par CLICK GAMES au prix de la commande lorsque
            l'Acheteur la valide. <br />
            Ainsi il ne pourra pas être demandé à l’Acheteur de régler toute autre somme que
            celle ﬁgurant sur la ﬁche descriptive du Produit.
@@ -134,12 +134,12 @@ export const cguv = {
            rapportant à des Produits qui ne sont plus disponibles. Le Vendeur est seul
            responsable en cas d’indisponibilité du Produit dont il a seul la maitrise. <br />
            Le Vendeur est informé par email, par le bais de son interface Vendeur ou par le
-           biais d'API s'il choisit cette option et dans son compte par CLICK UNIVERS
+           biais d'API s'il choisit cette option et dans son compte par CLICK GAMES
            lorsqu'un Produit qu'il a mis en ligne a fait l'objet d'une commande par un Acheteur.
            Le Vendeur doit alors conﬁrmer la commande concernée dans un délai de 2 jours
            ouvrés suivant la réception de l'information visée à l'alinéa précédent. <br />
            Aussi, le Vendeur s'engage à consulter régulièrement, et au moins une fois par jour
-           ouvré, ses emails reçus à l'adresse fournie à CLICK UNIVERS lors de l'ouverture
+           ouvré, ses emails reçus à l'adresse fournie à CLICK GAMES lors de l'ouverture
            de son compte puis, par la suite, en cas de changement affectant cette information,
            et ce, aﬁn d’être en mesure de conﬁrmer les Produits commandés par les
            Acheteurs. <br />
@@ -189,7 +189,7 @@ export const cguv = {
    <p>(iv) Le Vendeur s'engage à apporter tout le soin nécessaire à la mise sous pli des
            Produits commandés de façon à éviter que les Produits ne soient endommagés
            durant le transport. Le Produit voyage aux frais et aux risques du Vendeur.</p>
-   <p>(v) CLICK UNIVERS adresse au Vendeur, au plus tard dans les 24 heures suivant
+   <p>(v) CLICK GAMES adresse au Vendeur, au plus tard dans les 24 heures suivant
            la commande de l'Acheteur, les informations relatives à l'Acheteur lui permettant de
            livrer le(s) Produit(s) commandé(s).
    </p>
@@ -217,7 +217,7 @@ export const cguv = {
            messagerie mis à disposition dans le cadre du Service.<br />
            En cas de réclamation d'un Acheteur concernant un Produit, y compris lorsque le
            Vendeur est informé de ladite réclamation par le biais de l'outil d'information mis à
-           sa disposition dans le Service et/ou par l'envoi d'un email de CLICK UNIVERS, le
+           sa disposition dans le Service et/ou par l'envoi d'un email de CLICK GAMES, le
            Vendeur fait son affaire personnelle de la résolution du différend qui l'oppose à
            l'Acheteur. Les litiges sont directement réglés entre l'Acheteur et le Vendeur, le cas
            échéant à l'aide de l'outil de messagerie mis à leur disposition sur le Service. Le
@@ -225,20 +225,20 @@ export const cguv = {
            l'Acheteur amiablement.<br />
            Néanmoins, dans le cas où le Vendeur n'aurait pas résolu le litige l'opposant à
            l'Acheteur dans un délai de 8 jours ouvrés à compter de la réception de la
-           réclamation, CLICK UNIVERS se réserve le droit, après en avoir préalablement
+           réclamation, CLICK GAMES se réserve le droit, après en avoir préalablement
            informé le Vendeur, de procéder au remboursement du Produit auprès de
            l'Acheteur. Ce même montant sera ensuite déduit des sommes à reverser par
-           CLICK UNIVERS au Vendeur au titre des Produits vendus par le Vendeur via le
+           CLICK GAMES au Vendeur au titre des Produits vendus par le Vendeur via le
            Service.<br />
            Si la contestation de l'Acheteur s'avère fondée, le Vendeur procèdera soit au renvoi
            du Produit commandé soit au remboursement.<br />
-           En cas d'exercice du droit de rétractation par l'Acheteur, CLICK UNIVERS, en sa
+           En cas d'exercice du droit de rétractation par l'Acheteur, CLICK GAMES, en sa
            qualité de tiers de conﬁance, procédera au remboursement des sommes versées
            (y compris les frais de livraison) au plus tard dans les 14 jours à compter de la date
            à laquelle le droit a été exercé par l’Acheteur auprès du Vendeur et que CLICK
            UNIVERS en a été informé. Cette date de remboursement pouvant être différée
            jusqu’à récupération du Produit ou jusqu’à ce que l’Acheteur ait fourni
-           simultanément au Vendeur et à CLICK UNIVERS une preuve de l’expédition du
+           simultanément au Vendeur et à CLICK GAMES une preuve de l’expédition du
            Produit, la date retenue étant celle du premier de ces faits. Le remboursement sera
            effectué par le même moyen de paiement utilisé par l’Acheteur (par recrédit de la
            carte bancaire). Ce montant sera ensuite déduit des sommes dues par CLICK
@@ -246,14 +246,14 @@ export const cguv = {
            le compte du Vendeur serait débiteur de plus de 150 €, le remboursement du
            Produit retourné par l'Acheteur sera alors effectué directement par le Vendeur à
            l'Acheteur.<br />
-           CLICK UNIVERS se réserve le droit, concernant les Vendeurs ayant réalisé au
+           CLICK GAMES se réserve le droit, concernant les Vendeurs ayant réalisé au
            moins 5 ventes, de suspendre ou résilier les présentes dans les conditions prévues
            à l’article 8 en cas d’atteinte par le Vendeur d’un taux de réclamation supérieur à
            5% de ses commandes.
 
    </p>
    <h5>4.7. Non-respect des obligations par le Vendeur</h5>
-   <p>Il est rappelé que CLICK UNIVERS se réserve le droit de suspendre déﬁnitivement
+   <p>Il est rappelé que CLICK GAMES se réserve le droit de suspendre déﬁnitivement
            ou temporairement l’accès au service au Vendeur concerné en cas de non-respect
            de ses obligations , tel que prévu dans l’article 8.</p>`
     },
@@ -261,13 +261,13 @@ export const cguv = {
       id: '5',
       title: '5. Dispositions ﬁnancières',
       description:
-        ` <p>Pour chaque commande de Produits reçue par un Acheteur, CLICK UNIVERS
+        ` <p>Pour chaque commande de Produits reçue par un Acheteur, CLICK GAMES
         percevra de la part du Vendeur une commission en fonction de l’abonnement du
         Vendeur, comme indiqué dans la page d’abonnement.<br></br>
 
 
 </p>
-<p>CLICK UNIVERS reversera au Vendeur le montant total du prix de la commande
+<p>CLICK GAMES reversera au Vendeur le montant total du prix de la commande
         considérée, après conﬁrmation par l'Acheteur de la réception du ou des Produit(s)
         achetés après 15 jours.</p>
 <p>A défaut de conﬁrmation de la réception du produit par l'Acheteur et en l'absence
@@ -275,7 +275,7 @@ export const cguv = {
         imparti à l'Acheteur pour le faire, le Produit sera réputé avoir été reçu 21 jours
         suivant la date du débit du compte bancaire de l’Acheteur ou suivant la date
         d’expédition effective.<br />
-        CLICK UNIVERS se réserve le droit de suspendre le paiement des sommes dues
+        CLICK GAMES se réserve le droit de suspendre le paiement des sommes dues
         au Vendeur en cas de manquement par le Vendeur à ses obligations</p>
 
 <p>Chaque paiement pour les ventes du Vendeur serra émis le 5,10,25,30 de chaque
@@ -289,7 +289,7 @@ export const cguv = {
        indéterminée. Chaque Partie peut en conséquence résilier les CGU à tout moment
        sans avoir à en justiﬁer moyennant le respect d’un préavis de 2 mois. <br />
        8.2 En cas de manquement par le Vendeur Professionnel à l’une quelconque de
-       ses obligations, CLICK UNIVERS pourra après mise en demeure envoyée par tous
+       ses obligations, CLICK GAMES pourra après mise en demeure envoyée par tous
        moyens restée sans effet pendant une durée de 30 jours, résilier le présent Contrat
        par simple envoi d'une lettre recommandée avec avis de réception.
        <br /> 8.3 En cas de manquement grave et/ou répété par le Vendeur à ses obligations ou
@@ -303,15 +303,15 @@ export const cguv = {
        respect des obligations en matière de TVA (déclaration et paiement de la TVA
        afférent à des transactions imposables à la TVA en France) qui aboutit à la mise en
        œuvre de la procédure prévue à l’article 283 bis du CGI, (ii) la communication à
-       CLICK UNIVERS d’informations inexactes sur l’identité du Vendeur et sur le pays
+       CLICK GAMES d’informations inexactes sur l’identité du Vendeur et sur le pays
        d’établissement véritable de son siège social, (iii) la communication à CLICK
        UNIVERS d’un lieu d’expédition erroné.<br />
        En cas de signalement par l’administration ﬁscale d’une irrégularité du Vendeur,
-       pour quelque motif que ce soir, CLICK UNIVERS pourra procéder au blocage des
+       pour quelque motif que ce soir, CLICK GAMES pourra procéder au blocage des
        paiements du Vendeur le temps de mener les investigations y afférentes.<br />
        8.4 Lorsque le présent Contrat est résilié pour manquement grave, le Groupe
-       CLICK UNIVERS se réserve la possibilité de procéder à la résiliation des autres
-       Contrats liant le Vendeur avec le Groupe CLICK UNIVERS, sous réserve du
+       CLICK GAMES se réserve la possibilité de procéder à la résiliation des autres
+       Contrats liant le Vendeur avec le Groupe CLICK GAMES, sous réserve du
        respect du préavis applicable.</p>`
     },
     {
@@ -319,10 +319,10 @@ export const cguv = {
       title: `7. Service de médiation pour les litiges de
       consommation - Règlement en ligne des litiges`,
       description:
-        `<p>Conformément à la règlementation, CLICK UNIVERS propose aux Acheteurs un
+        `<p>Conformément à la règlementation, CLICK GAMES propose aux Acheteurs un
         service de médiation pour les litiges de consommation liés aux transactions
         réalisées par l’intermédiaire du Service.
-        Les frais de médiation seront refacturés par CLICK UNIVERS au Vendeur. <br />
+        Les frais de médiation seront refacturés par CLICK GAMES au Vendeur. <br />
         <strong>Plateforme de Règlement en Ligne des Litiges :</strong>
         Conformément à l’article
         14 du Règlement (UE) n°524/2013, la Commission Européenne a mis en
@@ -340,10 +340,10 @@ export const cguv = {
       title: '10. Données personnelles',
       description:
         `<p>Vos données à caractère personnel en tant que « Vendeur » sont traitées par
-       CLICK UNIVERS PARTICIPATIONS ET SERVICES et CLICK UNIVERS (ci-après
-       CLICK UNIVERS) et par Stripe agissant respectivement en qualité de
+       CLICK GAMES PARTICIPATIONS ET SERVICES et CLICK GAMES (ci-après
+       CLICK GAMES) et par Stripe agissant respectivement en qualité de
        responsables des traitements mis en œuvre dans le cadre du Service, à savoir :<br />
-       <strong>Traitements opérés par CLICK UNIVERS :
+       <strong>Traitements opérés par CLICK GAMES :
        </strong> <br /> Gestion de l’inscription et suivi des comptes vendeurs ;<br />
        Mise en relation avec les acheteurs ;<br />
        Elaboration de statistiques commerciales ;<br />
@@ -355,38 +355,38 @@ export const cguv = {
        encaissement, lutte contre le blanchiment et le ﬁnancement du terrorisme, lutte
        contre la fraude, gestion des risques, reporting, Vous avez la possibilité de vous
        opposer à cette communication, tout en justiﬁant de votre identité, par email :<a hre="mailto:support@click-univers.com">support@click-univers.com</a></p>
-<p>Click Univers collecte également certaines données.
+<p>CLICK GAMES collecte également certaines données.
 
 </p>
 <p>
        Vous disposez par ailleurs, du droit d'introduire une réclamation auprès de la
        Commission Nationale de l'Informatique et des Libertés (CNIL), notamment sur son
        site internet <a href="www.cnil.fr">www.cnil.fr</a>.<br />
-       CLICK UNIVERS dispose d'un Délégué à la Protection des données personnelles
+       CLICK GAMES dispose d'un Délégué à la Protection des données personnelles
        (DPO) chargé de garantir la protection des données personnelles. Vous pouvez
        contacter le Délégué à la protection des données personnelles de CLICK
        UNIVERS à l'adresse <a hre="mailto:support@click-univers.com">support@click-univers.com</a> (hors exercice de vos droits qui s'effectuent principalement sur l’agent conversationnel de la page de la Politique
        de protection des données personnelles du site).<br />
-       Pour plus d’information sur les traitements réalisés par CLICK UNIVERS voir police
+       Pour plus d’information sur les traitements réalisés par CLICK GAMES voir police
        de conﬁdentialité ici.<br />
        Pour plus d’information sur les traitements réalisés par BNP voir la notice de
        protection des données personnelles ici.<br />
-       CLICK UNIVERS utilise des cookies. Pour plus d'information sur les cookies
+       CLICK GAMES utilise des cookies. Pour plus d'information sur les cookies
        cliquez ici
        S'agissant des données relatives aux commandes de Produits du Vendeur
-       collectées dans le cadre du Service, CLICK UNIVERS informera les Acheteurs
-       qu'elles sont destinées à CLICK UNIVERS, et que les informations nécessaires à
+       collectées dans le cadre du Service, CLICK GAMES informera les Acheteurs
+       qu'elles sont destinées à CLICK GAMES, et que les informations nécessaires à
        la livraison des Produits seront transférées, à cette seule ﬁn ainsi que cas échéant
        aux ﬁns de lui permettre de répondre à ses obligations légales, au Vendeur.
        Le Vendeur s'engage irrévocablement à utiliser les données personnelles de
-       l'Acheteur qui lui seront transmises par CLICK UNIVERS uniquement pour les
+       l'Acheteur qui lui seront transmises par CLICK GAMES uniquement pour les
        besoins de la livraison des Produits et pour lui permettre de s'acquitter de ses
        obligations légales, notamment en termes d’identiﬁcation des cycles le cas
        échéant. Il s'engage à n'en conserver aucune copie dès qu'il aura procédé à
        l'expédition du ou des Produit(s) commandé(s). Toute autre utilisation, location,
        vente, revente ou copie de la part du Vendeur sont interdites. Dans ce cadre, le
        Vendeur peut être amené à recevoir des informations par email liées au Service de
-       la part de CLICK UNIVERS.<br />
+       la part de CLICK GAMES.<br />
        Lutte contre la fraude
        Aﬁn de lutter contre la fraude (absence de livraison des clients, impayés, ...)
        ou des comportements inadéquats du Vendeur (réclamations, mauvaises
@@ -401,29 +401,29 @@ export const cguv = {
        effectuée et peuvent l’utiliser pour leur compte aﬁn d’alimenter leur propre
        ﬁchier d’incidents. Certaines données en rapport avec le terminal associé
        au compte Vendeur peuvent en outre faire l’objet d’un transfert aux Etats-
-       Unis. CLICK UNIVERS prend toutes les mesures et garanties
+       Unis. CLICK GAMES prend toutes les mesures et garanties
        nécessaires pour sécuriser ces transferts.<br />
        Les messages échangés entre le Vendeur et l’Acheteur par le biais de CLICK
-       UNIVERS sont conservés par CLICK UNIVERS et pourront être utilisés
+       UNIVERS sont conservés par CLICK GAMES et pourront être utilisés
        pour prouver un comportement inadapté du Vendeur.<br />
-       CLICK UNIVERS pourra, en fonction des résultats du contrôle effectué sur
+       CLICK GAMES pourra, en fonction des résultats du contrôle effectué sur
        les comptes Vendeurs (à l’inscription et pendant la vie du compte), de
        l’indice de conﬁance attribué au compte Vendeur ou du comportement du
        Vendeur, prendre des mesures, telles que refus d’inscription du Vendeur à la Marketplace, suspension temporaire ou fermeture déﬁnitive du
        compte Vendeur. Ces mesures pourront également avoir pour effet de
        suspendre le paiement des Vendeurs dans le cas où le Vendeur n’a pas
        ou pourrait ne pas procéder à la livraison. La survenance d’un incident
-       (absence de livraison, impayé concernant CLICK UNIVERS, fermeture du
+       (absence de livraison, impayé concernant CLICK GAMES, fermeture du
        compte, indice de conﬁance négatif...) pourra entraîner l’inscription des
        données en rapport avec le compte au sein du ﬁchier d’alerte de CLICK
        UNIVERS, ce qui pourra, lors de prochaines connexions ou inscriptions
-       des Vendeurs, conduire CLICK UNIVERS à réaliser des vériﬁcations
+       des Vendeurs, conduire CLICK GAMES à réaliser des vériﬁcations
        supplémentaires ou des refus d’inscriptions des Vendeurs.
 
 </p>
 
-<p>A tout moment au cours de l’analyse de risque menée par CLICK UNIVERS,
-       vous pourrez présenter vos observations en écrivant à CLICK UNIVERS
+<p>A tout moment au cours de l’analyse de risque menée par CLICK GAMES,
+       vous pourrez présenter vos observations en écrivant à CLICK GAMES
        Service Consommateur, 8 rue louis Aragon 25400 Audincourt. En outre,
        conformément à la loi informatique et libertés du 6 janvier 1978 modiﬁée,
        vous disposez des droits d'accès, de rectiﬁcation, de suppression et
@@ -441,7 +441,7 @@ export const cguv = {
        reconnaissez également mettre en place les mesures techniques et
        organisationnelles appropriées pour protéger ces données contre toute
        atteinte à leur disponibilité, leur intégrité ou leur conﬁdentialité.</p>  <p className="ml-2">
-       Lorsque vous recevez des données de la part de CLICK UNIVERS à des ﬁns
+       Lorsque vous recevez des données de la part de CLICK GAMES à des ﬁns
        strictement limitées à l’exécution des commandes, vous agissez en
        qualité de responsable de traitement. Dans le cas où vous avez recours à
        des sous-traitants ultérieurs, vous mettez en place des procédures vous
@@ -463,39 +463,39 @@ export const cguv = {
       ou partielle du Site ou de tout ou partie des éléments se trouvant sur le Site est
       strictement interdite.</p>
 <p>11.2 - Les dénominations sociales, marques et signes distinctifs reproduits sur les
-      sites de la CLICK UNIVERS sont protégés au titre du droit des marques. La
+      sites de la CLICK GAMES sont protégés au titre du droit des marques. La
       reproduction ou la représentation de tout ou partie d'un des signes précités est
       strictement interdite et doit faire l'objet d'une autorisation écrite préalable du
       titulaire de la marque.
 </p>
 <p>11.3 - Certains produits font l'objet de droits d'utilisation personnels et spéciﬁques
       réglementant les copies, diffusions publiques, locations. Vous devez respecter les
-      conditions générales de vente de ces produits et CLICK UNIVERS ne saurait être
+      conditions générales de vente de ces produits et CLICK GAMES ne saurait être
       responsable des utilisations qui pourraient être faites des Produits dans ce cadre.</p>
-<p>11.4 - CLICK UNIVERS se réserve le droit d’utiliser les droits de propriété
+<p>11.4 - CLICK GAMES se réserve le droit d’utiliser les droits de propriété
       intellectuelle du Vendeur dans le cadre du Service.</p>`
     },
     {
       id: '10',
       title: `12. Responsabilité`,
       description:
-        ` <p>Le Vendeur garantit et indemnisera à première demande CLICK UNIVERS contre
-      tout dommage subi par CLICK UNIVERS et contre toute action en responsabilité
-      qui serait engagée à l'encontre de CLICK UNIVERS à raison de la violation par le
+        ` <p>Le Vendeur garantit et indemnisera à première demande CLICK GAMES contre
+      tout dommage subi par CLICK GAMES et contre toute action en responsabilité
+      qui serait engagée à l'encontre de CLICK GAMES à raison de la violation par le
       Vendeur d'un droit quelconque d'un tiers, y compris d'un Acheteur, que ce
       dommage résulte de la vente de Produits, de l'utilisation faite par le Vendeur du
       Service, ou de toute autre fait qui lui serait imputable.<br />
-      La responsabilité de CLICK UNIVERS envers le Vendeur ne peut être engagée
+      La responsabilité de CLICK GAMES envers le Vendeur ne peut être engagée
       que pour des faits qui lui seraient directement imputables et est en tout état de
       cause limitée au montant correspondant aux commandes réalisées dans le mois
       précédent. Elle ne peut être engagée pour les préjudices indirects, notamment la
       perte de chance de vendre des Produits en cas d'indisponibilité du Service. La
-      responsabilité de CLICK UNIVERS ne peut pas non plus être engagée du fait de la
+      responsabilité de CLICK GAMES ne peut pas non plus être engagée du fait de la
       mauvaise utilisation du Service par le Vendeur.<br />
-      CLICK UNIVERS décline toute responsabilité en ce qui concerne les ventes
+      CLICK GAMES décline toute responsabilité en ce qui concerne les ventes
       conclues entre les Vendeurs et les Acheteurs par l'intermédiaire de son Service.
       Toute réclamation relative aux Produits, (description, livraison, conditions
-      d'utilisation, etc.) qui serait portée à la connaissance de CLICK UNIVERS sera
+      d'utilisation, etc.) qui serait portée à la connaissance de CLICK GAMES sera
       transmise au Vendeur concerné, qui assumera l'entière et seule responsabilité.</p>`
     },
     {
@@ -512,7 +512,7 @@ export const cguv = {
       title: `14.Loi applicable / Attribution de compétences`,
       description:
         ` <p>Les présentes CGU Vendeur sont soumises au droit français.
-      Pour tout différend qui viendrait à se produire entre CLICK UNIVERS et un
+      Pour tout différend qui viendrait à se produire entre CLICK GAMES et un
       Vendeur professionnel relatif à l’existence, l’interprétation ou l’exécution du présent
       contrat, préalablement à toute instance judiciaire, les parties pourront avoir recours
       au Médiateur des entreprises dont les coordonnées sont les suivantes :
@@ -574,7 +574,7 @@ export const cguv = {
         mouvement ou la propriété illicite de biens, en sachant que ces biens sont le
         produit d’activités criminelles. Les termes « corruption » ou « pratique(s) de
         corruption », tels qu’ils sont utilisés dans la présente Clause Anticorruption de
-        Groupe CLICK UNIVERS, incluent la corruption, l’extorsion ou la sollicitation, le
+        Groupe CLICK GAMES, incluent la corruption, l’extorsion ou la sollicitation, le
         traﬁc d’inﬂuence et le blanchiment du produit de ces pratiques.<br />
         En outre le Vendeur reconnait avoir eu connaissance, accepter et s’engage à
         respecter le contenu du « Code de Conduite des Affaires » accessible sur le site

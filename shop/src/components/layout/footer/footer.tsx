@@ -13,7 +13,7 @@ const FooterItems = ({ children, title, description, Icon }: PropsFooter) => (
   <div className="lg:col-span-2 md:col-span-4 col-span-8 flex justify-start flex-col items-center max-w-xs">
     <div className="text-dark">{Icon}</div>
     <h2 className="text-dark text-xl  text-center">{title}</h2>
-    <p className="text-center text-xs text-gray-400 text-base  ">{description}</p>
+    <p className="text-center text-xs text-dark text-base  ">{description}</p>
     {children}
   </div>
 );

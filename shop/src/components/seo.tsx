@@ -19,10 +19,10 @@ export const SEO: React.FC<SeoProps> = ({
   js,
   image = "https://api.click-games.com/storage/96/60847fa03096e252162228.png",
 }) => {
-  const settings = useSettings();  
+  const settings = useSettings();
   return (
     <Head>
-      <title>{settings?.siteTitle ?? "Click GAMES"}</title>
+      <title>{settings?.siteTitle ?? "Click GAMES"} | {title}</title>
       <meta name="description" content={`%s | ${settings?.seo?.metaTitle ?? "E-Commerce"}`} />
       <meta
         name="viewport"
@@ -30,11 +30,11 @@ export const SEO: React.FC<SeoProps> = ({
       />
       <meta name="google-site-verification" content="GmRBmFDag8po0_SqBMt-kxbmjspnodXCo0P15SgE5Z8" />
       <meta property="og:type" content="website" />
-      <meta name="og:title" property="og:title" content={settings?.siteTitle ?? "Click GAMES"+"| " + title} />
+      <meta name="og:title" property="og:title" content={`${settings?.siteTitle ?? "Click GAMES"} | ${title}`} />
       <meta
         name="og:description"
         property="og:description"
-        content={settings?.seo?.metaDescription??description}
+        content={settings?.seo?.metaDescription ?? description}
       />
       <meta property="og:site_name" content="Click Game" />
       <meta property="og:url" content={`${canonical}`} />

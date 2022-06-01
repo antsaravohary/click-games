@@ -14,6 +14,14 @@ export const footer = {
           title: 'link-contact-us',
           path: '/contact',
         },
+        {
+          id: 3,
+          title: 'Livraison & Expéditions',
+          path: '/shipping',
+        },
+        {id:4,
+        title:"Conditions de retour et de remboursement",
+      path:'/rules-return-back'}
         /* {
            id: 3,
            title: 'link-about-team',
@@ -26,7 +34,7 @@ export const footer = {
          },*/
       ],
     },
-   /* {
+    {
       id: 2,
       widgetTitle: 'widget-title-our-information',
       lists: [
@@ -45,11 +53,11 @@ export const footer = {
           title: 'link-return-policy',
           path: '/privacy'
         },
-        /* {
-           id: 4,
-           title: 'link-site-map',
-           path: '/',
-         },
+        {
+          id: 4,
+          title: 'link-site-map',
+          path: '/',
+        },
       ],
     },
     /*{
@@ -146,13 +154,13 @@ export const footer = {
       width: 20,
       height: 20,
     },
-   /* {
-      id: 4,
-      path: 'https://www.youtube.com/channel/UCjld1tyVHRNy_pe3ROLiLhw',
-      image: '/assets/images/social/youtube.svg',
-      name: 'youtube',
-      width: 20,
-      height: 20,
-    },*/
+    /* {
+       id: 4,
+       path: 'https://www.youtube.com/channel/UCjld1tyVHRNy_pe3ROLiLhw',
+       image: '/assets/images/social/youtube.svg',
+       name: 'youtube',
+       width: 20,
+       height: 20,
+     },*/
   ],
 };
