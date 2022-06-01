@@ -54,7 +54,7 @@
                                                 <div style="color: #686d6d; line-height: 210%; text-align: center; word-wrap: break-word;">
                                                    <p style="font-size: 14px; line-height: 210%;">&nbsp;</p>
                                                    <p style="font-size: 14px; line-height: 210%;">Merci d'avoir créer un compte vendeur sur le site</p>
-                                                   <p style="font-size: 14px; line-height: 210%;"><a rel="noopener" href="http://www.click-univers.com" target="_blank">www.click-univers.com</a></p>
+                                                   <p style="font-size: 14px; line-height: 210%;"><a rel="noopener" href="http://www.click-games.fr" target="_blank">www.click-games.fr</a></p>
                                                    <p style="font-size: 14px; line-height: 210%;">vous pouvez dorénavant mettre vos articles en ligne depuis notre site. </p>
                                                    <p style="font-size: 14px; line-height: 210%;">Découvrez les options d'un compte vendeur, Promotion d'article, référencement et bien plus.</p>
                                                 </div>
@@ -149,11 +149,11 @@
                                                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:'Montserrat',sans-serif;">
                                                       <tr>
                                                          <td style="font-family:'Montserrat',sans-serif;" align="center">
-                                                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://click-univers.com/" style="height:49px; v-text-anchor:middle; width:266px;" arcsize="8%" stroke="f" fillcolor="#ffb200">
+                                                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://click-games.fr/" style="height:49px; v-text-anchor:middle; width:266px;" arcsize="8%" stroke="f" fillcolor="#ffb200">
                                                                <w:anchorlock/>
                                                                <center style="color:#FFFFFF;font-family:'Montserrat',sans-serif;">
                                                                   <![endif]-->
-                                                                  <a href="https://click-univers.com/" target="_blank" style="box-sizing: border-box;display: inline-block;font-family:'Montserrat',sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #ffb200; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
+                                                                  <a href="https://click-games.fr/" target="_blank" style="box-sizing: border-box;display: inline-block;font-family:'Montserrat',sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #ffb200; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
                                                                   <span style="display:block;padding:15px 33px;line-height:120%;"><span style="font-size: 16px; line-height: 19.2px;"><strong><span style="line-height: 19.2px; font-size: 16px;">Découvrir ma vitrine</span></strong></span></span>
                                                                   </a>
                                                                   <!--[if mso]>

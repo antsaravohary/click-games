@@ -72,7 +72,7 @@
                                                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:'Montserrat',sans-serif;">
                                                       <tr>
                                                          <td style="font-family:'Montserrat',sans-serif;" align="center">
-                                                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://click-univers.com/" style="height:46px; v-text-anchor:middle; width:298px;" arcsize="8.5%" stroke="f" fillcolor="#ffb200">
+                                                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://click-games.fr/" style="height:46px; v-text-anchor:middle; width:298px;" arcsize="8.5%" stroke="f" fillcolor="#ffb200">
                                                                <w:anchorlock/>
                                                                <center style="color:#FFFFFF;font-family:'Montserrat',sans-serif;">
                                                                   <![endif]-->
@@ -118,7 +118,7 @@
                                                       accès à votre compte, rendez-vous immédiatement sur Click
                                                       Univers.
                                                    </p>
-                                                   <p style="font-size: 14px; line-height: 210%;"><a rel="noopener" href="http://www.click-univers.com" target="_blank">www.click-univers.com</a>&nbsp;
+                                                   <p style="font-size: 14px; line-height: 210%;"><a rel="noopener" href="http://www.click-games.fr" target="_blank">www.click-games.fr</a>&nbsp;
                                                    </p>
                                                 </div>
                                              </td>

@@ -30,15 +30,15 @@
                                       href="mailto:test@gmail.com" target="_blank">{{$to}}</a>&nbsp;</span></p>
                                 <p style="line-height: 140%; font-size: 14px;"><span style="font-size: xx-small;">vous
                                     recevez cet email car vous &ecirc;tes membre de <a rel="noopener"
-                                      href="http://www.click-univers.com"
-                                      target="_blank">www.click-univers.com</a></span></p>
+                                      href="http://www.click-games.fr"
+                                      target="_blank">www.click-games.fr</a></span></p>
                                 <p style="line-height: 140%; font-size: 14px;"><span style="font-size: xx-small;">vous
                                     pouvez acc&eacute;der &agrave; nos conditions g&eacute;n&eacute;rales d'utilisation
                                     depuis notre site internet :</span></p>
                                 <p style="line-height: 140%; font-size: 14px;"><span
                                     style="font-size: xx-small;">&nbsp;<a rel="noopener"
-                                      href="http://www.click-univers.com"
-                                      target="_blank">www.click-univers.com</a></span></p>
+                                      href="http://www.click-games.fr"
+                                      target="_blank">www.click-games.fr</a></span></p>
                                 <p style="line-height: 140%; font-size: 14px;">&nbsp;</p>
                               </div>
 
@@ -91,7 +91,7 @@
                                       <tr style="vertical-align: top">
                                         <td align="left" valign="middle"
                                           style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-                                          <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2FClick-Univers-100619578720135"
+                                          <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2FClickUniversFR"
                                             title="Facebook" target="_blank">
                                             <img src="{{asset('images/image-5.png')}}" alt="Facebook" title="Facebook" width="32"
                                               style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">

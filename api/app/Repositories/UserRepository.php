@@ -84,7 +84,7 @@ class UserRepository extends BaseRepository
             $user->managed_shop = $user->managed_shop;
             if ($user->hasPermission(UserPermission::STORE_OWNER)) {
                 try {
-                    Mail::to($user->email)->send(new ShopOwnerRegistered("cu", "https://click-univers.com"));
+                    Mail::to($user->email)->send(new ShopOwnerRegistered("cu", "https://click-games.fr"));
                 } catch (\Exception $e) {
                 }
             } else {

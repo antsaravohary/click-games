@@ -86,8 +86,8 @@
                                                     choisi Click
                                                     Univers pour effectuer vos achats en ligne. Nous espérons vous revoir
                                                     très prochainement sur notre site internet. <a rel="noopener"
-                                                        href="http://www.click-univers.com"
-                                                        target="_blank">www.click-univers.com</a>
+                                                        href="http://www.click-games.fr"
+                                                        target="_blank">www.click-games.fr</a>
                                                 </p>
                                                 <p style="font-size: 14px; line-height: 210%;">&nbsp;</p>
                                                 <p style="font-size: 14px; line-height: 210%;">&nbsp;</p>

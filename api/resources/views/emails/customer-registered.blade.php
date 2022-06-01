@@ -52,7 +52,7 @@
                                                 <div style="color: #686d6d; line-height: 210%; text-align: center; word-wrap: break-word;">
                                                    <p style="font-size: 14px; line-height: 210%;">&nbsp;</p>
                                                    <p style="font-size: 14px; line-height: 210%;">Merci d'avoir crée un compte sur le site</p>
-                                                   <p style="font-size: 14px; line-height: 210%;"><a rel="noopener" href="http://www.click-univers.com" target="_blank">www.click-univers.com</a></p>
+                                                   <p style="font-size: 14px; line-height: 210%;"><a rel="noopener" href="http://www.click-games.fr" target="_blank">www.click-games.fr</a></p>
                                                    <p style="font-size: 14px; line-height: 210%;">vous pouvez dorénavant effectuer des achats depuis notre site. </p>
                                                    <p style="font-size: 14px; line-height: 210%;">Nous sommes heureux de vous compter parmi nos nouveaux membres.</p>
                                                 </div>
