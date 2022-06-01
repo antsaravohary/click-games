@@ -76,6 +76,11 @@ export const ContactPage = () => {
               </div>
             </div>
             <div className="flex flex-col mb-8">
+              <span className="font-semibold text-heading mb-4">
+              lundi à jeudi de 9H à 16H
+              </span>
+            </div>
+            <div className="flex flex-col mb-8">
               <span className="font-semibold text-heading mb-3">
                 Contact par courrier [Siège social]
               </span>
@@ -103,11 +108,7 @@ export const ContactPage = () => {
                 ))}
               </div>
             </div>
-            <div className="flex flex-col mb-8">
-              <span className="font-semibold text-heading mb-4">
-              lundi à jeudi de 9H à 16H
-              </span>
-            </div>
+       
           </div>
 
           {/* Contact form */}
