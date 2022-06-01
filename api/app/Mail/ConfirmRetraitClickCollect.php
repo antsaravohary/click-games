@@ -40,6 +40,6 @@ class ConfirmRetraitClickCollect extends Mailable
                 $products[] = $product;
             }
         }
-        return $this->markdown('emails.confirm-retrait-click-collect', ['to' => $this->to, 'ref' => $this->order->ref, 'products' => $products,'code_retrait'=>$this->order->code_click_collect,'address'=>$address,'telephone'=>$telephone])->subject(" Click Univers - Confirmation de retrait Click&Collect");
+        return $this->markdown('emails.confirm-retrait-click-collect', ['to' => $this->to, 'ref' => $this->order->ref, 'products' => $products,'code_retrait'=>$this->order->code_click_collect,'address'=>$address,'telephone'=>$telephone])->subject(" Click Games - Confirmation de retrait Click&Collect");
     }
 }

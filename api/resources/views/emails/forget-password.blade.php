@@ -55,7 +55,7 @@
                                                 <div style="color: #686d6d; line-height: 210%; text-align: center; word-wrap: break-word;">
                                                    <p style="font-size: 14px; line-height: 210%;">&nbsp;</p>
                                                    <p style="font-size: 14px; line-height: 210%;">Vous avez demandé la
-                                                      réinitialisation du mot de passe de votre compte Click Univers.
+                                                      réinitialisation du mot de passe de votre compte Click Games.
                                                    </p>
                                                    <p style="font-size: 14px; line-height: 210%;">Pour finaliser le processus, Veuillez copier le jeton ci-dessous pour réinitialiser votre mot de passe </p>
                                                 </div>

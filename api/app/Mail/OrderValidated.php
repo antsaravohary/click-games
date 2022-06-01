@@ -33,6 +33,6 @@ class OrderValidated extends Mailable
     {
         $products = [];
        
-        return $this->markdown('emails.order-validated', ['to' => $this->to, 'ref' => $this->order->ref])->subject("Click Univers - Confirmation de commande");
+        return $this->markdown('emails.order-validated', ['to' => $this->to, 'ref' => $this->order->ref])->subject("Click Games - Confirmation de commande");
     }
 }

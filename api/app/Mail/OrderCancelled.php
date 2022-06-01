@@ -31,6 +31,6 @@ class OrderCancelled extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.order-cancelled', ['to' => $this->to, 'ref' => $this->ref])->subject("Click Univers - Commande annulée");
+        return $this->markdown('emails.order-cancelled', ['to' => $this->to, 'ref' => $this->ref])->subject("Click Games - Commande annulée");
     }
 }

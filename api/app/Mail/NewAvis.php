@@ -30,6 +30,6 @@ class NewAvis extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.new-avis', ['to' => $this->to, 'star' => $this->star])->subject("Click Univers - Merci d'avoir donné votre avis");
+        return $this->markdown('emails.new-avis', ['to' => $this->to, 'star' => $this->star])->subject("Click Games - Merci d'avoir donné votre avis");
     }
 }

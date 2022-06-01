@@ -40,6 +40,6 @@ class OrderDispatched extends Mailable
                 $products[] = $product;
             }
         }
-        return $this->markdown('emails.order-dispatch', ['to' => $this->to, 'ref' => $this->order->ref, 'products' => $products,'tracking_url'=>$this->order->tracking_url,'tracking_number'=>$this->order->tracking_number])->subject("Click Univers - Votre colis est en route !");
+        return $this->markdown('emails.order-dispatch', ['to' => $this->to, 'ref' => $this->order->ref, 'products' => $products,'tracking_url'=>$this->order->tracking_url,'tracking_number'=>$this->order->tracking_number])->subject("Click Games - Votre colis est en route !");
     }
 }

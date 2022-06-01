@@ -29,6 +29,6 @@ class NewOrder extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.new-order',['to'=>$this->to])->subject("Click Univers - Vous avez une vente en cours. !");
+        return $this->markdown('emails.new-order',['to'=>$this->to])->subject("Click Games - Vous avez une vente en cours. !");
     }
 }

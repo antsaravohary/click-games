@@ -31,6 +31,6 @@ class ForgetPassword extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.forget-password',['to'=>$this->to,'token'=>$this->token])->subject("Click Univers - Mot de passe oublié");
+        return $this->markdown('emails.forget-password',['to'=>$this->to,'token'=>$this->token])->subject("Click Games - Mot de passe oublié");
     }
 }

@@ -28,6 +28,6 @@ class HelpCenterReceived extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.help-center-received')->subject("Click Univers - Accusé  de réception HelpCenter");
+        return $this->markdown('emails.help-center-received')->subject("Click Games - Accusé  de réception HelpCenter");
     }
 }

@@ -44,7 +44,7 @@
                                                 <div style="color: #686d6d; line-height: 210%; text-align: center; word-wrap: break-word;">
                                                    <p style="font-size: 14px; line-height: 210%;">&nbsp;</p>
                                                    <p style="font-size: 14px; line-height: 210%;">Bonjour, vous avez reçu un message suite à votre litige n°({{$ref}}).</p>
-                                                   <p style="font-size: 14px; line-height: 210%;">Vous pouvez consulter celui-ci ou y répondre directement depuis votre espace Click Univers .</p>
+                                                   <p style="font-size: 14px; line-height: 210%;">Vous pouvez consulter celui-ci ou y répondre directement depuis votre espace Click Games .</p>
                                                    <p style="font-size: 14px; line-height: 210%;">&nbsp;</p>
                                                    <p style="font-size: 14px; line-height: 210%;">Toutefois, nous vous rappelons qu’en cas de désaccord, vous avez la possibilité de faire appel à un agent médiateur.</p>
                                                    <p style="font-size: 14px; line-height: 210%;">&nbsp;</p>

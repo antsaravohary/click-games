@@ -35,7 +35,7 @@ class ColissimoController extends Controller
                 'parcel' => array('weight' => $request->post("weight")),
                 'sender' => array(
                     'address' => array(
-                        'companyName' => 'CLICK UNIVERS', 'line2' => '8 RUE LOUIS ARAGON', 'countryCode' => 'FR', 'city' => 'Audincourt', 'zipCode' => '25400'
+                        'companyName' => 'CLICK GAMES', 'line2' => '8 RUE LOUIS ARAGON', 'countryCode' => 'FR', 'city' => 'Audincourt', 'zipCode' => '25400'
                     )
                 ),
                 'addressee' => array(
@@ -133,7 +133,7 @@ class ColissimoController extends Controller
                 'parcel' => array('weight' => $request->post("weight")),
                 'sender' => array(
                     'address' => array(
-                        'companyName' => 'CLICK UNIVERS', 'line2' => '8 RUE LOUIS ARAGON', 'countryCode' => 'FR', 'city' => 'Audincourt', 'zipCode' => '25400'
+                        'companyName' => 'CLICK GAMES', 'line2' => '8 RUE LOUIS ARAGON', 'countryCode' => 'FR', 'city' => 'Audincourt', 'zipCode' => '25400'
                     )
                 ),
                 'addressee' => array(

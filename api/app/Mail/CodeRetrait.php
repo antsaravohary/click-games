@@ -41,6 +41,6 @@ class CodeRetrait extends Mailable
                 $products[] = $product;
             }
         }
-        return $this->markdown('emails.code-retrait', ['to' => $this->to, 'ref' => $this->order->ref, 'products' => $products,'code_retrait'=>$this->order->code_click_collect,'address'=>$address,'telephone'=>$telephone,'shop_name'=>$this->order->shop->name])->subject("Click Univers - Code de retrait Click&Collect");
+        return $this->markdown('emails.code-retrait', ['to' => $this->to, 'ref' => $this->order->ref, 'products' => $products,'code_retrait'=>$this->order->code_click_collect,'address'=>$address,'telephone'=>$telephone,'shop_name'=>$this->order->shop->name])->subject("Click Games - Code de retrait Click&Collect");
     }
 }

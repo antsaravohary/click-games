@@ -30,6 +30,6 @@ class FirstContact extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.first-contact', ['to' => $this->to])->subject("Click Univers - Suite de contact");
+        return $this->markdown('emails.first-contact', ['to' => $this->to])->subject("Click Games - Suite de contact");
     }
 }

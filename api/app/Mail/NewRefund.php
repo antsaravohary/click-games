@@ -30,6 +30,6 @@ class NewRefund extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.new-refund', ['to' => $this->to, 'ref' => $this->ref])->subject("Click Univers - Remboursement en cours");
+        return $this->markdown('emails.new-refund', ['to' => $this->to, 'ref' => $this->ref])->subject("Click Games - Remboursement en cours");
     }
 }

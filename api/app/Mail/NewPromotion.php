@@ -31,6 +31,6 @@ class NewPromotion extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.new-promotion', ['to' => $this->to, 'ref' => $this->coupon->code,'expire_date'=>(new Carbon($this->coupon->expire_at))->format('d/m/y')])->subject("Click Univers - Promotion");
+        return $this->markdown('emails.new-promotion', ['to' => $this->to, 'ref' => $this->coupon->code,'expire_date'=>(new Carbon($this->coupon->expire_at))->format('d/m/y')])->subject("Click Games - Promotion");
     }
 }

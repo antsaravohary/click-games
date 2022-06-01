@@ -62,7 +62,7 @@
                                                 <p style="font-size: 14px; line-height: 210%;">Vous pouvez consulter
                                                     directement le litige depuis votre espace personnel.</p>
                                                 <p style="font-size: 14px; line-height: 210%;">Nous espérons que celui-ci ne
-                                                    nuira pas votre expérience sur Click Univers.</p>
+                                                    nuira pas votre expérience sur Click Games.</p>
                                                 <p style="font-size: 14px; line-height: 210%;">&nbsp;</p>
                                                 <p style="font-size: 14px; line-height: 210%;">En cas de problème, vous avez
                                                     la possibilité de faire appel à un agent médiateur.</p>

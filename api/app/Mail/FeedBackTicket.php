@@ -30,6 +30,6 @@ class FeedBackTicket extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.feed-back-ticket', ['to' => $this->to, 'ref' => $this->ref])->subject("Click Univers - Vous avez un message suite à un litige");
+        return $this->markdown('emails.feed-back-ticket', ['to' => $this->to, 'ref' => $this->ref])->subject("Click Games - Vous avez un message suite à un litige");
     }
 }

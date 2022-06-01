@@ -24,7 +24,7 @@
                                           <tr>
                                              <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Montserrat',sans-serif;" align="left">
                                                 <div style="color: #34495e; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                                   <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 26px; line-height: 36.4px;"><strong><span style="line-height: 36.4px; font-size: 26px;">Prêt à vendre sur Click Univers</span></strong></span></p>
+                                                   <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 26px; line-height: 36.4px;"><strong><span style="line-height: 36.4px; font-size: 26px;">Prêt à vendre sur Click Games</span></strong></span></p>
                                                 </div>
                                              </td>
                                           </tr>
@@ -133,7 +133,7 @@
                                           <tr>
                                              <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 33px 10px;font-family:'Montserrat',sans-serif;" align="left">
                                                 <div style="color: #686d6d; line-height: 210%; text-align: center; word-wrap: break-word;">
-                                                   <p style="font-size: 14px; line-height: 210%;">Un site vitrine avec Click Univers.</p>
+                                                   <p style="font-size: 14px; line-height: 210%;">Un site vitrine avec Click Games.</p>
                                                    <p style="font-size: 14px; line-height: 210%;">Parmi les nombreux professionnels inscrits sur notre site des petits commerçants s'y trouve. Vous avez la possibilité de modifier votre site vitrine et de le personnaliser.</p>
                                                 </div>
                                              </td>

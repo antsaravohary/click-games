@@ -92,7 +92,7 @@
                                 </p>
                                 <p
                                     style="text-align: center; line-height: 1.5; word-break: break-word; font-size: 26px; mso-line-height-alt: 39px; margin: 0;">
-                                    <span style="font-size: 26px;">Cordialement L'équipe de Click Univers</span>
+                                    <span style="font-size: 26px;">Cordialement L'équipe de Click Games</span>
                                 </p><br>
                                 <p
                                     style="text-align: center; line-height: 1.5; word-break: break-word; mso-line-height-alt: 18px; margin: 0;">

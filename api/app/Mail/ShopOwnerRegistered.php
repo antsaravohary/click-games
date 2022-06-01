@@ -33,6 +33,6 @@ class ShopOwnerRegistered extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.shop-owner-registered',['name'=>$this->name,'url_validation'=>$this->url_validation,'to'=>$this->to])->subject("Click Univers - 3,2,1 Vendez !");
+        return $this->markdown('emails.shop-owner-registered',['name'=>$this->name,'url_validation'=>$this->url_validation,'to'=>$this->to])->subject("Click Games - 3,2,1 Vendez !");
     }
 }

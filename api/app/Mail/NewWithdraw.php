@@ -30,6 +30,6 @@ class NewWithdraw extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.new-withdraw', ['to' => $this->to, 'ref' => $this->ref])->subject("Click Univers - Confirmation de retrait");
+        return $this->markdown('emails.new-withdraw', ['to' => $this->to, 'ref' => $this->ref])->subject("Click Games - Confirmation de retrait");
     }
 }

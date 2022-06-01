@@ -22,7 +22,7 @@
                                           <tr>
                                              <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Montserrat',sans-serif;" align="left">
                                                 <div style="color: #34495e; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                                   <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 26px; line-height: 36.4px;"><strong><span style="line-height: 36.4px; font-size: 26px;">Bienvenue sur Click Univers</span></strong></span></p>
+                                                   <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 26px; line-height: 36.4px;"><strong><span style="line-height: 36.4px; font-size: 26px;">Bienvenue sur Click Games</span></strong></span></p>
                                                 </div>
                                              </td>
                                           </tr>

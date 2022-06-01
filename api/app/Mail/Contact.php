@@ -19,7 +19,7 @@ class Contact extends Mailable
      *
      * @return void
      */
-    public function __construct($text="Click Univers - Accusé de réception Contact")
+    public function __construct($text="Click Games - Accusé de réception Contact")
     {
         $this->text = $text;
         
@@ -33,6 +33,6 @@ class Contact extends Mailable
     public function build()
     {
        
-        return $this->markdown('emails.contact', ['to' => $this->to,"subject"=>$this->text])->subject("Click Univers - Accusé de réception Contact");
+        return $this->markdown('emails.contact', ['to' => $this->to,"subject"=>$this->text])->subject("Click Games - Accusé de réception Contact");
     }
 }

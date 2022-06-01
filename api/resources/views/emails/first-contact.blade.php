@@ -119,7 +119,7 @@
                                              <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Montserrat',sans-serif;" align="left">
                                                 <div style="color: #34495e; line-height: 140%; text-align: center; word-wrap: break-word;">
                                                    <p style="line-height: 140%; font-size: 14px;"><span style="line-height: 19.599999999999998px; font-size: 14px;"><strong><span style="line-height: 19.599999999999998px; font-size: 14px;"><span style="font-size: 26px; line-height: 36.4px;">ÉCONOMISER PLUS 1 600€ </span></span></strong></span></p>
-                                                   <p style="line-height: 140%; font-size: 14px;"><span style="line-height: 19.599999999999998px; font-size: 14px;"><strong><span style="line-height: 19.599999999999998px; font-size: 14px;"><span style="font-size: 26px; line-height: 36.4px;">SUR CLICK UNIVERS</span></span></strong></span></p>
+                                                   <p style="line-height: 140%; font-size: 14px;"><span style="line-height: 19.599999999999998px; font-size: 14px;"><strong><span style="line-height: 19.599999999999998px; font-size: 14px;"><span style="font-size: 26px; line-height: 36.4px;">SUR CLICK GAMES</span></span></strong></span></p>
                                                 </div>
                                              </td>
                                           </tr>
@@ -130,7 +130,7 @@
                                           <tr>
                                              <td style="overflow-wrap:break-word;word-break:break-word;padding:10px 33px;font-family:'Montserrat',sans-serif;" align="left">
                                                 <div style="color: #686d6d; line-height: 210%; text-align: center; word-wrap: break-word;">
-                                                   <p style="font-size: 14px; line-height: 210%;">Un site e-commerce coûte en moyenne 100 € à 1600 € parfois plus. Choisir Click Univers c'est profiter d'un espace vitrine à moindre coût. Click&amp;Collect, livraison à domicile etc.</p>
+                                                   <p style="font-size: 14px; line-height: 210%;">Un site e-commerce coûte en moyenne 100 € à 1600 € parfois plus. Choisir Click Games c'est profiter d'un espace vitrine à moindre coût. Click&amp;Collect, livraison à domicile etc.</p>
                                                 </div>
                                              </td>
                                           </tr>

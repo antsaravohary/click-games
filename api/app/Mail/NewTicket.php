@@ -29,6 +29,6 @@ class NewTicket extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.new-ticket',['to'=>$this->to])->subject("Click Univers - Accusé de réception litige");
+        return $this->markdown('emails.new-ticket',['to'=>$this->to])->subject("Click Games - Accusé de réception litige");
     }
 }

@@ -29,6 +29,6 @@ class TicketInProgress extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.ticket-in-progress',['to'=>$this->to])->subject("Click Univers - Vous avez un litige en cours");
+        return $this->markdown('emails.ticket-in-progress',['to'=>$this->to])->subject("Click Games - Vous avez un litige en cours");
     }
 }

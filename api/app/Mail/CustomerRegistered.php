@@ -28,6 +28,6 @@ class CustomerRegistered extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.customer-registered', ['to' => $this->to])->subject("Click Univers - Confirmation d'inscription");
+        return $this->markdown('emails.customer-registered', ['to' => $this->to])->subject("Click Games - Confirmation d'inscription");
     }
 }

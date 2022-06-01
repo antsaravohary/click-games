@@ -30,6 +30,6 @@ class ConditionUpdated extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.condition-updated', ['to' => $this->to])->subject("Click Univers - Mise à jour de nos conditions");
+        return $this->markdown('emails.condition-updated', ['to' => $this->to])->subject("Click Games - Mise à jour de nos conditions");
     }
 }

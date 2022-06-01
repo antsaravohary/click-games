@@ -38,11 +38,11 @@
                <div style="color: #686d6d; line-height: 210%; text-align: center; word-wrap: break-word;">
                   <p style="font-size: 14px; line-height: 210%;">&nbsp;</p>
                   <p style="font-size: 14px; line-height: 210%;">Bonjour, nous vous informons que vous avez un litige en cours.</p>
-                  <p style="font-size: 14px; line-height: 210%;">Vous pouvez consulter celui-ci ou y répondre directement depuis votre espace Click Univers</p>
+                  <p style="font-size: 14px; line-height: 210%;">Vous pouvez consulter celui-ci ou y répondre directement depuis votre espace Click Games</p>
                   <p style="font-size: 14px; line-height: 210%;">&nbsp;</p>
                   <p style="font-size: 14px; line-height: 210%;">Un problème avec la commande d’un client ? Proposez-lui un remboursement, un échange ou même un avoir.</p>
                   <p style="font-size: 14px; line-height: 210%;">&nbsp;</p>
-                  <p style="font-size: 14px; line-height: 210%;">En cas de problème, un agent Click Univers peut intervenir pour régler la situation.</p>
+                  <p style="font-size: 14px; line-height: 210%;">En cas de problème, un agent Click Games peut intervenir pour régler la situation.</p>
                </div>
             </td>
          </tr>
