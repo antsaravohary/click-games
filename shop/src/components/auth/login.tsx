@@ -127,7 +127,7 @@ const LoginForm = () => {
         </span>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 mt-2 hidden">
+      <div className="grid grid-cols-1 gap-4 mt-2">
         {/* Uncomment below code to use facebook login */}
         <Button
           className="w-full !bg-social-facebook hover:!bg-social-facebook-hover"

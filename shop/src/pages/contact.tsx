@@ -81,10 +81,11 @@ export const ContactPage = () => {
               </span>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-body">
-                  Click INC, 70 rue Pierre Marti, 25462 Étupes
+                  Click INC, 70 rue Pierre Marti, 25460 Étupes
                 </span>
               </div>
             </div>
+          
             <div className="flex flex-col mb-8">
               <span className="font-semibold text-heading mb-4">
                 {t("text-follow-us")}
@@ -102,6 +103,11 @@ export const ContactPage = () => {
                 ))}
               </div>
             </div>
+            <div className="flex flex-col mb-8">
+              <span className="font-semibold text-heading mb-4">
+              lundi à jeudi de 9H à 16H
+              </span>
+            </div>
           </div>
 
           {/* Contact form */}
@@ -114,7 +120,7 @@ export const ContactPage = () => {
               <p>
                 Si vous ne trouvez pas de réponse sous cette rubrique nous vous invitons à poser votre question dans le formulaire ci-dessous. Notre équipe vous répondra sous 24 heures.
               </p>
-              <p>Vous pouvez également nous contacter à tout moment par mail à l’adresse : support@click-games.fr ou par téléphone au 0161370570</p>
+              <p>Vous pouvez également nous contacter à tout moment par mail ou par téléphone</p>
 
 
 
