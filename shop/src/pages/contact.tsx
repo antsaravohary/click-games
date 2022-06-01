@@ -117,7 +117,7 @@ export const ContactPage = () => {
               {t("text-questions-comments")}
             </h1>
             <div className="flex flex-col text-sm space-y-2 mb-7">
-              <p>Nous vous rappelons que les réponses à la plupart des questions que vous pourrez poser se trouvent sous la rubrique «<a href="/support">FAQ</a>»</p>
+              <p>Nous vous rappelons que les réponses à la plupart des questions que vous pourrez poser se trouvent sous la rubrique «<a href="/support">Supports</a>»</p>
               <p>
                 Si vous ne trouvez pas de réponse sous cette rubrique nous vous invitons à poser votre question dans le formulaire ci-dessous. Notre équipe vous répondra sous 24 heures.
               </p>
