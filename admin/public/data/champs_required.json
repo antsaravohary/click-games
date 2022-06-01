@@ -1,0 +1,30 @@
+[
+  {
+    "label": "Année",
+    "value": "year"
+  },
+  {
+    "label": "Kilomètrage",
+    "value": "milage"
+  },
+  {
+    "label": "Licence",
+    "value": "licence"
+  },
+  {
+    "label": "Carburant",
+    "value": "fuel"
+  },
+  {
+    "label": "Partform",
+    "value": "partform"
+  },
+  {
+    "label": "Capacité de stockage",
+    "value": "storage_capacity"
+  },
+  {
+    "label": "Ages",
+    "value": "age"
+  }
+]
