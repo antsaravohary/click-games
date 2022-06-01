@@ -146,14 +146,14 @@ const RegisterForm = () => {
         <p className="text-center text-sm md:text-base leading-relaxed px-2 sm:px-0 text-body mt-4 sm:mt-5 mb-2 sm:mb-10">
           {t("registration-helper")}
           <span
-            onClick={() => handleNavigate("terms")}
+            onClick={() => handleNavigate("/terms/conditions-generales-de-vente")}
             className="mx-1 underline cursor-pointer text-accent hover:no-underline"
           >
             {t("text-terms")}
           </span>
           &
           <span
-            onClick={() => handleNavigate("terms")}
+            onClick={() => handleNavigate("/terms/conditions-generales-de-vente")}
             className="ms-1 underline cursor-pointer text-accent hover:no-underline"
           >
             {t("text-policy")}

@@ -5,6 +5,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useArticleQuery } from "@data/article/use-article.query";
 import Loader from "@components/ui/loader/loader";
+import { SEO } from "@components/seo";
 
 function makeTitleToDOMId(title: string) {
   return title.toLowerCase().split(" ").join("_");
@@ -25,7 +26,7 @@ export default function PrivacyPage() {
         <h1 className="text-xl md:text-2xl sm:text-3xl 2xl:text-4xl text-heading font-bold mb-4 sm:mb-5 2xl:mb-7">
           Livraison & Expéditions
         </h1>
-        <p className="text-sm md:text-base text-body-dark 2xl:text-lg px-0.5">
+        <p className="text-sm md:text-base text-body-dark 2xl:text-lg px-0++.5">
 
         </p>
       </header>

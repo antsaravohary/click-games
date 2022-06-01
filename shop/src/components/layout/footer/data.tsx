@@ -34,7 +34,7 @@ export const footer = {
          },*/
       ],
     },
-    {
+  /*  {
       id: 2,
       widgetTitle: 'widget-title-our-information',
       lists: [
@@ -59,7 +59,7 @@ export const footer = {
           path: '/',
         },
       ],
-    },
+    },*/
     /*{
       id: 3,
       widgetTitle: 'widget-title-community',
