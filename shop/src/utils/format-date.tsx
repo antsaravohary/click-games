@@ -15,7 +15,7 @@ export const formatDateCompletWithDay=(date:string)=>{
   if(date===undefined){
       return "";
   }
-  return dayjs(date).format("dddd le DD MMMM YYYY");
+  return dayjs(date).format("dddd  DD MMMM YYYY");
 }
 
 export const formatDateFromNow = (date: string) => {

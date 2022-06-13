@@ -76,13 +76,8 @@ export const ContactPage = () => {
               </div>
             </div>
             <div className="flex flex-col mb-8">
-              <span className="font-semibold text-heading mb-4">
-              lundi à jeudi de 9H à 16H
-              </span>
-            </div>
-            <div className="flex flex-col mb-8">
               <span className="font-semibold text-heading mb-3">
-                Contact par courrier [Siège social]
+                Contact par courrier 
               </span>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-body">
@@ -116,7 +111,7 @@ export const ContactPage = () => {
             <h1 className="mb-2 text-xl md:text-2xl font-body font-bold text-heading">
               {t("text-questions-comments")}
             </h1>
-            <div className="flex flex-col text-sm space-y-2 mb-7">
+         {/**   <div className="flex flex-col text-sm space-y-2 mb-7">
               <p>Nous vous rappelons que les réponses à la plupart des questions que vous pourrez poser se trouvent sous la rubrique «<a href="/support">Supports</a>»</p>
               <p>
                 Si vous ne trouvez pas de réponse sous cette rubrique nous vous invitons à poser votre question dans le formulaire ci-dessous. Notre équipe vous répondra sous 24 heures.
@@ -126,7 +121,7 @@ export const ContactPage = () => {
 
 
 
-            </div>
+            </div> */}
             <form onSubmit={handleSubmit(onSubmit)} noValidate>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <Input

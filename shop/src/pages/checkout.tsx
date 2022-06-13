@@ -314,7 +314,7 @@ export default function CheckoutPage() {
                   <DeliveryIcon height="42" width="42" />
                   <div className="ml-4 flex">
                     <p>
-                      Livraison </p>
+                      Livraison estimée le </p>
                     <p className=" ml-2 font-bold first-letter:capitalize">
                       {formatDateCompletWithDay(dateDelivery.toDateString())}
                     </p>

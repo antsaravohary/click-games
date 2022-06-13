@@ -229,12 +229,12 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
               />
             </div>
             <DeliveryOptionView product={product} />
-            <div className="flex items-center">
+            <div className="flex items-center hidden">
               <Tooltip tooltipText={"Les délais de livraison sont indicatifs de certaines commandes, susceptibles d'avoir des délais de livraison plus longs"} children={<InfoIcon height="16" width="16" />} />
               <DeliveryIcon height="42" width="42" />
               <div className="ml-4 flex">
                 <p>
-                  Livraison {product.price - product.discount > 35 && "GRATUITE"}{" "}</p>
+                  Livraison estimée {product.price - product.discount > 35 && ""}{"le"}</p>
                 <p className=" ml-2 font-bold first-letter:capitalize">
                   {formatDateCompletWithDay(dateDelivery.toDateString())}
                 </p>
@@ -279,7 +279,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                         </div>
                       )}
                       <div className="flex justify-center items-center flex-col">
-                        <div className="flex justify-center items-center text-gray-600"><Lock height="16" width="16" /> <span className="ml-2">Paiement 100% sécurisé par CB</span></div>
+                        <div className="flex justify-center items-center text-gray-600"><Lock height="16" width="16" /> <span className="ml-2">Paiement 100% sécurisé par Visa, Mastercard</span></div>
                        
                       </div>
                     </div>
