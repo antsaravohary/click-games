@@ -71,7 +71,7 @@ export const ContactPage = () => {
               </span>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-body">
-                  0161370570
+                  0756826523
                 </span>
               </div>
             </div>
@@ -81,7 +81,7 @@ export const ContactPage = () => {
               </span>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-body">
-                  Click INC, 70 rue Pierre Marti, 25460 Étupes
+                70 rue Pierre Marti, 25460 Étupes
                 </span>
               </div>
             </div>
