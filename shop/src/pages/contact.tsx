@@ -71,7 +71,7 @@ export const ContactPage = () => {
               </span>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-body">
-                  0756826523
+                +33 6 60 94 24 96
                 </span>
               </div>
             </div>

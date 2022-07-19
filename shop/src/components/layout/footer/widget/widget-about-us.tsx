@@ -5,6 +5,8 @@ import Logo from '@components/ui/logo';
 import { ROUTES } from '@utils/routes';
 import Image from 'next/image';
 import Text from '@components/ui/text';
+import { PhoneIcon } from '@components/icons/phone';
+import { EmailIcon } from '@components/icons/sidebar';
 
 interface AboutProps {
   className?: string;
@@ -25,10 +27,16 @@ const WidgetAbout: React.FC<AboutProps> = ({ social, className }) => {
       <div className="flex flex-col text-center sm:text-start max-w-[300px] mx-auto sm:ms-0 pb-6 sm:pb-5">
         <Logo href={ROUTES.HOME} className="mb-3 lg:mb-5 mx-auto sm:ms-0" />
         <p className='text-left text-xs'>
-        Click Games | E-commerce spécialiste du jeux vidéos | Livraison gratuite à partir de 35€ | Click sur ton jeu
-    </p>
-      </div>
+          Click Games | E-commerce spécialiste du jeux vidéos | Livraison gratuite à partir de 35€ | Click sur ton jeu
+        </p>
+        <div className='mt-2 text-sm flex items-center'>
+          <div>  <PhoneIcon width="15" height="15" /></div>
+          <div className='ml-2'>+33 6 60 94 24 96</div></div>
 
+      <div className=' text-sm flex items-center'>
+        <div>  <EmailIcon width="15" height="15" /></div>
+        <a href='mailto:support@click-games.fr' className='ml-2'>support@click-games.fr</a>
+      </div></div>
       {social && (
         <ul className="flex flex-wrap justify-center sm:justify-start space-s-4 md:space-s-5 mx-auto md:mx-0">
           {social?.map((item) => (

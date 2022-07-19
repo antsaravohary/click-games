@@ -5,7 +5,7 @@ export default function HelpCenterList() {
 
     const { data, isLoading: loading } = useFaqQuery();
     return (
-        <div className="w-full mx-auto">
+        <div className="w-full  h-full mx-auto">
             {loading ? (
                 <div>Chargement...</div>
             ) : (

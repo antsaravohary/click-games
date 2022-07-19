@@ -64,7 +64,7 @@ const Collapse: React.FC<CollapseProps> = ({
             exit="from"
             variants={heightCollapse()}
           >
-            <div className="md:pt-1 pb-4 px-5 leading-7 text-sm md:text-base md:leading-loose text-body-dark">
+            <div className="md:pt-1 pb-4 px-5 leading-7 text-sm md:text-base md:leading-loose text-body-dark z-50 ">
             <div
             className="html-content"
             dangerouslySetInnerHTML={{

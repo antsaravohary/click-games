@@ -49,7 +49,7 @@ export default function PrivacyPage() {
               <p>CLICK GAMES </p>
               <p>70 rue Pierre Marti, 25462 Étupes</p>
               <p>Adresse email : support@click-game­s.fr</p>
-              <p>Numéro de téléphone : 0756826523</p>
+              <p>Numéro de téléphone : +33 6 60 94 24 96</p>
             </div>
           </div>
 

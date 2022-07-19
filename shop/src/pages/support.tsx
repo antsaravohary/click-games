@@ -34,7 +34,7 @@ export default function HelpPage() {
   return (
     <>
       <SEO title="Centre d’aide" />
-      <div className="flex  justify-beetwen flex-col h-screen bg-white">
+      <div className="flex  justify-beetwen flex-col h-full bg-white">
         <div className="  md:mx-8 flex flex-col md:flex-row">
           <div className="flex-1  m-4 p-4">
             {!showContactForm ? <>      <h3 className="border-l border-l-8 pl-2 text-2xl font-bold leading-6 border-yellow-600 mb-10">Vous êtes client ? Utilisez ce formulaire
@@ -56,7 +56,7 @@ export default function HelpPage() {
 
 
           </div>
-          <div className="flex-1  m-4 p-4 ">
+          <div className="flex-1 m-4 p-4 ">
             <h3 className="border-l border-l-8 pl-2 text-2xl font-bold leading-6 border-red-600 mb-5">Centre d'aide</h3>
             <HelpCenterList />
           </div>

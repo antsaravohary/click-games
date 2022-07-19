@@ -54,7 +54,7 @@ const RegisterForm = () => {
   const { authorize } = useUI();
   const { closeModal, openModal } = useModalAction();
   function handleNavigate(path: string) {
-    router.push(`/${path}`);
+    router.push(`${path}`);
     closeModal();
   }
   function onSubmit({ first_name,last_name, email, password }: FormValues) {

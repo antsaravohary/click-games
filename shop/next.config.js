@@ -38,7 +38,8 @@ module.exports = withPWA({
       "picsum.photos",
       "lh3.googleusercontent.com",
       "dev.api.click-games.fr",
-      "api.click-games.fr"
+      "api.click-games.fr",
+      "api.click-games.local"
     ],
   },
   typescript: {

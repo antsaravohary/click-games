@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 import { ROUTES } from "@utils/routes";
 import Link from "@components/ui/link";
 import { useTranslation } from "next-i18next";
+import CartCounterTop from "@components/cart/cart-counter-top";
 
 const AuthorizedMenu = dynamic(
   () => import("@components/layout/navbar/authorized-menu"),
@@ -56,6 +57,7 @@ const Navbar = () => {
               </NavLink>
             </li>
           ))}
+             <CartCounterTop />
           {isAuthorize ? (
             <li>
               <AuthorizedMenu />

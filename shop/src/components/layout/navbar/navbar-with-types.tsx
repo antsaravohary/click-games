@@ -13,6 +13,7 @@ import { useTranslation } from "next-i18next";
 import { getIcon } from "@utils/get-icon";
 import { Waypoint } from "react-waypoint";
 import { useTypesQuery } from "@data/type/use-types.query";
+import CartCounterTop from "@components/cart/cart-counter-top";
 
 const AuthorizedMenu = dynamic(
   () => import("@components/layout/navbar/authorized-menu"),
@@ -119,6 +120,7 @@ const NavbarWithTypes: React.FC = () => {
                 </Link>
               </li>
             ))}
+            <CartCounterTop />
             {isAuthorize ? (
               <li>
                 <AuthorizedMenu />

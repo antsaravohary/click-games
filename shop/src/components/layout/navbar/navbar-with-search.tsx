@@ -12,6 +12,7 @@ import { useTypesQuery } from "@data/type/use-types.query";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { PlusIcon } from "@components/icons/plus-icon";
+import CartCounterTop from "@components/cart/cart-counter-top";
 
 const AuthorizedMenu = dynamic(
   () => import("@components/layout/navbar/authorized-menu"),
@@ -73,10 +74,10 @@ const NavbarWithSearch = () => {
                 )}
               >
                 <Link href={"/announce/create"} className="hidden inline-flex items-center justify-center px-2 bg-yellow-500 rounded mr-2 ">
-                  <span  className='border border-2 border-whhite mr-2'>
-                  <PlusIcon width="32" color="white" />
+                  <span className='border border-2 border-whhite mr-2'>
+                    <PlusIcon width="32" color="white" />
                   </span>
-              
+
                   <span className="font-bold une annonce text-lg whitespace-nowrap">Deposer une annonce</span>
                 </Link>
                 <Search label={t("text-search-label")} variant="minimal" />
@@ -93,16 +94,16 @@ const NavbarWithSearch = () => {
                       {t("nav-menu-track-order")}
                     </Link>
                   </li>
-                  
+
                 </>
               ) : <li key="supports">
-              <Link
-                href={"/support"}
-                className="font-semibold text-heading flex items-center transition duration-200 no-underline hover:text-accent focus:text-accent"
-              >
-                {t("nav-menu-support")}
-              </Link>
-            </li>}
+                <Link
+                  href={"/support"}
+                  className="font-semibold text-heading flex items-center transition duration-200 no-underline hover:text-accent focus:text-accent"
+                >
+                  {t("nav-menu-support")}
+                </Link>
+              </li>}
               {siteSettings.headerLinks.map(({ href, label, icon }) => (
                 <li key={`${href}${label}`}>
                   <Link
@@ -114,6 +115,9 @@ const NavbarWithSearch = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <CartCounterTop />
+              </li>
               {isAuthorize ? (
                 <li>
                   <AuthorizedMenu />
