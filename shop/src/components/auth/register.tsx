@@ -95,7 +95,7 @@ const RegisterForm = () => {
     );
   }
   return (
-    <div className="py-6 px-5 sm:p-8 bg-light w-screen md:max-w-md h-screen md:h-auto flex flex-col justify-center">
+    <div className="py-4 my-8 px-5 sm:p-8 bg-light w-screen md:max-w-xl h-screen md:h-auto flex flex-col justify-center">
       <div className="flex justify-center">
         <Logo />
       </div>
@@ -176,7 +176,7 @@ const RegisterForm = () => {
       <div className="text-sm sm:text-base text-body text-center">
         {t("text-already-account")}{" "}
         <button
-          onClick={() => openModal("LOGIN_VIEW")}
+          onClick={() => router.push("/login")}
           className="ms-1 underline text-accent font-semibold transition-colors duration-200 focus:outline-none hover:text-accent-hover focus:text-accent-hover hover:no-underline focus:no-underline"
         >
           {t("text-login")}

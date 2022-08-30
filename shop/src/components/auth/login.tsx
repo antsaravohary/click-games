@@ -15,6 +15,7 @@ import * as yup from "yup";
 import { FacebookIcon } from "@components/icons/facebook";
 //import { GoogleIcon } from "@components/icons/google";
 import { useModalAction } from "@components/ui/modal/modal.context";
+import { useRouter } from "next/router";
 
 type FormValues = {
   email: string;
@@ -37,6 +38,7 @@ const defaultValues = {
 const LoginForm = () => {
   const { t } = useTranslation("common");
   const { mutate: login, isLoading: loading } = useLoginMutation();
+  const router=useRouter();
   const [errorMsg, setErrorMsg] = useState("");
   const { authorize } = useUI();
   const { openModal, closeModal } = useModalAction();
@@ -75,7 +77,7 @@ const LoginForm = () => {
     );
   }
   return (
-    <div className="py-6 px-5 sm:p-8 bg-light w-screen md:max-w-md h-screen md:h-auto flex flex-col justify-center">
+    <div className="py-4 my-8 px-5 sm:p-8 bg-light w-screen md:max-w-xl h-screen md:h-auto flex flex-col justify-center">
       <div className="flex justify-center">
         <Logo />
       </div>
@@ -118,17 +120,17 @@ const LoginForm = () => {
           </Button>
         </div>
       </form>
-      {/* End of forgot login form */}
+      {/* End of forgot login form 
 
       <div className="flex flex-col items-center justify-center relative text-sm text-heading mt-8 sm:mt-11 mb-6 sm:mb-8">
         <hr className="w-full" />
         <span className="absolute start-2/4 -top-2.5 px-2 -ms-4 bg-light">
           {t("text-or")}
         </span>
-      </div>
+      </div>*/}
 
       <div className="grid grid-cols-1 gap-4 mt-2">
-        {/* Uncomment below code to use facebook login */}
+        {/* Uncomment below code to use facebook login 
         <Button
           className="w-full !bg-social-facebook hover:!bg-social-facebook-hover"
           // loading={loading}
@@ -139,7 +141,7 @@ const LoginForm = () => {
         >
           <FacebookIcon className="w-4 h-4 mr-3" />
           {t("text-login-facebook")}
-        </Button>
+        </Button>*/}
         {/*   <Button
           className="!bg-social-google hover:!bg-social-google-hover"
           // loading={loading}
@@ -153,13 +155,13 @@ const LoginForm = () => {
         </Button> */}
       </div>
 
-      <div className="flex flex-col items-center justify-center relative text-sm text-heading mt-8 sm:mt-11 mb-6 sm:mb-8">
+      <div className="flex flex-col items-center justify-center relative text-sm text-heading mt-8 sm:mt-11 mb-4 sm:mb-4">
         <hr className="w-full" />
       </div>
       <div className="text-sm sm:text-base text-body text-center">
         {t("text-no-account")}{" "}
         <button
-          onClick={() => openModal("REGISTER")}
+          onClick={() => router.push("/register")}
           className="ms-1 underline text-accent font-semibold transition-colors duration-200 focus:outline-none hover:text-accent-hover focus:text-accent-hover hover:no-underline focus:no-underline"
         >
           {t("text-register")}

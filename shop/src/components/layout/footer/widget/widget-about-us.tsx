@@ -29,14 +29,18 @@ const WidgetAbout: React.FC<AboutProps> = ({ social, className }) => {
         <p className='text-left text-xs'>
           Click Games | E-commerce spécialiste du jeux vidéos | Livraison gratuite à partir de 35€ | Click sur ton jeu
         </p>
+        
         <div className='mt-2 text-sm flex items-center'>
           <div>  <PhoneIcon width="15" height="15" /></div>
           <div className='ml-2'>+33 6 60 94 24 96</div></div>
 
-      <div className=' text-sm flex items-center'>
-        <div>  <EmailIcon width="15" height="15" /></div>
-        <a href='mailto:support@click-games.fr' className='ml-2'>support@click-games.fr</a>
-      </div></div>
+        <div className=' text-sm flex items-center'>
+          <div>  <EmailIcon width="15" height="15" /></div>
+          <a href='mailto:support@click-games.fr' className='ml-2'>support@click-games.fr</a>
+        </div>
+        <div className='text-sm'>Heure d'ouverture lundi au samedi de 10h à 18h</div>
+      </div>
+
       {social && (
         <ul className="flex flex-wrap justify-center sm:justify-start space-s-4 md:space-s-5 mx-auto md:mx-0">
           {social?.map((item) => (
@@ -59,6 +63,7 @@ const WidgetAbout: React.FC<AboutProps> = ({ social, className }) => {
           ))}
         </ul>
       )}
+
     </div>
   );
 };

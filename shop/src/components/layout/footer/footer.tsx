@@ -68,8 +68,10 @@ const Footer: React.FC = () => {
             Icon={<HelpCenterIcon width="32" height="32" color='#000' />}
           ></FooterItems>
         </div></div>
-      <Widgets widgets={[...widgets,{ id: 2, widgetTitle: 'widget-title-our-information',lists: articles.map(a=>({ id:a?.id,title:a?.title, path:"/terms/"+a?.slug}))}]} />
+      <Widgets widgets={[...widgets, { id: 2, widgetTitle: 'widget-title-our-information', lists: articles.map(a => ({ id: a?.id, title: a?.title, path: "/terms/" + a?.slug })) }]} />
+    
       <Copyright payment={payment} />
+
       <div className="px-2 pb-4">
 
       </div>

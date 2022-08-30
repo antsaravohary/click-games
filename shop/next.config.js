@@ -46,7 +46,7 @@ module.exports = withPWA({
     ignoreBuildErrors: true,
   },
   experimental: {
-    urlImports: ["https://checkout.moneytigo.com/dist/css"],
+    
 
   },
 

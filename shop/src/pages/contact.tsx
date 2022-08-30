@@ -77,6 +77,16 @@ export const ContactPage = () => {
             </div>
             <div className="flex flex-col mb-8">
               <span className="font-semibold text-heading mb-3">
+               Horaires
+              </span>
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-body">
+               Lundi au samedi de 10h à 18h
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-col mb-8">
+              <span className="font-semibold text-heading mb-3">
                 Contact par courrier 
               </span>
               <div className="flex items-center justify-between">
@@ -85,7 +95,7 @@ export const ContactPage = () => {
                 </span>
               </div>
             </div>
-          
+           
             <div className="flex flex-col mb-8">
               <span className="font-semibold text-heading mb-4">
                 {t("text-follow-us")}
