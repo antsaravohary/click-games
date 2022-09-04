@@ -128,17 +128,17 @@ const ClickGamePlus = ({ value, setValue,disabled }: any) => {
             </div>
 
             <span className="flex flex-col text-center">
-              <span className="text-[9px] text-gray-400 font-bold mt-1">
+              <span className="text-[0.8rem] text-gray-400 font-bold mt-1">
                 Adhésion au ClickGames+
               </span>
             </span>
             <span className="flex flex-col text-center">
-              <span className="text-[9px] text-gray-400 font-bold mt-1">
+              <span className="text-[0.8rem] text-gray-400 font-bold mt-1">
                14 jours d’essai 
               </span>
             </span>
             <span className="flex flex-col text-center">
-              <span className="text-[9px] text-gray-400 font-bold mt-1">
+              <span className="text-[0.8rem] text-gray-400 font-bold mt-1">
                 Sans engagement, 49,99€ HT TTC par mois
               </span>
             </span>

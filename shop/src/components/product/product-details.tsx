@@ -229,18 +229,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
               />
             </div>
             <DeliveryOptionView product={product} />
-            <div className="flex items-center hidden">
-              <Tooltip tooltipText={"Les délais de livraison sont indicatifs de certaines commandes, susceptibles d'avoir des délais de livraison plus longs"} children={<InfoIcon height="16" width="16" />} />
-              <DeliveryIcon height="42" width="42" />
-              <div className="ml-4 flex">
-                <p>
-                  Livraison estimée {product.price - product.discount > 35 && ""}{"le"}</p>
-                <p className=" ml-2 font-bold first-letter:capitalize">
-                  {formatDateCompletWithDay(dateDelivery.toDateString())}
-                </p>
-              </div>
 
-            </div>
             {quantity > 0 && (
               <div className="flex items-center text-green-500 mt-2 ml-2">
                 <CheckMark height="24" width="24" />
@@ -280,7 +269,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                       )}
                       <div className="flex justify-center items-center flex-col">
                         <div className="flex justify-center items-center text-gray-600"><Lock height="16" width="16" /> <span className="ml-2">Paiement 100% sécurisé par Visa, Mastercard</span></div>
-                       
+
                       </div>
                     </div>
                   )}
@@ -312,7 +301,19 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
               )}
             </div>
           </div>
-
+          <div className="w-full mt-4 md:mt-6 pt-4 md:pt-6 flex flex-row items-start border-t border-border-200 border-opacity-60">
+            <div className="flex items-center">
+              <Tooltip tooltipText={"Les délais de livraison sont indicatifs de certaines commandes, susceptibles d'avoir des délais de livraison plus longs"} children={<InfoIcon height="16" width="16" />} />
+              <DeliveryIcon height="42" width="42" />
+              <div className="ml-4 flex">
+                <p>
+                  Livraison estimée {product.price - product.discount > 35 && ""}{"le"}</p>
+                <p className=" ml-2 font-bold first-letter:capitalize">
+                  {formatDateCompletWithDay(dateDelivery.toDateString())}
+                </p>
+              </div>
+            </div>
+          </div>
           {!!categories?.length ? (
             <ProductCategories
               categories={categories}
