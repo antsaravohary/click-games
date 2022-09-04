@@ -51,7 +51,7 @@ const ClickGamePlus = ({ value, setValue,disabled }: any) => {
   }, [value]);
 
   return (
-    <div className="mt-5 bg-white rounded-sm hidden p-8">
+    <div className="mt-5 bg-white rounded-sm p-8">
       <div className="flex flex-col md:flex-row justify-center md:justify-start ">
         <Checkbox
           className="text-dark"
