@@ -138,9 +138,9 @@ export default function HomePage() {
       <SEO
         title="Click sur ton Univers"
       />
-      <div className="w-fulll overflow-hidden hidden lock lg:mt-6">
+      <div className="w-fulll overflow-hidden lock lg:mt-6">
         <BannerShort banner={getPageData.banner} className="max-h-140" />
-        <FeatureGrid className="hidden" />
+        <FeatureGrid className="" />
       </div>
  
       <div className="flex flex-1 bg-gray-100">
