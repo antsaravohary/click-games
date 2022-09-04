@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 const solutions = [
   {
-    name: "Jusqu’à -50% sur les prix produits en devenant membre du ClickGames+.",
+    name: "réductions sur produits",
     description: '',
 
     href: "#",
@@ -36,6 +36,27 @@ const solutions = [
   },
   {
     name: "Prioritaire du les files d’attente.",
+    description:
+      "",
+    href: "#",
+    icon: CheckMark,
+  },
+  {
+    name: "Accès aux catalogues exclusif",
+    description:
+      "",
+    href: "#",
+    icon: CheckMark,
+  },
+  {
+    name: "Livraison en express gratuite",
+    description:
+      "",
+    href: "#",
+    icon: CheckMark,
+  },
+  {
+    name: "Possibilité d’échanger jusqu’à 2 jeux dans le mois",
     description:
       "",
     href: "#",
@@ -75,13 +96,13 @@ const ClickGamePlus = ({ value, setValue,disabled }: any) => {
         {showDetail && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "26rem" }}
+            animate={{ opacity: 1, height: "38rem" }}
             transition={{ duration: 0.5 }}
             exit={{ opacity: 0, height: 0 }}
             className=" h-[24rem]  mt-2 w-full overflow-hidden"
           >
             <h3 className="mt-2 text-xl font-semibold flex items-center justify-center">
-              ClickGames+
+            <img style={{height:"35px"}} src="/click_games+.png"/>
             </h3>
 
             <div className="relative grid gap-6 bg-white px-5 py-5 sm:gap-8 sm:p-8 lg:grid-cols-1">
@@ -118,7 +139,7 @@ const ClickGamePlus = ({ value, setValue,disabled }: any) => {
             </span>
             <span className="flex flex-col text-center">
               <span className="text-[9px] text-gray-400 font-bold mt-1">
-                Sans engagement, 59,99€ par mois
+                Sans engagement, 49,99€ HT TTC par mois
               </span>
             </span>
           </motion.div>
