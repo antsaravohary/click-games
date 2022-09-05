@@ -27,6 +27,7 @@ import Button from "@components/ui/button";
 import { InfoIcon } from "@components/icons/info";
 import Tooltip from "@components/ui/tool-tips";
 import { useUpdateOrderMutation } from "@data/order/use-mutation-order.mutation";
+import { formatDateCompletWithDay } from "@utils/format-date";
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const cookies = parseContextCookie(context?.req?.headers?.cookie);
@@ -157,13 +158,30 @@ export default function OrderPage() {
     addressTitle = my_order?.shop?.name;
     address = my_order?.shop?.address;
   }
+  let dateDelivery = new Date(new Date(my_order?.created_at).getTime() + 2 * 24 * 60 * 60 * 1000);
+  switch (dateDelivery.getDay()) {
+    case 0:
+      dateDelivery = new Date(dateDelivery.getTime() + 2 * 24 * 60 * 60 * 1000);
+      break;
+    case 1:
+      dateDelivery = new Date(dateDelivery.getTime() + 1 * 24 * 60 * 60 * 1000);
+      break;
+    case 2:
+      dateDelivery = new Date(dateDelivery.getTime() + 1 * 24 * 60 * 60 * 1000);
+      break;
+    case 6:
+      dateDelivery = new Date(dateDelivery.getTime() + 2 * 24 * 60 * 60 * 1000);
+      break;
 
+    default:
+      break;
+  }
   return (
     <div className="p-4 sm:p-8">
       <div className="p-6 sm:p-8 lg:p-12 max-w-screen-lg w-full mx-auto bg-light rounded border shadow-sm">
         <h2 className="flex flex-col sm:flex-row items-center justify-between text-base font-bold text-heading mb-9 sm:mb-12">
           <span className="mb-5 sm:mb-0 me-auto ">
-            <span className="me-4">{t("text-status")} :</span>
+            <span className="me-4">État de commande :</span>
             <Badge
               text={data?.order?.status?.name!}
               className="font-normal text-sm whitespace-nowrap"
@@ -180,11 +198,11 @@ export default function OrderPage() {
         <div className="mb-5">
 
           {my_order?.status?.serial == 3 && <Button loading={isLoading} onClick={() => {
-            updateOrder({ id: my_order?.id, input: { action: "packet_received",status:4 } })
+            updateOrder({ id: my_order?.id, input: { action: "packet_received", status: 4 } })
           }}>Confirmer la reception de colis</Button>}
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-12">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 ">
           <div className="py-4 px-5 border border-border-200 rounded shadow-sm">
             <h3 className="mb-2 text-sm text-heading font-semibold">
               {t("text-order-ref")}
@@ -242,7 +260,19 @@ export default function OrderPage() {
               </p>
             </div>
           )}
+
         </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2 mb-12 mt-2">
+          <div className="py-4 px-5 border border-border-200 rounded shadow-sm">
+            <h3 className="mb-2 text-sm  text-heading font-semibold">
+              Temps de livraison
+            </h3>
+            <p>
+              Livraison estimée {"le"}  <span className=" ml-2 font-bold first-letter:capitalize">
+              {formatDateCompletWithDay(dateDelivery.toDateString())}
+            </span></p>
+           
+          </div></div>
         {data?.order?.children.length === 1 ||
           (data?.order?.children.length === 0 && (
             <div className="w-full flex justify-center items-center ">
@@ -263,6 +293,7 @@ export default function OrderPage() {
               />
             </div>
           ))}
+
         {/* end of order received  */}
 
         <div className="flex flex-col lg:flex-row">
@@ -307,7 +338,7 @@ export default function OrderPage() {
               </p>
               <p className="flex text-body-dark mt-5">
                 <strong className="w-5/12 sm:w-4/12 text-sm  text-heading font-semibold">
-                  {t("text-total")}
+                Prix TTC 
                 </strong>
                 :<span className="w-7/12 sm:w-8/12 ps-4 text-sm ">{total}</span>
               </p>

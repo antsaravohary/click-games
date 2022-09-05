@@ -11,7 +11,7 @@ export default function Loginpage() {
   return (
     <>
       <SEO title="Connexion" />
-      <div className="max-w-7xl mx-auto mt-4 sm:px-4 lg:px-4 flex justify-center h-screen">
+      <div className="max-w-7xl mx-auto mt-4 sm:px-4 lg:px-4 flex justify-center">
         <LoginForm />
       </div>
     </>

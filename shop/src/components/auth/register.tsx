@@ -6,7 +6,7 @@ import { useRegisterMutation } from "@data/auth/use-register.mutation";
 import Logo from "@components/ui/logo";
 import Alert from "@components/ui/alert";
 import Input from "@components/ui/input";
-import PasswordInput from "@components/ui/password-input";
+import PasswordInputStrength from "@components/ui/password-input-strength";
 import Button from "@components/ui/button";
 import { useUI } from "@contexts/ui.context";
 import { useTranslation } from "next-i18next";
@@ -44,7 +44,7 @@ const RegisterForm = () => {
     register,
     handleSubmit,
     setError,
-
+    watch,
     formState: { errors },
   } = useForm<FormValues>({
     defaultValues,
@@ -57,6 +57,7 @@ const RegisterForm = () => {
     router.push(`${path}`);
     closeModal();
   }
+  const password=watch("password");
   function onSubmit({ first_name,last_name, email, password }: FormValues) {
     mutate(
       {
@@ -136,12 +137,13 @@ const RegisterForm = () => {
           className="mb-5"
           error={t(errors.email?.message!)}
         />
-        <PasswordInput
+        <PasswordInputStrength
           label={t("text-password")}
+          password={password}
           {...register("password")}
           error={t(errors.password?.message!)}
           variant="outline"
-          className="mb-5"
+          className="mb-8"
         />
         <p className="text-center text-sm md:text-base leading-relaxed px-2 sm:px-0 text-body mt-4 sm:mt-5 mb-2 sm:mb-10">
           {t("registration-helper")}

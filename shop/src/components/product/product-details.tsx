@@ -156,10 +156,10 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
         <div className="flex flex-col items-start md:w-1/2 p-5 lg:p-14 xl:p-16">
           <div className="w-full">
             <div className="flex">
-              <h1 className="font-semibold text-lg md:text-xl xl:text-2xl tracking-tight text-heading">
+              <h1 className="font-semibold text-center text-lg md:text-xl xl:text-2xl tracking-tight text-heading">
                 {name}
               </h1>
-              <div className="ml-8 hidden">
+              <div className="ml-8">
                 {product.product_condition === "new" && (
                   <Badge
                     text={`text-product-condition-${product.product_condition}`}
@@ -314,12 +314,21 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
               </div>
             </div>
           </div>
-          {!!categories?.length ? (
+          {/*!!categories?.length ? (
             <ProductCategories
               categories={categories}
               basePath={`/${type?.slug}`}
             />
-          ) : null}
+          ) : null*/}
+          <div className="bg-gray-300 p-4 rounded-lg">
+            <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
+            <li className="text-gray-600">Note de jeu: <span className="text-dark"> 9/10</span></li>
+            <li className="text-gray-600">Type de jeu: <span className="text-dark">Action</span></li>
+              <li className="text-gray-600">Compatibilité: <span className="text-dark">{categories[0].name}</span></li>
+              <li className="text-gray-600">Date de sortie: <span className="text-dark">{formatDateComplet("12/12/2022")}</span></li>
+       
+            </ul>
+          </div>
 
           {shop?.name && (
             <div className="flex items-center mt-2 hidden">
