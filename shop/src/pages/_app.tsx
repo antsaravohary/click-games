@@ -3,6 +3,7 @@ import "@fontsource/open-sans";
 import "@fontsource/open-sans/600.css";
 import "@fontsource/open-sans/700.css";
 import "@assets/main.css";
+import "@assets/animate.css";
 import "react-toastify/dist/ReactToastify.css";
 
 //import '@assets/card.css';
