@@ -38,6 +38,9 @@ import { Button } from "..";
 import { DataTransferIcon } from "@components/icons/category";
 import LinkButton from "@components/ui/link-button";
 import { Lock } from "@components/icons/lock";
+import VisaIcon from "@components/icons/icons/visa";
+import MasterIcon from "@components/icons/icons/master";
+import AmericanExpressIcon from "@components/icons/icons/american_express";
 
 type Props = {
   product: any;
@@ -153,10 +156,10 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
           </div>
         </div>
 
-        <div className="flex flex-col items-start md:w-1/2 p-5 lg:p-14 xl:p-16">
+        <div className="flex flex-col md:w-1/2 p-5 lg:p-14 xl:p-16">
           <div className="w-full">
-            <div className="flex">
-              <h1 className="font-semibold text-center text-lg md:text-xl xl:text-2xl tracking-tight text-heading">
+            <div className="flex justify-center justify-items-center items-center ">
+              <h1 className="font-semibold  text-lg md:text-xl xl:text-2xl tracking-tight text-heading">
                 {name}
               </h1>
               <div className="ml-8">
@@ -196,7 +199,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                 {/*unit*/}
               </span>
             )}
-            <div className="my-5 md:my-10 flex items-center">
+            <div className="flex justify-center">
               {!isEmpty(variations) ? (
                 <VariationPrice
                   selectedVariation={selectedVariation}
@@ -220,7 +223,19 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                 </span>
               )}
             </div>
-
+            <div className="w-full flex  flex justify-center flex-row items-start ">
+              <div className="flex items-center">
+                <Tooltip tooltipText={"Les délais de livraison sont indicatifs de certaines commandes, susceptibles d'avoir des délais de livraison plus longs"} children={<InfoIcon height="16" width="16" />} />
+                <DeliveryIcon height="42" width="42" />
+                <div className="ml-4 flex">
+                  <p>
+                    Livraison estimée {product.price - product.discount > 35 && ""}{"le"}</p>
+                  <p className=" ml-2 font-bold first-letter:capitalize">
+                    {formatDateCompletWithDay(dateDelivery.toDateString())}
+                  </p>
+                </div>
+              </div>
+            </div>
             <div>
               <ProductAttributes
                 variations={variations}
@@ -231,12 +246,12 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
             <DeliveryOptionView product={product} />
 
             {quantity > 0 && (
-              <div className="flex items-center text-green-500 mt-2 ml-2">
+              <div className="flex items-center  justify-center hidden text-green-500 mt-2 ml-2">
                 <CheckMark height="24" width="24" />
                 <div className="ml-4 ">En stock</div>
               </div>
             )}
-            <div className="mt-4 md:mt-6 flex flex-col lg:flex-row items-center">
+            <div className=" md:mt-2  flex justify-center flex-col lg:flex-row items-center ">
               {quantity > 0 && (
                 <>
                   {mode === "user-product" && (
@@ -249,8 +264,8 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                     />
                   )}
                   {mode !== "user-product" && (
-                    <div className="mb-3 lg:mb-0 w-full lg:max-w-[400px]">
-
+                    <div className="mb-3 lg:mb-0 justify-center  w-full lg:max-w-[400px]">
+                      <img className="mx-auto mb-4" src="/click_games+.png" style={{width:"100px"}}/>
                       <AddToCart
                         isCard={false}
                         data={product}
@@ -268,8 +283,13 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                         </div>
                       )}
                       <div className="flex justify-center items-center flex-col">
-                        <div className="flex justify-center items-center text-gray-600"><Lock height="16" width="16" /> <span className="ml-2">Paiement 100% sécurisé par Visa, Mastercard</span></div>
+                        <div className="flex justify-center items-center text-gray-600"> <span className="ml-2">Paiement sécurisé</span></div>
 
+                      </div>
+                      <div className="flex justify-center items-center flex-row  space-x-4">
+                        <VisaIcon/>
+                        <MasterIcon/>
+                        <AmericanExpressIcon/>
                       </div>
                     </div>
                   )}
@@ -301,34 +321,24 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
               )}
             </div>
           </div>
-          <div className="w-full mt-4 md:mt-6 pt-4 md:pt-6 flex flex-row items-start border-t border-border-200 border-opacity-60">
-            <div className="flex items-center">
-              <Tooltip tooltipText={"Les délais de livraison sont indicatifs de certaines commandes, susceptibles d'avoir des délais de livraison plus longs"} children={<InfoIcon height="16" width="16" />} />
-              <DeliveryIcon height="42" width="42" />
-              <div className="ml-4 flex">
-                <p>
-                  Livraison estimée {product.price - product.discount > 35 && ""}{"le"}</p>
-                <p className=" ml-2 font-bold first-letter:capitalize">
-                  {formatDateCompletWithDay(dateDelivery.toDateString())}
-                </p>
-              </div>
-            </div>
-          </div>
+
           {/*!!categories?.length ? (
             <ProductCategories
               categories={categories}
               basePath={`/${type?.slug}`}
             />
           ) : null*/}
-          <div className="bg-gray-300 p-4 rounded-lg">
-            <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-            <li className="text-gray-600">Note de jeu: <span className="text-dark"> 9/10</span></li>
-            <li className="text-gray-600">Type de jeu: <span className="text-dark">Action</span></li>
-              <li className="text-gray-600">Compatibilité: <span className="text-dark">{categories[0].name}</span></li>
-              <li className="text-gray-600">Date de sortie: <span className="text-dark">{formatDateComplet("12/12/2022")}</span></li>
-       
-            </ul>
+          <div className=" md:mt-2  flex justify-center flex-col lg:flex-row items-center ">
+            <div className="bg-gray-300 p-4 rounded-lg border-t border-border-200 border-opacity-60 lg:max-w-[400px] w-full">
+              <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
+                <li className="text-gray-600">Note de jeu: <span className="text-dark"> 9/10</span></li>
+                <li className="text-gray-600">Type de jeu: <span className="text-dark">Action</span></li>
+                <li className="text-gray-600">Compatibilité: <span className="text-dark">{categories[0].name}</span></li>
+                <li className="text-gray-600">Date de sortie: <span className="text-dark">{formatDateComplet("12/12/2022")}</span></li>
+              </ul>
+            </div>
           </div>
+
 
           {shop?.name && (
             <div className="flex items-center mt-2 hidden">
