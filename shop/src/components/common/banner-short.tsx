@@ -27,7 +27,7 @@ const breakpoints = {
   '0': {
     slidesPerView: 1,
   },};
-const BannerShort: React.FC<BannerProps> = ({ banner, className }) => {
+const BannerShort: React.FC<BannerProps> = ({ banner, className,preview}) => {
   const { t } = useTranslation("common");
   const { stickMobileFilter, unstickMobileFilter } = useUI();
   const onWaypointPositionChange = ({
@@ -47,7 +47,7 @@ const BannerShort: React.FC<BannerProps> = ({ banner, className }) => {
             breakpoints={breakpoints}
             autoplay={true}
             resizeObserver={true}
-            slidesPerView={4}
+            slidesPerView={preview}
             navigation={{
               nextEl: ".next",
               prevEl: ".prev",

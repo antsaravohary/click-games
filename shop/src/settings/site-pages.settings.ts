@@ -32,7 +32,7 @@ export const sitePages: Record<PageName, PageInfo> = {
       subheading: "subheading-grocery",
       image: "/banner/click-games-light-1.jpeg",
       gallery: [
-        {
+       /* {
           id: 1,
           title: "Buy One Get One Free",
           image: "/banner/click-games-light-1.jpeg",
@@ -41,18 +41,47 @@ export const sitePages: Record<PageName, PageInfo> = {
           id: 2,
           title: "Buy One Get One Free",
           image: "/banner/click-games-light-2.jpeg",
-        },
+        },*/
         {
           id: 3,
           title: "Buy One Get One Free",
-          image: "/banner/click-games-light-2.jpeg",
+          image: "/banner/banner-3.png",
         },
         {
           id: 4,
           title: "Buy One Get One Free",
-          image: "/banner/click-games-light-2.jpeg",
+          image: "/banner/banner-4.png",
         },
       ],
+      
+    },
+    banner1: {
+      heading: "heading-grocery",
+      subheading: "subheading-grocery",
+      image: "/banner/click-games-light-1.jpeg",
+      gallery: [
+       {
+          id: 1,
+          title: "Buy One Get One Free",
+          image: "/banner/banner-5.png",
+        },
+        {
+          id: 2,
+          title: "Buy One Get One Free",
+          image: "/banner/banner-5.png",
+        },
+        {
+          id: 3,
+          title: "Buy One Get One Free",
+          image: "/banner/banner-5.png",
+        },
+        {
+          id: 4,
+          title: "Buy One Get One Free",
+          image: "/banner/banner-5.png",
+        },
+      ],
+      
     },
   },
   bakery: {
