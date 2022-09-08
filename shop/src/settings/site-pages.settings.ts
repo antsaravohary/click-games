@@ -42,6 +42,16 @@ export const sitePages: Record<PageName, PageInfo> = {
           title: "Buy One Get One Free",
           image: "/banner/click-games-light-2.jpeg",
         },
+        {
+          id: 3,
+          title: "Buy One Get One Free",
+          image: "/banner/click-games-light-2.jpeg",
+        },
+        {
+          id: 4,
+          title: "Buy One Get One Free",
+          image: "/banner/click-games-light-2.jpeg",
+        },
       ],
     },
   },

@@ -82,19 +82,19 @@ const BakeryCategory = () => {
     },
 
     620: {
-      slidesPerView: 4,
+      slidesPerView: 11,
     },
 
     820: {
-      slidesPerView: 5,
+      slidesPerView: 11,
     },
 
     1100: {
-      slidesPerView: 6,
+      slidesPerView: 11,
     },
 
     1280: {
-      slidesPerView: 7,
+      slidesPerView: 11,
     },
   };
 
@@ -109,9 +109,9 @@ const BakeryCategory = () => {
                 nextEl: ".banner-slider-next",
                 prevEl: ".banner-slider-prev",
               }}
-              breakpoints={breakpoints}
-              slidesPerView={7}
-              spaceBetween={10}
+              
+              slidesPerView={12}
+              spaceBetween={5}
             >
               {data?.categories?.data.map((category, idx) => (
                 <SwiperSlide key={idx}>
@@ -125,7 +125,7 @@ const BakeryCategory = () => {
                     role="button"
                     onClick={() => onCategoryClick(category?.slug)}
                   >
-                    <div className="flex items-center justify-center h-32 w-full relative overflow-hidden mb-3">
+                    <div className="flex items-center justify-center h-16 w-full relative overflow-hidden mb-3">
                       <img
                         src={
                           category?.image?.original! ??
@@ -135,7 +135,7 @@ const BakeryCategory = () => {
                         className="w-auto h-auto max-w-full max-h-full"
                       />
                     </div>
-                    <span className="text-sm font-semibold text-heading text-center px-4 pb-4 block">
+                    <span className="text-sm font-semibold text-heading text-center pb-2 block">
                       {category.name}
                     </span>
                   </div>

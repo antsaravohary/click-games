@@ -47,7 +47,7 @@ const BannerShort: React.FC<BannerProps> = ({ banner, className }) => {
             breakpoints={breakpoints}
             autoplay={true}
             resizeObserver={true}
-            slidesPerView={2}
+            slidesPerView={4}
             navigation={{
               nextEl: ".next",
               prevEl: ".prev",

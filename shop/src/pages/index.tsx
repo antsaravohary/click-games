@@ -30,6 +30,7 @@ import BannerShort from "@components/common/banner-short";
 import BoxCategory from "@components/category/box-category";
 import FilterBarLayoutTwo from "@components/common/filter-bar-layout-two";
 import FeedLayoutTwo from "@components/product/feed-layout-two";
+import BakeryCategory from "@components/category/bakery-category";
 const banners = [
   {
     id: 1,
@@ -142,14 +143,17 @@ export default function HomePage() {
         <BannerShort banner={getPageData.banner} className="max-h-140" />
         <FeatureGrid className="" />
       </div>
- 
+      {width > 1280 &&  <BakeryCategory />}
+     
       <div className="flex flex-1 bg-gray-100">
-        <div className="sticky top-22 h-full lg:w-[380px] hidden xl:block bg-gray-100">
+       
+       {/**  <div className="sticky top-22 h-full lg:w-[380px] hidden xl:block bg-gray-100 hidden">
           <BoxCategory />
-        </div>
+        </div>*/}
 
         <main className="w-full overflow-hidden block lg:mt-6">
           {width < 1280 && width > 684 && <FilterBarLayoutTwo />}
+
           <Element name="grid">
             <ProductFeed />
           </Element>

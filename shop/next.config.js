@@ -39,7 +39,8 @@ module.exports = withPWA({
       "lh3.googleusercontent.com",
       "dev.api.click-games.fr",
       "api.click-games.fr",
-      "api.click-games.local"
+      "api.click-games.local",
+      "api-test.click-games.fr",
     ],
   },
   typescript: {
