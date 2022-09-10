@@ -118,7 +118,6 @@ function CustomApp({ Component, pageProps: { session, ...pageProps } }: AppProps
     const ReactPixel = require("react-facebook-pixel").default;
     ReactPixel.init(`${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL}`);
     router.events.on("routeChangeComplete", () => {
-      console.log("we are hre", ReactPixel);
       ReactPixel.pageView();
     });
   }, [router.events]);

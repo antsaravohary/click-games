@@ -44,10 +44,10 @@ import CheckoutStep4 from "@components/checkout/checkout_step4";
 import { getIcon } from "@utils/get-icon";
 import * as listIcon from "@components/icons";
 const plans = [
-  { name: 'Bonus ClickGame+ ', step: 1, icon: ' <lord-icon  style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/nkmsrxys.json" trigger="loop-on-hover" colors="primary:#1e1c3a,secondary:5c94d0,tertiary:#ebe6ef,quaternary:#646e78"  className="lord-icon"> </lord-icon>' },
-  { name: 'Adresse de livraison', step: 2, icon: '  <lord-icon style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/oaflahpk.json"trigger="loop-on-hover" colors="primary:5c94d0" class="lord-icon"></lord-icon>' },
-  { name: 'Mode de livraison', step: 3, icon: '    <lord-icon style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/jyijxczt.json"trigger="loop-on-hover"colors="primary:#1e1c3a,secondary:5c94d0,tertiary:#ebe6ef,quaternary:#646e78"  class="lord-icon"> </lord-icon>' },
-  { name: 'Paiement', step: 4, icon: '   <lord-icon style="width:70px;height:70px"  target=".nav-item" src="https://cdn.lordicon.com/qmcsqnle.json"trigger="loop-on-hover" colors="primary:5c94d0,secondary:5c94d0" class="lord-icon"> </lord-icon>' },
+  { name: 'Bonus ClickGame+ ', step: 1, icon: ' <lord-icon  style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/nkmsrxys.json" trigger="loop-on-hover" colors="primary:#1e1c3a,secondary:#109121,tertiary:#ebe6ef,quaternary:#646e78"  className="lord-icon"> </lord-icon>' },
+  { name: 'Adresse de livraison', step: 2, icon: '  <lord-icon style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/zzcjjxew.json"trigger="loop-on-hover" colors="primary:#1e1c3a" class="lord-icon"></lord-icon>' },
+  { name: 'Mode de livraison', step: 3, icon: '    <lord-icon style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/uetqnvvg.json"trigger="loop-on-hover"colors="primary:#1e1c3a,secondary:#109121,tertiary:#ebe6ef,quaternary:#646e78"  class="lord-icon"> </lord-icon>' },
+  { name: 'Paiement', step: 4, icon: '   <lord-icon style="width:70px;height:70px"  target=".nav-item" src="https://cdn.lordicon.com/qhviklyi.json" trigger="loop-on-hover" colors="primary:#1e1c3a,secondary:#109121" class="lord-icon"> </lord-icon>' },
 ]
 declare namespace JSX {
   interface IntrinsicElements {
@@ -254,7 +254,7 @@ export default function CheckoutPage() {
                 value={plan}
                 className={({ checked, active }) =>
                   classNames(
-                    checked ? 'border-transparent border-accent' : 'border-gray-300',
+                    checked ? 'border-transparent border-accent' : 'border-gray-300  hidden md:flex',
                     active ? 'ring-2 ring-indigo-500' : '',
                     'relative block bg-white border rounded-lg shadow-sm px-6 py-4 cursor-pointer sm:flex sm:justify-between focus:outline-none'
                   )
