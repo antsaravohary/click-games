@@ -34,8 +34,28 @@ import { formatDateCompletWithDay } from "@utils/format-date";
 import { DeliveryIcon } from "@components/icons/DeliveryIcon";
 import Tooltip from "@components/ui/tool-tips";
 import { InfoIcon } from "@components/icons/info";
-
+import { RadioGroup } from "@headlessui/react";
+import classNames from "classnames";
+import { ArrowNext } from "@components/icons/arrow-next";
+import CheckoutStep1 from "@components/checkout/checkout_step1";
+import CheckoutStep2 from "@components/checkout/checkout_step2";
+import CheckoutStep3 from "@components/checkout/checkout_step3";
+import CheckoutStep4 from "@components/checkout/checkout_step4";
+import { getIcon } from "@utils/get-icon";
+import * as listIcon from "@components/icons";
+const plans = [
+  { name: 'Bonus ClickGame+ ', step: 1, icon: ' <lord-icon  style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/nkmsrxys.json" trigger="loop-on-hover" colors="primary:#1e1c3a,secondary:5c94d0,tertiary:#ebe6ef,quaternary:#646e78"  className="lord-icon"> </lord-icon>' },
+  { name: 'Adresse de livraison', step: 2, icon: '  <lord-icon style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/oaflahpk.json"trigger="loop-on-hover" colors="primary:5c94d0" class="lord-icon"></lord-icon>' },
+  { name: 'Mode de livraison', step: 3, icon: '    <lord-icon style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/jyijxczt.json"trigger="loop-on-hover"colors="primary:#1e1c3a,secondary:5c94d0,tertiary:#ebe6ef,quaternary:#646e78"  class="lord-icon"> </lord-icon>' },
+  { name: 'Paiement', step: 4, icon: '   <lord-icon style="width:70px;height:70px"  target=".nav-item" src="https://cdn.lordicon.com/qmcsqnle.json"trigger="loop-on-hover" colors="primary:5c94d0,secondary:5c94d0" class="lord-icon"> </lord-icon>' },
+]
+declare namespace JSX {
+  interface IntrinsicElements {
+    'lord-icon': any
+  }
+}
 export default function CheckoutPage() {
+  const [selected, setSelected] = useState(plans[0])
   const router = useRouter();
   const [processToPay, setProcessToPay] = useState(false);
   const ref = useRef(null);
@@ -221,200 +241,67 @@ export default function CheckoutPage() {
   if (isLoading) {
     return <Loader />;
   }
+  console.log("list", listIcon);
   return (
     <div className="py-8 px-4 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20" >
-      <div className="flex flex-col lg:flex-row items-center lg:items-start m-auto lg:space-s-8 w-full max-w-5xl">
-        <div className="lg:max-w-2xl w-full space-y-6">
-          {totalItems > 0 && totalItems === totalClickCollectActive ? null : (
-            <div className="shadow-700 bg-light p-5 md:p-8" ref={ref}>
-              {shipping_class === 3 ? (
-                <div>
-                  <div className="flex items-center space-s-3 md:space-s-4">
-                    <span className="rounded-full w-8 h-8 bg-accent flex items-center justify-center text-base lg:text-xl text-light">
-                      1
-                    </span>
-                    <p className="text-lg lg:text-xl text-heading capitalize">
-                      Livraison en point relais
-                    </p>
-                  </div>
-                  <ul className="list-unstyled font-size-sm mt-2 border p-4">
-                    <li className="text-left">
-                      <span className="text-right text-size-md">
-                        Information sur le point de relais
-                      </span>
-                    </li>
-
-                    {relay_point && (
-                      <>
-                        <li className="text-left">
-                          <span className="text-right text-gray-700">
-                            Nom du point de relay:&nbsp;{relay_point?.nom}
-                          </span>
-                        </li>
-                        <li className="text-left">
-                          <span className=" text-right text-gray-700">
-                            Adresse:&nbsp;{relay_point?.address}
-                          </span>
-                        </li>
-                        <li className="text-left">
-                          <span className=" text-right text-gray-700">
-                            Code postal:&nbsp;{relay_point?.zip}
-                          </span>
-                        </li>
-                      </>
-                    )}
-                    <div className="flex justify-end -mt-10">
-                      <Button
-                        size="small"
-                        className="mt-2"
-                        onClick={() => {
-                          openModal("DELIVERY_RELAY_POINT");
-                        }}
-                      >
-                        {relay_point ? (
-                          <Edit width="16" height="16" />
-                        ) : (
-                          <PlusIcon width="16" height="16" />
-                        )}
-                      </Button>
-                    </div>
-                  </ul>
-                </div>
-              ) : (
-                <Address
-                  id={data?.me?.id!}
-                  me={data?.me}
-
-                  heading="text-delivery-address"
-                  addresses={data?.me?.address}
-                  disabled={processToPay}
-                  count={1}
-                  type="billing"
-                />
-              )}
-            </div>
-          )}
-          {/**
-           * <Address
-              id={data?.me?.id!}
-              heading="text-shipping-address"
-              addresses={data?.me?.address}
-              count={2}
-              type="shipping"
-            />
-           */}
-          <div className="shadow-700 bg-light p-5 md:p-8">
-            {totalItems > 0 && totalItems === totalClickCollectActive ? (
-              {/** <ModeClickCollectCard count={1} /> */ }
-            ) : (
-              <div>
-                <ShippingMode disabled={processToPay} count={2} />
-                <div className="flex items-center">
-                 
-                  <DeliveryIcon height="42" width="42" />
-                  <div className="ml-4 flex">
-                    <p>
-                      Livraison estimée le </p>
-                    <p className=" ml-2 font-bold first-letter:capitalize">
-                      {formatDateCompletWithDay(dateDelivery.toDateString())}
-                    </p>
-                  </div>
-                  <Tooltip tooltipText={"Les délais de livraison sont indicatifs de certaines commandes, susceptibles d'avoir des délais de livraison plus longs"} children={<InfoIcon height="16" width="16" />} />
-                </div>
-
-
-              </div>
-            )}
-
-          </div>
-          {/*totalClickCollect > 0 && (
-            <div className="shadow-700 bg-light p-5  md:p-8">
-              <OrderProductClickCollectList
-                count={isFullClickCollect ? 2 : 3}
-              />
-            </div>
-          )*/}
-          {!data?.me?.subscription?.status && (
-            <AnimatePresence>
-              <ClickGamePlus
-                disabled={processToPay}
-                value={clickGamePlus}
-                setValue={setClickGamePlus}
-              />
-            </AnimatePresence>
-          )}
-          <div className=" sm:hidden w-full lg:w-96 mb-10 sm:mb-12 lg:mb-0 mt-10">
-            <OrderInformation />
-          </div>
-          {showPay() && !processToPay && <Button className="w-full" onClick={() => setProcessToPay(true)}>
-            Procéder au paiement
-          </Button>}
-          {processToPay && (
-            <>
-              {/**
-              <PaymentTigoForm
-                goBack={() => {
-                  setProcessToPay(false);
-                }}
-                data={{
-                  action: "create_order_payment",
-                  data: { ...dataCreateOrder(), clickGamePlus },
-                }}
-                amount={totalF}
-              /> */}
-
-              { /*   <SecurionPayForm
-                data={{
-                  action: "create_order_payment",
-                  data: { ...dataCreateOrder(), clickGamePlus },
-                }}
-                onPaySuccess={onPaySuccess}
-                amount={totalF}
-              />*/}
-              {/**  <div className="pt-8">
-                <div className="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-700">
-                  <div className="w-full pt-1 pb-5">
-                    <div className="bg-accent text-white overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg flex justify-center items-center">
-                      <Lock width="48" heigth="48" />
-                    </div>
-                  </div>
-                  <div className="m-8 text-xl text-center text-red-500 ">  Les paiements sont temporairement suspendu</div>
-                </div>
-              </div>*/}
-
-              {<PaymentForm
-                click_game_plus={
-                  clickGamePlus && !data?.me?.subscription?.status
+      <div className="grid grid-cols-4 gap-4">
+        <div className="col-span-4 md:col-span-1"> <RadioGroup value={selected} onChange={setSelected}>
+          <RadioGroup.Label className="sr-only">Server size</RadioGroup.Label>
+          <div className="space-y-4">
+            {plans.map((plan) => (
+              <RadioGroup.Option
+                key={plan.name}
+                value={plan}
+                className={({ checked, active }) =>
+                  classNames(
+                    checked ? 'border-transparent border-accent' : 'border-gray-300',
+                    active ? 'ring-2 ring-indigo-500' : '',
+                    'relative block bg-white border rounded-lg shadow-sm px-6 py-4 cursor-pointer sm:flex sm:justify-between focus:outline-none'
+                  )
                 }
-                onPaySuccess={onPaySuccess}
-                data={{
-                  action: "create_order_payment",
-                  data: { ...dataCreateOrder(), clickGamePlus },
-                }}
-                amount={totalF}
-              />}
-              {/**<div className="shadow-700 bg-light p-5 md:p-8">
-              <Elements stripe={stripePromise}>
-                  <PaymentGroup
-                    onPaySuccess={onPaySuccess}
-                    data={{
-                      action: "create_order_payment",
-                      data: dataCreateOrder(),
-                    }}
-                    amount={total}
-                  />  
-              </Elements>
-            
-            </div>*/}
-            </>
-          )}
-        </div>
-        <div className="hidden sm:block w-full lg:w-96 mb-10 sm:mb-12 lg:mb-0 mt-10">
-          <OrderInformation />
-        </div>
+              >
+                {({ active, checked }) => (
+                  <>
+                    <div className="flex items-center">
+                      <div className="text-sm">
+                        <RadioGroup.Label as="p" className="font-medium text-gray-900">
+                          Etape {plan.step}
+                        </RadioGroup.Label>
+                        <RadioGroup.Description as="div" className=" font-bold text-lg text-accent">
+                          <p className="sm:inline">
+                            {plan.name}
+                          </p>{' '}
+                        </RadioGroup.Description>
+                      </div>
 
+                    </div>
+                    <RadioGroup.Description as="div" className="">
+                      <div
+                        dangerouslySetInnerHTML={{ __html: plan.icon }}
+                      />
+                    </RadioGroup.Description>
+                    <div
+                      className={classNames(
+                        active ? 'border' : 'border-2',
+                        checked ? 'border-indigo-500' : 'border-transparent',
+                        'absolute -inset-px rounded-lg pointer-events-none'
+                      )}
+                      aria-hidden="true"
+                    />
+                  </>
+                )}
+              </RadioGroup.Option>
+            ))}
+          </div>
+        </RadioGroup></div>
+        <div className="col-span-4 md:col-span-3 bg-white p-4 rounded">
+          {selected?.step == 1 && <CheckoutStep1 setStep={(e: number) => setSelected(plans[e])} setClickGamePlus={setClickGamePlus} />}
+          {selected?.step == 2 && <CheckoutStep2 setStep={(e: number) => setSelected(plans[e])} me={data?.me} />}
+          {selected?.step == 3 && <CheckoutStep3 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} />}
+          {selected?.step == 4 && <CheckoutStep4 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} click_games_plus={clickGamePlus} dataCreateOrder={dataCreateOrder} />}
+        </div>
       </div>
-      <Script src="https://checkout.moneytigo.com/dist/js/moneytigapp.js" />
+      <Script src="https://cdn.lordicon.com/xdjxvujz.js" />
     </div>
   );
 }

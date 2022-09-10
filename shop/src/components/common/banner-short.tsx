@@ -11,22 +11,12 @@ import { useTranslation } from "next-i18next";
 type BannerProps = {
   banner: BannerType;
   className?: string;
+  preview:number;
 };
 
 SwiperCore.use([Navigation]);
 
-const breakpoints = {
-  '768': {
-    slidesPerView: 2,
-    spaceBetween: 16,
-  },
-  '640 ': {
-    slidesPerView: 1,
-    spaceBetween: 12,
-  },
-  '0': {
-    slidesPerView: 1,
-  },};
+
 const BannerShort: React.FC<BannerProps> = ({ banner, className,preview}) => {
   const { t } = useTranslation("common");
   const { stickMobileFilter, unstickMobileFilter } = useUI();
@@ -37,6 +27,18 @@ const BannerShort: React.FC<BannerProps> = ({ banner, className,preview}) => {
      // stickMobileFilter();
     }
   };
+  const breakpoints = {
+    '768': {
+      slidesPerView: preview,
+      spaceBetween: 16,
+    },
+    '640 ': {
+      slidesPerView: 1,
+      spaceBetween: 12,
+    },
+    '0': {
+      slidesPerView: 1,
+    },};
   return (
     <div className={cn("relative", className)}>
       <div className="overflow-hidden -z-1">
