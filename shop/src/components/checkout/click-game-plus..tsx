@@ -7,21 +7,21 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 const solutions = [
   {
-    name: "réductions sur produits",
+    name: " Vous pouvez échanger vos jeux d’occasion, contre des neufs",
     description: '',
 
     href: "#",
     icon: CheckMark,
   },
   {
-    name: "Prioritaire sur les nouvelles sorties et exclusivité.",
+    name: "Catalogue exclusif propositions du réassort avant publication",
     description:
       "",
     href: "#",
     icon: CheckMark,
   },
   {
-    name: "Aucune obligation d’achat. C’est toujours vous qui décidez.",
+    name: "Livraison garantie pour les précommandes",
     description:
       "",
     href: "#",
@@ -64,7 +64,7 @@ const solutions = [
   },
 ];
 
-const ClickGamePlus = ({ value, setValue,disabled }: any) => {
+const ClickGamePlus = ({ value, setValue, disabled }: any) => {
   const [showDetail, setShowDetail] = useState(false);
   const { setClickGamePlus } = useCart();
   useEffect(() => {
@@ -72,9 +72,11 @@ const ClickGamePlus = ({ value, setValue,disabled }: any) => {
   }, [value]);
 
   return (
-    <div className="mt-5 bg-white rounded-sm p-8">
+    <div className=" bg-white rounded-sm p-8">
       <div className="flex flex-col md:flex-row justify-center md:justify-start ">
-        <Checkbox
+
+        <h3 className="text-lg font-medium text-gray-900"> Bénéficier des avantages ClickGamres +</h3>
+        {/* <Checkbox
           className="text-dark"
           checked={value}
           disabled={disabled}
@@ -82,7 +84,9 @@ const ClickGamePlus = ({ value, setValue,disabled }: any) => {
           labelClassName="text-xs sm:text-sm  md:text-md font-semibold"
           name={"click_game_plus"}
           label="Bénéficier du ClickGames+"
-        />
+  />*/}
+
+
         {!showDetail && (
           <button
             onClick={() => setShowDetail(true)}
@@ -101,10 +105,10 @@ const ClickGamePlus = ({ value, setValue,disabled }: any) => {
             exit={{ opacity: 0, height: 0 }}
             className=" h-[24rem]  mt-2 w-full overflow-hidden"
           >
-            <h3 className="mt-2 text-xl font-semibold flex items-center justify-center">
+            {/**            <h3 className="mt-2 text-xl font-semibold flex items-center justify-center">
             <img style={{height:"35px"}} src="/click_games+.png"/>
             </h3>
-
+ */}
             <div className="relative grid gap-6 bg-white px-5 py-5 sm:gap-8 sm:p-8 lg:grid-cols-1">
               {solutions.map((item) => (
                 <a
@@ -134,7 +138,7 @@ const ClickGamePlus = ({ value, setValue,disabled }: any) => {
             </span>
             <span className="flex flex-col text-center">
               <span className="text-[0.8rem] text-gray-400 font-bold mt-1">
-               14 jours d’essai 
+                14 jours d’essai
               </span>
             </span>
             <span className="flex flex-col text-center">

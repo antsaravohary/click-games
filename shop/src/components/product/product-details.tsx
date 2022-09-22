@@ -335,10 +335,10 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
           <div className=" md:mt-2  flex justify-center flex-col lg:flex-row items-center ">
             <div className="bg-gray-300 p-4 rounded-lg border-t border-border-200 border-opacity-60 lg:max-w-[400px] w-full">
               <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                <li className="text-gray-600">Note de jeu: <span className="text-dark"> 9/10</span></li>
-                <li className="text-gray-600">Type de jeu: <span className="text-dark">Action</span></li>
+                <li className="text-gray-600">Note de jeu: <span className="text-dark"> {product.note_admin}/10</span></li>
+                <li className="text-gray-600">Type de jeu: <span className="text-dark">{product?.tags?.map(tag=>(tag?.name)+"  ")}</span></li>
                 <li className="text-gray-600">Compatibilité: <span className="text-dark">{categories[0].name}</span></li>
-                <li className="text-gray-600">Date de sortie: <span className="text-dark">{formatDateComplet("12/12/2022")}</span></li>
+                <li className="text-gray-600">Date de sortie: <span className="text-dark">{formatDateComplet(product?.release_date)}</span></li>
               </ul>
             </div>
           </div>

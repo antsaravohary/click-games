@@ -14,10 +14,11 @@ type props = {
   me: User;
   shipping_class: number;
   clickGamePlus: boolean;
+  onPaySuccess:boolean;
   dataCreateOrder: any;
 
 }
-const CheckoutStep4 = ({ me, shipping_class, clickGamePlus, dataCreateOrder, totalF }: props) => {
+const CheckoutStep4 = ({ me, shipping_class, clickGamePlus, dataCreateOrder, totalF,onPaySuccess}: props) => {
 
   return (
     <div className="py-8 px-4 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20" >
@@ -27,7 +28,7 @@ const CheckoutStep4 = ({ me, shipping_class, clickGamePlus, dataCreateOrder, tot
             click_game_plus={
               clickGamePlus && !me?.subscription?.status
             }
-            onPaySuccess={true}
+            onPaySuccess={onPaySuccess}
             data={{
               action: "create_order_payment",
               data: { ...dataCreateOrder(), clickGamePlus },

@@ -78,6 +78,7 @@
   "input-label-name": "Nom",
   "input-label-last-name":"Prénom",
   "input-label-description": "Description",
+  "input-label-note-admin":"Note sur 10",
   "input-label-price": "Prix",
   "input-label-buy-price": "Prix d'achat",
   "input-label-sale-price": "Prix de vente",

@@ -9,26 +9,46 @@ module.exports = withPWA({
     dest: "public",
     runtimeCaching,
   },
-
+  async redirects() {
+    return [
+     /* {
+        source: "/",
+        destination: "/grocery",
+        permanent: false,
+      },*/
+    ];
+  },
   images: {
     domains: [
-      "via.placeholder.com",
+      "googleusercontent.com",
+      "localhost",
+      "graph.facebook.com",
+"platform-lookaside.fbsbx.com",
       "res.cloudinary.com",
       "s3.amazonaws.com",
-      "18.141.64.26",
-      "127.0.0.1",
-      "localhost",
-      "picsum.photos",
       "test.api.click-univers.com",
-      "api.click-univers.local",
+       "api.click-univers.com",
+       "api.click-univers.local",
       "click-univers.com",
-      "dev.api.click-games.fr",
-      "pickbazar-sail.test",
+      "18.141.64.26",
+      "dev.api.click-univers.com",
+      "localhost:8000",
+      "via.placeholder.com",
       "pickbazarlaravel.s3.ap-southeast-1.amazonaws.com",
+      "picsum.photos",
       "lh3.googleusercontent.com",
+      "dev.api.click-games.fr",
+      "api.click-games.fr",
+      "api.click-games.local",
+      "api-test.click-games.fr",
     ],
   },
   typescript: {
     ignoreBuildErrors: true,
   },
+  experimental: {
+    
+
+  },
+
 });

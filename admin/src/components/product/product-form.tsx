@@ -1,5 +1,5 @@
 import Input from "@components/ui/input";
-
+import dayjs from "dayjs";
 import TextArea from "@components/ui/text-area";
 import { useForm, FormProvider } from "react-hook-form";
 import Button from "@components/ui/button";
@@ -55,6 +55,7 @@ type FormValues = {
   ref: string;
   pre_order: boolean;
   release_date: Date;
+  note_admin:number;
   sku: string;
   name: string;
   type: Type;
@@ -88,6 +89,8 @@ type FormValues = {
 const defaultValues = {
   ref: "",
   pre_order: false,
+  release_date:"",
+  note_admin:"",
   sku: "",
   name: "",
   type: "",
@@ -198,6 +201,7 @@ export default function CreateOrUpdateProductForm({
             : null,
           type_id: 1,
           sku:copy?sku:initialValues.sku,
+          release_date:dayjs(initialValues.release_date).format("YYYY-MM-DD"),
           isVariation:
             initialValues.variations?.length &&
             initialValues.variation_options?.length
@@ -236,6 +240,7 @@ export default function CreateOrUpdateProductForm({
     const inputValues: any = {
       description: description,
       height: values.height,
+      note_admin:values.note_admin,
       length: values.length,
       mode: "shop-product",
       name: values.name,
@@ -389,7 +394,6 @@ export default function CreateOrUpdateProductForm({
               details={t("form:featured-image-help-text")}
               className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8"
             />
-
             <Card className="w-full sm:w-8/12 md:w-2/3">
               <FileInput name="image" control={control} multiple={false} />
             </Card>
@@ -457,7 +461,7 @@ export default function CreateOrUpdateProductForm({
                 error={t(errors.pre_order?.message!)}
                 className="mb-5"
               />
-              {!!preOrderValue && (
+       
                 <Input
                   label={`${t("form:input-label-release_date")}`}
                   {...register("release_date")}
@@ -466,7 +470,8 @@ export default function CreateOrUpdateProductForm({
                   variant="outline"
                   className="mb-5"
                 />
-              )}
+              
+
               <Checkbox
                 label="Produit d'occasion"
                 {...register("is_used")}
@@ -480,6 +485,13 @@ export default function CreateOrUpdateProductForm({
                 label={`${t("form:input-label-click_collect")}`}
                 {...register("click_collect")}
                 error={t(errors.click_collect?.message!)}
+                className="mb-5"
+              />
+               <Input
+                label={`${t("form:input-label-note-admin")}`}
+                {...register("note_admin")}
+                error={t(errors.note_admin?.message!)}
+                variant="outline"
                 className="mb-5"
               />
               <Editor

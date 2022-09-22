@@ -1,5 +1,7 @@
 import { ArrowNext } from "@components/icons"
+import { AnimatePresence } from "framer-motion";
 import { Button } from ".."
+import ClickGamePlus from "./click-game-plus.";
 
 type props = {
     setStep: (e) => {};
@@ -9,7 +11,14 @@ const CheckoutStep1 = ({ setStep, setClickGamePlus }: props) => {
     return (
         <div className="mt-8 flex flex-col h-full">
             <img className="mx-auto" style={{ width: "120px" }} src="/click_games+.png" />
-            <h3 className="mt-2 text-lg font-medium text-gray-900 mx-auto"> Bénéficier des avantages ClickGamres +</h3>
+            <div className=" text-lg font-medium text-gray-900 mx-auto">  <AnimatePresence>
+              <ClickGamePlus
+                disabled={false}
+                value={true}
+                setValue={setClickGamePlus}
+              />
+            </AnimatePresence></div>
+           
             <div className="mt-6 mx-auto">
                 <Button onClick={() => {
                     setClickGamePlus(true);

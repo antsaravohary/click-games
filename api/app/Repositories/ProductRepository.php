@@ -34,6 +34,7 @@ class ProductRepository extends BaseRepository
     protected $dataArray = [
         'ref',
         'is_used',
+        'note_admin',
         'exchangeable',
         'release_date',
         'click_collect',

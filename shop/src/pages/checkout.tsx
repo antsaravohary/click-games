@@ -241,7 +241,7 @@ export default function CheckoutPage() {
   if (isLoading) {
     return <Loader />;
   }
-  console.log("list", listIcon);
+  console.log("CLICK GAMES PLUS", clickGamePlus);
   return (
     <div className="py-8 px-4 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20" >
       <div className="grid grid-cols-4 gap-4">
@@ -298,7 +298,7 @@ export default function CheckoutPage() {
           {selected?.step == 1 && <CheckoutStep1 setStep={(e: number) => setSelected(plans[e])} setClickGamePlus={setClickGamePlus} />}
           {selected?.step == 2 && <CheckoutStep2 setStep={(e: number) => setSelected(plans[e])} me={data?.me} />}
           {selected?.step == 3 && <CheckoutStep3 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} />}
-          {selected?.step == 4 && <CheckoutStep4 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} click_games_plus={clickGamePlus} dataCreateOrder={dataCreateOrder} />}
+          {selected?.step == 4 && <CheckoutStep4 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} click_games_plus={clickGamePlus} dataCreateOrder={dataCreateOrder}  onPaySuccess={onPaySuccess}/>}
         </div>
       </div>
       <Script src="https://cdn.lordicon.com/xdjxvujz.js" />
