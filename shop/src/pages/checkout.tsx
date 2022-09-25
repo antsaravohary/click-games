@@ -43,11 +43,13 @@ import CheckoutStep3 from "@components/checkout/checkout_step3";
 import CheckoutStep4 from "@components/checkout/checkout_step4";
 import { getIcon } from "@utils/get-icon";
 import * as listIcon from "@components/icons";
+import CheckoutCart from "@components/checkout/checkout_cart";
 const plans = [
-  { name: 'Bonus ClickGame+ ', step: 1, icon: ' <lord-icon  style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/nkmsrxys.json" trigger="loop-on-hover" colors="primary:#1e1c3a,secondary:#109121,tertiary:#ebe6ef,quaternary:#646e78"  className="lord-icon"> </lord-icon>' },
-  { name: 'Adresse de livraison', step: 2, icon: '  <lord-icon style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/zzcjjxew.json"trigger="loop-on-hover" colors="primary:#1e1c3a" class="lord-icon"></lord-icon>' },
-  { name: 'Mode de livraison', step: 3, icon: '    <lord-icon style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/uetqnvvg.json"trigger="loop-on-hover"colors="primary:#1e1c3a,secondary:#109121,tertiary:#ebe6ef,quaternary:#646e78"  class="lord-icon"> </lord-icon>' },
-  { name: 'Paiement', step: 4, icon: '   <lord-icon style="width:70px;height:70px"  target=".nav-item" src="https://cdn.lordicon.com/qhviklyi.json" trigger="loop-on-hover" colors="primary:#1e1c3a,secondary:#109121" class="lord-icon"> </lord-icon>' },
+  { name: 'Panier', step: 1, icon: '  <lord-icon style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/zzcjjxew.json"trigger="loop-on-hover" colors="primary:#1e1c3a" class="lord-icon"></lord-icon>' },
+  { name: 'Bonus ClickGames+', step: 2, icon: ' <lord-icon  style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/nkmsrxys.json" trigger="loop-on-hover" colors="primary:#1e1c3a,secondary:#109121,tertiary:#ebe6ef,quaternary:#646e78"  className="lord-icon"> </lord-icon>' },
+  { name: 'Adresse de livraison', step: 3, icon: '  <lord-icon style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/zzcjjxew.json"trigger="loop-on-hover" colors="primary:#1e1c3a" class="lord-icon"></lord-icon>' },
+  { name: 'Modes de livraison', step: 4, icon: '    <lord-icon style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/uetqnvvg.json"trigger="loop-on-hover"colors="primary:#1e1c3a,secondary:#109121,tertiary:#ebe6ef,quaternary:#646e78"  class="lord-icon"> </lord-icon>' },
+  { name: 'Paiement', step: 5, icon: '   <lord-icon style="width:70px;height:70px"  target=".nav-item" src="https://cdn.lordicon.com/qhviklyi.json" trigger="loop-on-hover" colors="primary:#1e1c3a,secondary:#109121" class="lord-icon"> </lord-icon>' },
 ]
 declare namespace JSX {
   interface IntrinsicElements {
@@ -265,10 +267,10 @@ export default function CheckoutPage() {
                     <div className="flex items-center">
                       <div className="text-sm">
                         <RadioGroup.Label as="p" className="font-medium text-gray-900">
-                          Etape {plan.step}
+                          Étape {plan.step}
                         </RadioGroup.Label>
-                        <RadioGroup.Description as="div" className=" font-bold text-lg text-accent">
-                          <p className="sm:inline">
+                        <RadioGroup.Description as="div" className=" font-bold text-lg  text-accent">
+                          <p className="sm:inline ">
                             {plan.name}
                           </p>{' '}
                         </RadioGroup.Description>
@@ -295,10 +297,11 @@ export default function CheckoutPage() {
           </div>
         </RadioGroup></div>
         <div className="col-span-4 md:col-span-3 bg-white p-4 rounded">
-          {selected?.step == 1 && <CheckoutStep1 setStep={(e: number) => setSelected(plans[e])} setClickGamePlus={setClickGamePlus} />}
-          {selected?.step == 2 && <CheckoutStep2 setStep={(e: number) => setSelected(plans[e])} me={data?.me} />}
-          {selected?.step == 3 && <CheckoutStep3 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} />}
-          {selected?.step == 4 && <CheckoutStep4 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} click_games_plus={clickGamePlus} dataCreateOrder={dataCreateOrder}  onPaySuccess={onPaySuccess}/>}
+          {selected?.step == 1 && <CheckoutCart setStep={(e: number) => setSelected(plans[e])} setClickGamePlus={setClickGamePlus} />}
+          {selected?.step == 2 && <CheckoutStep1 setStep={(e: number) => setSelected(plans[e])} setClickGamePlus={setClickGamePlus} />}
+          {selected?.step == 3 && <CheckoutStep2 setStep={(e: number) => setSelected(plans[e])} me={data?.me} />}
+          {selected?.step == 4 && <CheckoutStep3 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} />}
+          {selected?.step == 5 && <CheckoutStep4 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} click_games_plus={clickGamePlus} dataCreateOrder={dataCreateOrder} onPaySuccess={onPaySuccess} />}
         </div>
       </div>
       <Script src="https://cdn.lordicon.com/xdjxvujz.js" />

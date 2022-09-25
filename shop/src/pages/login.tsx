@@ -6,15 +6,17 @@ import LoginForm from "@components/auth/login";
 import { loggedIn } from "@utils/is-loggedin";
 import { useRouter } from "next/router";
 import Loader from "@components/ui/loader/loader";
+import { useEffect } from "react";
 export default function Loginpage() {
 
 
-  
+
   const { t } = useTranslation();
-  const router=useRouter();
-  if(loggedIn()){
+  const router = useRouter();
+
+  if (loggedIn()) {
     router.push("/");
-  }else{
+  } else {
     return (
       <>
         <SEO title="Connexion" />
@@ -24,8 +26,8 @@ export default function Loginpage() {
       </>
     );
   }
-  return <Loader/>
- 
+  return <Loader />
+
 }
 
 Loginpage.Layout = HomeLayout;

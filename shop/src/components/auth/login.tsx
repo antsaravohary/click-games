@@ -16,6 +16,7 @@ import { FacebookIcon } from "@components/icons/facebook";
 //import { GoogleIcon } from "@components/icons/google";
 import { useModalAction } from "@components/ui/modal/modal.context";
 import { useRouter } from "next/router";
+import { GoogleIcon } from "@components/icons/google";
 
 type FormValues = {
   email: string;
@@ -38,7 +39,7 @@ const defaultValues = {
 const LoginForm = () => {
   const { t } = useTranslation("common");
   const { mutate: login, isLoading: loading } = useLoginMutation();
-  const router=useRouter();
+  const router = useRouter();
   const [errorMsg, setErrorMsg] = useState("");
   const { authorize } = useUI();
   const { openModal, closeModal } = useModalAction();
@@ -63,6 +64,7 @@ const LoginForm = () => {
             Cookies.set("auth_token", data.token);
             Cookies.set("auth_permissions", data.permissions);
             authorize();
+            router.push("/dashboard");
             closeModal();
             return;
           }
@@ -130,7 +132,7 @@ const LoginForm = () => {
       </div>*/}
 
       <div className="grid grid-cols-1 gap-4 mt-2">
-        {/* Uncomment below code to use facebook login 
+
         <Button
           className="w-full !bg-social-facebook hover:!bg-social-facebook-hover"
           // loading={loading}
@@ -141,8 +143,8 @@ const LoginForm = () => {
         >
           <FacebookIcon className="w-4 h-4 mr-3" />
           {t("text-login-facebook")}
-        </Button>*/}
-        {/*   <Button
+        </Button>
+        <Button
           className="!bg-social-google hover:!bg-social-google-hover"
           // loading={loading}
           disabled={loading}
@@ -152,7 +154,7 @@ const LoginForm = () => {
         >
           <GoogleIcon className="w-4 h-4 mr-3" />
           {t("text-login-google")}
-        </Button> */}
+        </Button>
       </div>
 
       <div className="flex flex-col items-center justify-center relative text-sm text-heading mt-8 sm:mt-11 mb-4 sm:mb-4">

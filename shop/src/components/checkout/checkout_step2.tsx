@@ -24,11 +24,11 @@ const CheckoutStep2 = ({ me, setStep }: props) => {
 
             <div className="mt-auto flex justify-between">
                 <Button onClick={() => {
-                    setStep(0);
+                    setStep(1);
                 }}>Retour</Button>
                 <Button
                     onClick={() => {
-                        setStep(2);
+                        setStep(3);
                     }}
                 >Suivant</Button>
             </div>

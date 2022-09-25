@@ -15,6 +15,7 @@ import { useCustomerQuery } from "@data/customer/use-customer.query";
 import { useUI } from "@contexts/ui.context";
 import { useModalAction } from "@components/ui/modal/modal.context";
 import LinkButton from "@components/ui/link-button";
+import { PhoneIcon } from "@components/icons/phone";
 
 
 export default function HelpPage() {
@@ -35,6 +36,12 @@ export default function HelpPage() {
     <>
       <SEO title="Centre d’aide" />
       <div className="flex  justify-beetwen flex-col h-full bg-white">
+        <div className="flex mx-auto my-8"> <PhoneIcon height="100px" width="100px"/>
+          <div className="flex flex-col justify-center ml-4 ">
+            <h4 className="text-muted text-4xl font-bold">24/7 Delivery</h4>
+            <h4 className="text-4xl font-bold mt-auto">+261 32 76 708 11</h4>
+          </div>
+        </div>
         <div className="  md:mx-8 flex flex-col md:flex-row">
           <div className="flex-1  m-4 p-4">
             {!showContactForm ? <>      <h3 className="border-l border-l-8 pl-2 text-2xl font-bold leading-6 border-yellow-600 mb-10">Vous êtes client ? Utilisez ce formulaire

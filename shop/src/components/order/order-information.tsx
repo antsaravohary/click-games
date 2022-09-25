@@ -78,14 +78,14 @@ const OrderInformation = (props: Props) => {
       </div>
 
       <div className="mt-4">
-       {/**  <div className="flex justify-between mb-3">
+         <div className="flex justify-between mb-3">
           <p className="text-sm text-body">{t("text-sub-total")}</p>
           <span className="text-sm text-body">{sub_total}</span>
         </div>
         <div className="flex justify-between mb-3">
           <p className="text-sm text-body">{t("text-tax")}</p>
           <span className="text-sm text-body">{tax}</span>
-        </div>*/}
+        </div>
         <div className="flex justify-between mb-3">
           <p className="text-sm text-body">{t("text-shipping")}</p>
           <span className="text-sm text-body">{shipping}</span>
@@ -102,7 +102,7 @@ const OrderInformation = (props: Props) => {
             <span className="text-sm text-body">{discountPrice}</span>
           </div>
         ) : (
-          <div className="flex justify-between mt-5 hidden mb-4">
+          <div className="flex justify-between mt-5  mb-4">
             <Coupon />
           </div>
         )}

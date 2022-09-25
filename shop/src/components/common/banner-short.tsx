@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import cn from "classnames";
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 type BannerProps = {
   banner: BannerType;
@@ -20,6 +21,7 @@ SwiperCore.use([Navigation]);
 const BannerShort: React.FC<BannerProps> = ({ banner, className,preview}) => {
   const { t } = useTranslation("common");
   const { stickMobileFilter, unstickMobileFilter } = useUI();
+  const router=useRouter();
   const onWaypointPositionChange = ({
     currentPosition,
   }: Waypoint.CallbackArgs) => {
@@ -56,7 +58,7 @@ const BannerShort: React.FC<BannerProps> = ({ banner, className,preview}) => {
             }}
           >
             {banner?.gallery?.map((item) => (
-              <SwiperSlide className="mx-2" key={item.id}>
+              <SwiperSlide className="mx-2 cursor-pointer" key={item.id} onClick={()=>{if(item?.url)router.push(item?.url)}}>
                 <img
                   className="w-full h-auto"
                   src={item.image ?? "/banner/grocery.png"}

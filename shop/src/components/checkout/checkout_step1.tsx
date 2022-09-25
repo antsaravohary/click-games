@@ -9,27 +9,27 @@ type props = {
 }
 const CheckoutStep1 = ({ setStep, setClickGamePlus }: props) => {
     return (
-        <div className="mt-8 flex flex-col h-full">
-            <img className="mx-auto" style={{ width: "120px" }} src="/click_games+.png" />
-            <div className=" text-lg font-medium text-gray-900 mx-auto">  <AnimatePresence>
+        <div className=" flex flex-col h-full">
+            <img className="mx-auto" style={{ maxWidth: "520px" }} src="/click_games_plus_detail.png" />
+           {/**<div className=" text-lg font-medium text-gray-900 mx-auto">  <AnimatePresence>
               <ClickGamePlus
                 disabled={false}
                 value={true}
                 setValue={setClickGamePlus}
-              />
-            </AnimatePresence></div>
+              /
+            </AnimatePresence></div> */} 
            
             <div className="mt-6 mx-auto">
                 <Button onClick={() => {
                     setClickGamePlus(true);
-                    setStep(1);
+                    setStep(2);
                 }}>
                     <span className="mb-1">Suivant</span> <ArrowNext /></Button>
             </div>
             <div className="mt-auto ml-auto mb-8">
                 <button onClick={() => {
                     setClickGamePlus(false);
-                    setStep(1);
+                    setStep(2);
                 }} className="border-0 text-gray-500">Continuer sans le ClickGames+</button>
             </div>
         </div>

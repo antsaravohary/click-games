@@ -2,6 +2,7 @@ export type GalleryType = {
   id: string | number;
   title: string;
   image: string;
+  url:string;
 };
 
 export type BannerType = {
@@ -46,11 +47,13 @@ export const sitePages: Record<PageName, PageInfo> = {
           id: 3,
           title: "Buy One Get One Free",
           image: "/banner/banner-3.png",
+          url:"/products/pokemon-donjon-mystere-equipe-de-secours-dx"
         },
         {
           id: 4,
           title: "Buy One Get One Free",
           image: "/banner/banner-4.png",
+          url:"/products/pokemon-let-s-go-pikachu"
         },
       ],
       

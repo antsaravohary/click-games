@@ -16,7 +16,7 @@ const RelatedProducts = ({
   const { t } = useTranslation("common");
   return (
     <>
-      <h2 className="text-lg text-heading tracking-tight font-semibold mb-6">
+      <h2 className="font-semibold  text-lg md:text-xl xl:text-2xl tracking-tight text-heading mb-6">
         {t("text-related-products")}
       </h2>
       <div

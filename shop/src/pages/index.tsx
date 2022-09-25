@@ -31,6 +31,7 @@ import BoxCategory from "@components/category/box-category";
 import FilterBarLayoutTwo from "@components/common/filter-bar-layout-two";
 import FeedLayoutTwo from "@components/product/feed-layout-two";
 import BakeryCategory from "@components/category/bakery-category";
+import MyCookieConsent from "@components/common/MyCookieConsent";
 const banners = [
   {
     id: 1,
@@ -141,14 +142,14 @@ export default function HomePage() {
       />
       <div className="w-fulll overflow-hidden lock lg:mt-6">
         <BannerShort banner={getPageData.banner} preview={2} className="max-h-140" />
-        <BannerShort  banner={getPageData.banner1}  preview={3}  className="max-h-160 mt-4" />
+        <BannerShort banner={getPageData.banner1} preview={3} className="max-h-160 mt-4" />
         {/*<FeatureGrid className="" />*/}
       </div>
-      {width > 1280 &&  <BakeryCategory />}
-     
+      {width > 1280 && <BakeryCategory />}
+
       <div className="flex flex-1 bg-gray-100">
-       
-       {/**  <div className="sticky top-22 h-full lg:w-[380px] hidden xl:block bg-gray-100 hidden">
+
+        {/**  <div className="sticky top-22 h-full lg:w-[380px] hidden xl:block bg-gray-100 hidden">
           <BoxCategory />
         </div>*/}
 
@@ -183,7 +184,9 @@ export default function HomePage() {
       >
       </Element>
       {width > 1023 && <CartCounterButton />}*/}
-      <CookieConsent buttonText="ok!" style={{ background: "white", color: "black", boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)", textAlign: "center" }}>Nous utilisons des cookies pour vous garantir la meilleure expérience sur notre site web. Si vous continuez à utiliser ce site, nous supposerons que vous en êtes satisfait.</CookieConsent>
+      <MyCookieConsent/>
+      {/** <CookieConsent buttonText="ok!" style={{ background: "white", color: "black", boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)", textAlign: "center" }}></CookieConsent> */}
+
     </>
   );
 }

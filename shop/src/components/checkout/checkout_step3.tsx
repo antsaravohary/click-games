@@ -3,38 +3,46 @@ import { ArrowNext } from "@components/icons"
 import { DeliveryIcon } from "@components/icons/DeliveryIcon";
 import { InfoIcon } from "@components/icons/info";
 import Tooltip from "@components/ui/tool-tips";
+import { RadioGroup } from "@headlessui/react";
 import { User } from "@ts-types/generated";
 import { formatDateCompletWithDay } from "@utils/format-date";
+import classNames from "classnames";
+import { useState } from "react";
 import { Button } from ".."
 import ShippingMode from "./shipping-mode";
 
 type props = {
     me: User;
-    shipping_class:number;
+    shipping_class: number;
     setStep: (e) => {};
 }
-const CheckoutStep3 = ({ me,shipping_class,setStep }: props) => {
+const plans = [
+    { name: 'Startup', priceMonthly: 29, priceYearly: 290, limit: 'Up to 5 active job postings' },
+    { name: 'Business', priceMonthly: 99, priceYearly: 990, limit: 'Up to 25 active job postings' },
+    { name: 'Enterprise', priceMonthly: 249, priceYearly: 2490, limit: 'Unlimited active job postings' },
+];
+const CheckoutStep3 = ({ me, shipping_class, setStep }: props) => {
     let dateDelivery = new Date(new Date().getTime() + shipping_class * 24 * 60 * 60 * 1000);
     switch (dateDelivery.getDay()) {
-      case 0:
-        dateDelivery = new Date(dateDelivery.getTime() + 2 * 24 * 60 * 60 * 1000);
-        break;
-      case 1:
-        dateDelivery = new Date(dateDelivery.getTime() + 1 * 24 * 60 * 60 * 1000);
-        break;
-      case 2:
-        dateDelivery = new Date(dateDelivery.getTime() + 1 * 24 * 60 * 60 * 1000);
-        break;
-      case 6:
-        dateDelivery = new Date(dateDelivery.getTime() + 2 * 24 * 60 * 60 * 1000);
-        break;
-  
-      default:
-        break;
+        case 0:
+            dateDelivery = new Date(dateDelivery.getTime() + 2 * 24 * 60 * 60 * 1000);
+            break;
+        case 1:
+            dateDelivery = new Date(dateDelivery.getTime() + 1 * 24 * 60 * 60 * 1000);
+            break;
+        case 2:
+            dateDelivery = new Date(dateDelivery.getTime() + 1 * 24 * 60 * 60 * 1000);
+            break;
+        case 6:
+            dateDelivery = new Date(dateDelivery.getTime() + 2 * 24 * 60 * 60 * 1000);
+            break;
+
+        default:
+            break;
     }
+    const [selected, setSelected] = useState(plans[0]);
     return (
         <div className="p-5 md:p-4 h-full flex flex-col">
-
             <ShippingMode disabled={false} />
             <div className="flex mt-8 items-center">
 
@@ -50,11 +58,11 @@ const CheckoutStep3 = ({ me,shipping_class,setStep }: props) => {
             </div>
             <div className="mt-auto flex justify-between">
                 <Button onClick={() => {
-                    setStep(1 );
+                    setStep(2);
                 }}>Retour</Button>
                 <Button
                     onClick={() => {
-                        setStep(3);
+                        setStep(4);
                     }}
                 >Suivant</Button>
             </div>
