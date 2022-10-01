@@ -134,7 +134,7 @@ class OrderRepository extends BaseRepository
         $orderInput = $data['orderInput'];
         $orderInput['tracking_number'] = NULL;
         $orderInput['customer_id'] = $user->id;
-        $orderInput["mode"] = ($user->subscription != null && $user->subscription->status) ? "CGP_SUBSCRIBER" : ($data["clickGamePlus"] ? "CGP_NEW" : "NONE");
+        $orderInput["mode"] = ($user->subscription != null && $user->subscription->status) ? "CGP_SUBSCRIBER" : (/*$data["clickGamePlus"]*/true ? "CGP_NEW" : "NONE");
         $discount = $this->calculateDiscount($orderInput);
         if ($discount) {
             $orderInput['paid_total'] = $orderInput['amount'] + $orderInput['sales_tax'] + $orderInput['delivery_fee'] - $orderInput;
@@ -151,7 +151,7 @@ class OrderRepository extends BaseRepository
 
         $orderInput["credit"]=$orderInput["mode"]=="NONE"? 0: $processProducts["credit"];
 
-        return ['orderInput' => $orderInput, 'products' => $products, 'clickGamePlus' => ($user->subscription != null && $user->subscription->status) ? "SUBSCRIBER" : ($data["clickGamePlus"] ? "NEW" : "NONE")];
+        return ['orderInput' => $orderInput, 'products' => $products, 'clickGamePlus' => ($user->subscription != null && $user->subscription->status) ? "SUBSCRIBER" : (/*$data["clickGamePlus"]*/true ? "NEW" : "NONE")];
     }
 
     /**
@@ -171,7 +171,7 @@ class OrderRepository extends BaseRepository
             $order = $this->create($orderInput);
             $order->products()->attach($products);
             $this->createChildOrder($order, $data);
-            //  $this->calculateShopIncome($order);
+            //$this->calculateShopIncome($order);
             //$order->children = $order->children;
             foreach ($order->children as $key => $c) {
                 $this->processQuantity($c);

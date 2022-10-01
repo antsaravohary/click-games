@@ -27,12 +27,15 @@ const Footer: React.FC = () => {
           <FooterItems
             title="Livraison"
             description="Livraison gratuite à partir de 35 € d’achat"
-            Icon={<DeliveryTruckIcon color='#000' width="32" height="32" />}
+            // Icon={<DeliveryTruckIcon color='#000' width="32" height="32" />}
+            Icon={<img src="/icons/gif/truck-delivery.gif" className='w-16 h-16' style={{marginBottom:"-20px"}} />}
+
           />
           <FooterItems
             title="Paiement sécurisé"
             description="Paiement sécurisé par Carte bancaire"
-            Icon={<CardIcon width="32" height="32" color='#000' />}
+            //Icon={<CardIcon width="32" height="32" color='#000' />}
+            Icon={<img src="/icons/gif/coins.gif" className='w-16 h-16' style={{marginBottom:"-20px"}} />}
           >
             <ul className="flex flex-wrap mt-2 justify-center items-center space-s-4 sm:space-s-5 lg:space-s-7 -mb-1.5 md:mb-0 mx-auto md:mx-0 pt-3.5 md:pt-0">
               {payment?.map((item) => (
@@ -60,16 +63,18 @@ const Footer: React.FC = () => {
           <FooterItems
             title="Protection acheteur"
             description="Retournez vos articles sous 14 jours, Remboursement intégral de la commande"
-            Icon={<GuranteeIcon width="32" height="32" color='#000' />}
+            //Icon={<GuranteeIcon width="32" height="32" color='#000' />}
+            Icon={<img src="/icons/gif/equity-security.gif" className='w-16 h-16' style={{marginBottom:"-20px"}} />}
           />
           <FooterItems
             title="Centre d’aide"
             description=" Assistance 24/24h 7/7J par mail ou depuis de votre espace"
-            Icon={<HelpCenterIcon width="32" height="32" color='#000' />}
+           // Icon={<HelpCenterIcon width="32" height="32" color='#000' />}
+           Icon={<img src="/icons/gif/consultation.gif" className='w-16 h-16' style={{marginBottom:"-20px"}} />}
           ></FooterItems>
         </div></div>
       <Widgets widgets={[...widgets, { id: 2, widgetTitle: 'widget-title-our-information', lists: articles.map(a => ({ id: a?.id, title: a?.title, path: "/terms/" + a?.slug })) }]} />
-    
+
       <Copyright payment={payment} />
 
       <div className="px-2 pb-4">

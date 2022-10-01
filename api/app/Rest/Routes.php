@@ -34,6 +34,7 @@ use App\Http\Controllers\PromotionTypeController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\RefundController;
 use App\Http\Controllers\RepairController;
+use App\Http\Controllers\SherlocksController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\StripeSessionController;
 use App\Http\Controllers\SubscriptionController;
@@ -69,7 +70,13 @@ Route::post('/stripe/subscription/active/{user_id}', 'App\Http\Controllers\Strip
 Route::post('/label/{ref}', 'App\Http\Controllers\ColissimoController@label');
 Route::post('/generate-label-colissimo/{id}', 'App\Http\Controllers\ColissimoController@generateLabel');
 Route::post('/securion-pay/payment/{token}', 'App\Http\Controllers\SecurionPayController@payment');
-
+//SHERLOCK
+Route::POST('/sherlocks/payment-product',[SherlocksController::class,'paymentProduct']);
+Route::post("/sherlocks/return/{id}", [SherlocksController::class, 'sherlock']);
+Route::any("/sherlocks/subscription-pay/{id}", [SherlocksController::class, 'sherlockSubscriptionPay']);
+Route::any("/sherlocks/secure/{id}", [SherlocksController::class, 'formSecure']);
+Route::any("/sherlocks/test", [SherlocksController::class, 'test']);
+Route::any("/sherlocks/transaction/{id}", [SherlocksController::class, 'sherlock_transaction']);
 Route::apiResource('articles', ArticleController::class, [
     'only' => ['index', 'show', 'update', 'store', 'destroy']
 ]);

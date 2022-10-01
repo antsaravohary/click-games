@@ -14,13 +14,8 @@ import ShippingMode from "./shipping-mode";
 type props = {
     me: User;
     shipping_class: number;
-    setStep: (e) => {};
+    setStep: (e:number) => {};
 }
-const plans = [
-    { name: 'Startup', priceMonthly: 29, priceYearly: 290, limit: 'Up to 5 active job postings' },
-    { name: 'Business', priceMonthly: 99, priceYearly: 990, limit: 'Up to 25 active job postings' },
-    { name: 'Enterprise', priceMonthly: 249, priceYearly: 2490, limit: 'Unlimited active job postings' },
-];
 const CheckoutStep3 = ({ me, shipping_class, setStep }: props) => {
     let dateDelivery = new Date(new Date().getTime() + shipping_class * 24 * 60 * 60 * 1000);
     switch (dateDelivery.getDay()) {
@@ -40,12 +35,10 @@ const CheckoutStep3 = ({ me, shipping_class, setStep }: props) => {
         default:
             break;
     }
-    const [selected, setSelected] = useState(plans[0]);
     return (
         <div className="p-5 md:p-4 h-full flex flex-col">
             <ShippingMode disabled={false} />
             <div className="flex mt-8 items-center">
-
                 <DeliveryIcon height="42" width="42" />
                 <div className="ml-4 flex">
                     <p>

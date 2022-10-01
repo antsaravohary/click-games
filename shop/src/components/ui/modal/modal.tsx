@@ -11,6 +11,7 @@ export default function Modal({ open, onClose, children }: any) {
       <Dialog
         as="div"
         className="fixed inset-0 z-50 overflow-y-auto"
+
         initialFocus={cancelButtonRef}
         static
         open={open}

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GoogleShopController;
+use App\Http\Controllers\SherlocksController;
 use App\Mail\Contact;
 use App\Mail\NewAvis;
 use App\Models\Order;
@@ -40,14 +41,12 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
- 
 });
 
 Route::get('/email', function () {
     $order = Order::find(90);
-    $coupon=Coupon::find(1);
+    $coupon = Coupon::find(1);
     return (new CustomerRegistered())->to("orelien.soany@gmail.com");
 });
 
-Route::get('google/shopping/product',[GoogleShopController::class,'listProduct']);
-
+Route::get('google/shopping/product', [GoogleShopController::class, 'listProduct']);

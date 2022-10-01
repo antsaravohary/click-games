@@ -6,7 +6,7 @@ export interface Item {
   [key: string]: any;
 }
 
-export interface UpdateItemInput extends Partial<Omit<Item, "id">> {}
+export interface UpdateItemInput extends Partial<Omit<Item, "id">> { }
 
 export function addItemWithQuantity(
   items: Item[],
@@ -66,7 +66,7 @@ export function setClickCollect(
   id: Item["id"],
 ) {
   return items.map((existingItem) =>
-    existingItem.id === id ? { ...existingItem, active_click_collect:!existingItem.active_click_collect } : existingItem
+    existingItem.id === id ? { ...existingItem, active_click_collect: !existingItem.active_click_collect } : existingItem
   );
 }
 
@@ -83,10 +83,10 @@ export const calculateItemTotals = (items: Item[]) =>
     ...item,
     itemTotal: item.price * item.quantity!,
   }));
-export const calculTotalClickCollectItem=(items:Item[])=>
-  items.reduce((sum, item) => sum + item.click_collect?1:0, 0);
-  export const   calculTotalClickCollectActiveItem=(items:Item[])=>
-  items.reduce((sum, item) => sum + item.active_click_collect?1:0, 0);
+export const calculTotalClickCollectItem = (items: Item[]) =>
+  items.reduce((sum, item) => sum + item.click_collect ? 1 : 0, 0);
+export const calculTotalClickCollectActiveItem = (items: Item[]) =>
+  items.reduce((sum, item) => sum + item.active_click_collect ? 1 : 0, 0);
 
 export const calculateTotal = (items: Item[]) =>
 

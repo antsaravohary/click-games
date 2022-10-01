@@ -243,7 +243,7 @@ export default function CheckoutPage() {
   if (isLoading) {
     return <Loader />;
   }
-  console.log("CLICK GAMES PLUS", clickGamePlus);
+  console.log("dataOrder",dataCreateOrder())
   return (
     <div className="py-8 px-4 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20" >
       <div className="grid grid-cols-4 gap-4">
@@ -258,7 +258,7 @@ export default function CheckoutPage() {
                   classNames(
                     checked ? 'border-transparent border-accent' : 'border-gray-300  hidden md:flex',
                     active ? 'ring-2 ring-indigo-500' : '',
-                    'relative block bg-white border rounded-lg shadow-sm px-6 py-4 cursor-pointer sm:flex sm:justify-between focus:outline-none'
+                    'relative block bg-white border rounded-lg shadow-sm px-6 py-4 cursor-pointer   sm:flex sm:justify-between focus:outline-none'
                   )
                 }
               >
@@ -266,10 +266,10 @@ export default function CheckoutPage() {
                   <>
                     <div className="flex items-center">
                       <div className="text-sm">
-                        <RadioGroup.Label as="p" className="font-medium text-gray-900">
+                        <RadioGroup.Label as="p" className="font-medium text-gray-900  ">
                           Étape {plan.step}
                         </RadioGroup.Label>
-                        <RadioGroup.Description as="div" className=" font-bold text-lg  text-accent">
+                        <RadioGroup.Description as="div" className=" font-bold text-lg  text-accent  ">
                           <p className="sm:inline ">
                             {plan.name}
                           </p>{' '}
@@ -301,7 +301,7 @@ export default function CheckoutPage() {
           {selected?.step == 2 && <CheckoutStep1 setStep={(e: number) => setSelected(plans[e])} setClickGamePlus={setClickGamePlus} />}
           {selected?.step == 3 && <CheckoutStep2 setStep={(e: number) => setSelected(plans[e])} me={data?.me} />}
           {selected?.step == 4 && <CheckoutStep3 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} />}
-          {selected?.step == 5 && <CheckoutStep4 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} click_games_plus={clickGamePlus} dataCreateOrder={dataCreateOrder} onPaySuccess={onPaySuccess} />}
+          {selected?.step == 5 && <CheckoutStep4 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} clickGamePlus={clickGamePlus} dataCreateOrder={dataCreateOrder} onPaySuccess={onPaySuccess} />}
         </div>
       </div>
       <Script src="https://cdn.lordicon.com/xdjxvujz.js" />

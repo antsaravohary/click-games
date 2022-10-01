@@ -77,7 +77,7 @@ const SubscriptionList = ({ subscriptions, onPagination }: IProps) => {
           return (<Button onClick={() => {
             console.log(subscription);
             setLoading(true);
-            http.post("/stripe/subscription/active/" + subscription.user.id).then(() => {
+            http.post("/sherlock/subscription/active/" + subscription.id).then(() => {
               toast.success("Prélèvement avec succcès");
               queryClient.invalidateQueries(API_ENDPOINTS.SUBSCRIPTION);
             }).catch(() => {

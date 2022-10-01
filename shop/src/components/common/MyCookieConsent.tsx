@@ -3,7 +3,6 @@ import { useState } from "react";
 
 const MyCookieConsent = () => {
     const [state, setState] = useState(storage.get("cookie_consent") == null);
-    console.log("state", state);
     if (state) {
         return (<div className="fixed bottom-4 right-4 z-[100]">
             <div style={{ 'backgroundColor': 'rgb(255, 255, 255)' }}>

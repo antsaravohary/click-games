@@ -29,7 +29,7 @@ const CheckoutCart = ({ setStep, setClickGamePlus }: props) => {
                             variants={fadeInOut(0.25)}
                             className=" flex flex-col items-center justify-center"
                         >
-                            <img src="/empty-cart.png" />
+                            <img src="/icons/gif/basket.gif" />
                             {/** *<EmptyCartIcon width={140} height={176} />*/}
                             <h4 className="mt-6 text-base font-semibold">
                                 {t("text-no-cart")}

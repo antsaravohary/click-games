@@ -9,21 +9,24 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 
 interface Props {
-  count: number;
+  count?: number;
   disabled?: boolean;
 }
 
 const ShippingMode = ({ count, disabled }: Props) => {
   const { updateDeliveryTime, setShippingClass, shipping_class } =
     useCheckout();
+  const [selected, setSelected] = useState();
   const { data, isFetching: loading } = useShippingQuery();
   useEffect(() => {
     updateDeliveryTime(siteSettings.deliverySchedule[0]);
     if (!shipping_class && data?.shippings) {
       setShippingClass(data?.shippings[0]);
+      setSelected(data?.shippings[0]);
     }
+    setSelected(data?.shippings.find((s) => s.id == shipping_class));
   }, [data]);
-  const [selected, setSelected] = useState(shipping_class);
+
   let dateDelivery = new Date(new Date().getTime() + shipping_class * 24 * 60 * 60 * 1000);
   switch (dateDelivery.getDay()) {
     case 0:
