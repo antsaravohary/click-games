@@ -17,6 +17,7 @@ export type ProductsQueryOptionsType = {
   text?: string;
   exchangeable?:Boolean|number;
   category?: string;
+  price?:string;
   status?: string;
   limit?: number;
   user_id?:number;

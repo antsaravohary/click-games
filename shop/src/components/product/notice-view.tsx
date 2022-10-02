@@ -6,7 +6,6 @@ const NoticeView = ({ product_id }: Props) => {
   const { data, isLoading } = useNoticesQuery({ product_id: product_id });
   let star = 0;
   var indents = [];
-  console.log("data", data);
   if (isLoading) {
     return <div>Chargment ...</div>;
   }

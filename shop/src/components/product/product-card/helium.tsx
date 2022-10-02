@@ -20,7 +20,6 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
   const { t } = useTranslation("common");
   const { data, isLoading: loadingMe } = useCustomerQuery();
   const subscription = data?.me?.subscription;
-
   const { name, image, unit, quantity } = product ?? {};
   const { openModal } = useModalAction();
   const { price, basePrice, discount } = usePrice({
@@ -92,8 +91,10 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
           role="button"
           className="text-heading text-sm font-semibold truncate mb-2"
         >
-          {name}
+          {name} 
         </h3>
+        {product?.categories&& <div style={{backgroundColor:product?.categories[0]?.color,borderColor:product?.categories[0]?.color}} className="inline-flex shrink-0 items-center rounded border px-2 py-1 text-xs text-light">{product?.categories[0]?.name}</div>}
+      
         {/** <p className="text-muted text-xs">{unit}</p> */}
         {/* End of product info */}
         {/*loadingMe ? (

@@ -29,6 +29,10 @@ const Feed = () => {
     type: query.type as string,
     text: query?.text as string,
     category: query?.category as string,
+    price:query?.price as string,
+    orderBy:query?.orderBy,
+    sortedBy:query?.sortedBy
+
   });
 
   if (isError && error) return <ErrorMessage message={error.message} />;

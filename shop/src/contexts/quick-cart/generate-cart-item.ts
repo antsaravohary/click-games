@@ -22,7 +22,7 @@ interface Variation {
   [key: string]: unknown;
 }
 export function generateCartItem(item: Item, variation: Variation,click_game_plus:boolean) {
-  const { id, name, slug, image, price, sale_price,pre_order, quantity, unit,click_collect, shop,discount } = item;
+  const { id, name, slug, image, price, categories,sale_price,pre_order, quantity, unit,click_collect, shop,discount } = item;
   if (!isEmpty(variation)) {
     return {
       id: `${id}.${variation.id}`,
@@ -31,6 +31,7 @@ export function generateCartItem(item: Item, variation: Variation,click_game_plu
       active_click_collect:false,
       click_collect,
       pre_order,
+      categories,
       shop,
       discount,
       slug,
@@ -49,6 +50,7 @@ export function generateCartItem(item: Item, variation: Variation,click_game_plu
     unit,
     active_click_collect:false,
     click_collect,
+    categories,
     pre_order,
     shop,
     image: image?.thumbnail,

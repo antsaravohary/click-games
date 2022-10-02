@@ -19,7 +19,7 @@ const MyCookieConsent = () => {
                                     storage.set({ key: "cookie_consent", value: "all" });
                                     setState(false);
                                 }}
-                                type="button" className="py-2 px-4  bg-accent hover:bg-accent-hiover focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">Accept</button>
+                                type="button" className="py-2 px-4  bg-accent hover:bg-accent-hiover focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">Accepter</button>
                         </div>
                     </div>
                 </div>

@@ -6,20 +6,22 @@ export type ParamsType = {
   types?: string[];
   text?: string;
   category?: string;
+  price_min?: string;
+  price_max?: string;
   status?: string;
   is_active?: string;
   shop_id?: string;
   product_id?: string;
-  platform_id?:string;
+  platform_id?: string;
   user_id?: string;
   limit?: number;
-  orderBy?:string;
-  sortedBy?:string,
-  page?:number;
+  orderBy?: string;
+  sortedBy?: string,
+  page?: number;
 };
 export class CoreApi {
   http = Axios;
-  constructor(public _base_path: string) {}
+  constructor(public _base_path: string) { }
   private stringifySearchQuery(values: any) {
     const parsedValues = pickBy(values);
     return Object.keys(parsedValues)
@@ -46,6 +48,7 @@ export class CoreApi {
       page,
       category,
       status,
+      price,
       is_active,
       shop_id,
       product_id,
@@ -59,6 +62,7 @@ export class CoreApi {
     const searchString = this.stringifySearchQuery({
       types,
       type,
+      price,
       name,
       exchangeable,
       category,

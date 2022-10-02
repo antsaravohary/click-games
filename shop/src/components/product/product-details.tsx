@@ -162,7 +162,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
               <h1 className="font-semibold  text-lg md:text-xl xl:text-2xl tracking-tight text-heading">
                 {name}
               </h1>
-              <div className="inline-flex shrink-0  ml-4 items-center rounded border border-accent bg-accent px-3 py-1 text-sm text-white">4.67<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.056 24" class="h-2.5 w-2.5 ltr:ml-1 rtl:mr-1"><g data-name="Group 36413" fill="currentColor"><path id="Path_22667" data-name="Path 22667" d="M19.474,34.679l-6.946-4.346L5.583,34.679a.734.734,0,0,1-1.1-.8L6.469,25.93.263,20.668a.735.735,0,0,1,.421-1.3l8.1-.566,3.064-7.6a.765.765,0,0,1,1.362,0l3.064,7.6,8.1.566a.735.735,0,0,1,.421,1.3L18.588,25.93l1.987,7.949a.734.734,0,0,1-1.1.8Z" transform="translate(0 -10.792)"></path></g></svg></div>
+              
               <div className="ml-8 hidden">
                 {product.product_condition === "new" && (
                   <Badge
@@ -190,6 +190,10 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                 )}
               </div>
             </div>
+            <div className="flex justify-center justify-items-center items-center mt-4 ">
+            <div style={{ backgroundColor: product?.categories[0]?.color, borderColor: product?.categories[0]?.color }} className="inline-flex flex justify-center ml-4 shrink-0 items-center text-center rounded border px-2 py-1 text-xs text-light">{product?.categories[0]?.name}</div>
+            </div>
+         
             {mode === "user-product" && (
               <span className="text-small text-gray-400">
                 Publier le {dayjs(updated_at).format("DD/MM/YYYY à HH:MM")}
@@ -267,7 +271,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                   {mode !== "user-product" && (
                     <div className="mb-3 lg:mb-0 justify-center  w-full lg:max-w-[400px]">
                       <div className="flex mx-auto justify-center space-x-1 mb-4">
-                        <img className=" " src="/click_games+.png" style={{ width: "100px" }} /> 
+                        <img className=" " src="/click_games+.png" style={{ width: "100px" }} />
                         <Tooltip tooltipText={" Cette mention signifie que le produit et éligible au programme ClickGames+. en savoirs plus"} children={<InfoIcon height="16" width="16" />} />
                       </div>
                       <AddToCart
@@ -336,7 +340,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
             <div className="bg-gray-300 p-4 rounded-lg border-t border-border-200 border-opacity-60 lg:max-w-[400px] w-full">
               <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
                 <li className="text-gray-600">Note de jeu: <span className="text-dark"> {product.note_admin}/10</span></li>
-                <li className="text-gray-600">Type de jeu: <span className="text-dark">{product?.tags?.map(tag=>(tag?.name)+"  ")}</span></li>
+                <li className="text-gray-600">Type de jeu: <span className="text-dark">{product?.tags?.map(tag => (tag?.name) + "  ")}</span></li>
                 <li className="text-gray-600">Compatibilité: <span className="text-dark">{categories[0].name}</span></li>
                 <li className="text-gray-600">Date de sortie: <span className="text-dark">{formatDateComplet(product?.release_date)}</span></li>
               </ul>
@@ -372,13 +376,32 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
         </div>
       </div>
       <div className="mx-16" >
-        <Tab tabs={[{ name: "My Account", href: "#", current: true }]}>
+        <div title="Détails">
+          <h1 className="font-semibold  text-lg md:text-xl xl:text-2xl tracking-tight text-heading mt-2">
+            Details
+          </h1>
+          <Element
+            name="details"
+            className="py-4 border-b border-border-200 border-opacity-70 lg:w-3/4"
+          >
+            {/** <p className="text-sm text-body">{description}</p>*/}
+            <div className="">
+              <div
+                className="html-content"
+                dangerouslySetInnerHTML={{
+                  __html: description,
+                }}
+              />
+            </div>
+          </Element>
+        </div>
+        {/** <Tab tabs={[{ name: "My Account", href: "#", current: true }]}>
           <div title="Détails">
             <Element
               name="details"
               className="py-4 border-b border-border-200 border-opacity-70 lg:w-3/4"
             >
-              {/** <p className="text-sm text-body">{description}</p>*/}
+           
               <div className="">
                 <div
                   className="html-content"
@@ -389,10 +412,11 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
               </div>
             </Element>
           </div>
-          <div title="Avis" className="container mx-auto">
+
+   <div title="Avis" className="container mx-auto">
             <NoticeList productId={product.id} />
           </div>
-        </Tab>
+                </Tab>*/}
       </div>
 
     </article>

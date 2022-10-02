@@ -30,7 +30,11 @@ const Copyright: React.FC<CopyrightProps> = ({ payment }) => {
             </a>
             &nbsp; {t('text-all-rights-reserved')}
           </p>
+        
         </div>
+        <p className='text-center text-xs mt-2 '>
+        Les noms des produits présentés sur ce site sont utilisés à des fins d'identification uniquement.
+        Toutes les marques commerciales et marques déposées appartiennent à leurs propriétaires respectifs.</p>
       </Container>
     </div>
   );

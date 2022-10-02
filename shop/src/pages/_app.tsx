@@ -5,7 +5,7 @@ import "@fontsource/open-sans/700.css";
 import "@assets/main.css";
 import "@assets/animate.css";
 import "react-toastify/dist/ReactToastify.css";
-
+import "@assets/style_nouislider.css"
 //import '@assets/card.css';
 import "@assets/form_checkout.css";
 import "@components/payment/card.css";

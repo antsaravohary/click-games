@@ -29,6 +29,7 @@
     "next-auth": "^4.2.1",
     "next-pwa": "^5.2.22",
     "next-seo": "^4.26.0",
+    "nouislider-react": "^3.4.1",
     "overlayscrollbars": "^1.13.1",
     "overlayscrollbars-react": "^0.2.3",
     "rc-collapse": "^3.1.1",

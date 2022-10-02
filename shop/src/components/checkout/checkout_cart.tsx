@@ -1,4 +1,4 @@
-import CartItem from "@components/cart/cart-item";
+import CartItem2 from "@components/cart/cart-item2";
 import { ArrowNext } from "@components/icons"
 import { useCart } from "@contexts/quick-cart/cart.context";
 import { fadeInOut } from "@utils/motion/fade-in-out";
@@ -19,7 +19,7 @@ const CheckoutCart = ({ setStep, setClickGamePlus }: props) => {
             <AnimateSharedLayout>
                 <motion.div layout className="flex-grow pt-16">
                     {items.length > 0 ? (
-                        items?.map((item) => <CartItem item={item} key={item.id} />)
+                        items?.map((item) => <CartItem2 item={item} key={item.id} />)
                     ) : (
                         <motion.div
                             layout

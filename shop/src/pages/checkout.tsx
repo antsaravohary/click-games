@@ -185,6 +185,7 @@ export default function CheckoutPage() {
       ),
     };
   };
+  
   const onPaySuccess = (data: any) => {
     const ReactPixel = require("react-facebook-pixel").default;
     ReactPixel.trackSingle(
@@ -243,7 +244,6 @@ export default function CheckoutPage() {
   if (isLoading) {
     return <Loader />;
   }
-  console.log("dataOrder",dataCreateOrder())
   return (
     <div className="py-8 px-4 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20" >
       <div className="grid grid-cols-4 gap-4">

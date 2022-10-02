@@ -153,13 +153,13 @@ const RegisterForm = () => {
           >
             {t("text-terms")}
           </span>
-          &
+          et 
           <span
             onClick={() => handleNavigate("/terms/conditions-generales-de-vente")}
             className="ms-1 underline cursor-pointer text-accent hover:no-underline"
           >
             {t("text-policy")}
-          </span>
+          </span>.
         </p>
         <div className="mt-8">
           <Button className="w-full h-12" loading={loading} disabled={loading}>

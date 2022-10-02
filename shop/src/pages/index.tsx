@@ -32,6 +32,8 @@ import FilterBarLayoutTwo from "@components/common/filter-bar-layout-two";
 import FeedLayoutTwo from "@components/product/feed-layout-two";
 import BakeryCategory from "@components/category/bakery-category";
 import MyCookieConsent from "@components/common/MyCookieConsent";
+import FilterBar2 from "@components/common/filter-bar2";
+import CategoryCloud from "@components/category/category-cloud";
 const banners = [
   {
     id: 1,
@@ -94,7 +96,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   await queryClient.prefetchQuery("settings", fetchSettings);
 
   await queryClient.prefetchInfiniteQuery(
-    ["products", { type: params?.type }],
+    ["products", { type: params?.type}],
     fetchProducts,
     {
       staleTime: 60 * 1000,
@@ -145,24 +147,25 @@ export default function HomePage() {
         <BannerShort banner={getPageData.banner1} preview={3} className="max-h-160 mt-4" />
         {/*<FeatureGrid className="" />*/}
       </div>
-      {width > 1280 && <BakeryCategory />}
-
+      {/*width > 1280 && <BakeryCategory />*/}
+      {width > 1280 && <CategoryCloud/>}
+      
       <div className="flex flex-1 bg-gray-100">
 
         {/**  <div className="sticky top-22 h-full lg:w-[380px] hidden xl:block bg-gray-100 hidden">
           <BoxCategory />
         </div>*/}
 
-        <main className="w-full overflow-hidden block lg:mt-6">
+        <main className="w-full mx-4 overflow-hidden block lg:mt-6">
           {width < 1280 && width > 684 && <FilterBarLayoutTwo />}
-
+          <FilterBar2/>
           <Element name="grid">
             <ProductFeed />
           </Element>
         </main>
       </div>
       {width > 1023 && <CartCounterButton />}
-
+      
       {/**   <Banner banner={getPageData?.banner} className="miiiin-h-screen" />
   
       <FilterBar />
