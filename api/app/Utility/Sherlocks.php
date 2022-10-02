@@ -105,7 +105,7 @@ class Sherlocks
         $seal = $this->compute_seal('HMAC-SHA-256', $dataStr, $this->secretKey);
         $data["keyVersion"] = "1";
         $data["seal"] = $seal;
-        return $this->send($data,"https://office-server-sherlocks.test.sips-services.com/rs-services/v2/wallet/addCard");
+        return $this->send($data,"https://office-server-sherlocks.test.sips-services.com/rs-services/v2/wallet/getWalletData");
     }
     function compute_seal_from_string($sealAlgorithm, $data, $secretKey)
     {

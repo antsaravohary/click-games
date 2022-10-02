@@ -24,8 +24,8 @@ class ColissimoController extends Controller
 
         //   return $order;
         $requestParameter = array(
-            'contractNumber' => '391546',
-            'password' => 'Cucu3434@',
+            'contractNumber' => '440122',
+            'password' => '67f2b54',
             'outputFormat' => array('outputPrintingType' => 'PDF_10x15_300dpi'),
             'letter' => array(
                 'service' => array(

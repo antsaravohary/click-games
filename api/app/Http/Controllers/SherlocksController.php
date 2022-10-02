@@ -98,13 +98,11 @@ class SherlocksController extends Controller
       $subscription = StripeSubscription::find($id);
       $data = [
 
-         "cardExpiryDate" => "202212",
-         "cardNumber" => "5017679100900100",
-         "interfaceVersion" => "WR_WS_2.3",
-         "merchantWalletId" => "iDWal1",
-         "paymentMeanAlias" => "myvisacard",
-         "paymentMeanBrand" => "CB",
+       
+            "interfaceVersion"=> "WR_WS_2.3",
+            "merchantWalletId"=> " 13",
 
+          
 
       ];
       /* $data=[

@@ -25,6 +25,7 @@ class ProductRepository extends BaseRepository
         'shop_id',
         'exchangeable',
         'user_id',
+        'price'=>'between',
         'status',
         'sku',
         'type.slug',
