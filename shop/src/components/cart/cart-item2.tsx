@@ -61,7 +61,7 @@ const CartItem2 = ({ item }: CartItemProps) => {
         <p className="my-2.5 font-semibold text-accent">{price}</p>
       </div>
       <div className="mx-auto">
-        <h3 className="font-bold text-heading">Qauntité</h3>
+        <h3 className="font-bold text-heading">Quantité</h3>
         <Counter
         className="my-2.5"
           value={item.quantity}

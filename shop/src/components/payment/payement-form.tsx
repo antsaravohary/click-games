@@ -176,6 +176,7 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
                   disabled={processing}
                   className="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors"
                   onFocus={() => setfocused("number")}
+                  placeholder="Numéro de carte"
                   name="cardNumber"
                   value={cardInput.cardNumber}
                   onChange={(e) => setCardInput({ ...cardInput, cardNumber: e.target.value })}
@@ -189,6 +190,7 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
                   value={cardInput.cardExpiry}
                   className="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors  flex-1"
                   name="CardExpiry"
+                  placeholder="Date d’éxpiration"
                   onChange={(e) => setCardInput({ ...cardInput, cardExpiry: e.target.value })}
                   onFocus={() => setfocused("expiry")}
                 />
@@ -197,6 +199,7 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
                 <Input
                   disabled={processing}
                   name="cardCvc"
+                  placeholder="code cvc"
                   className="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors  flex-1"
                   onChange={(e) => setCardInput({ ...cardInput, cardCvc: e.target.value })}
                   value={cardInput.cardCvc}
