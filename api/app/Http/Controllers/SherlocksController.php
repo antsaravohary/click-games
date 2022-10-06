@@ -121,7 +121,7 @@ class SherlocksController extends Controller
 
       $payment_card = PaymentCard::where('paymentMeanId',  $subscription->payment_method_id)->first();
       $data = [
-         "amount" => "5900",
+         "amount" => "200",
          "captureDay" => "0",
          "captureMode" => "AUTHOR_CAPTURE",
          "currencyCode" => "978",
@@ -142,7 +142,13 @@ class SherlocksController extends Controller
       //$t = SherlockTransaction::find(155);
 
       $object = "";
-      if ($t->response['acquirerResponseCode'] == "00" && $t->response['responseCode'] == "00") {
+      if ($t->response['responseCode'] == "00") {
+         if($t->response['acquirerResponseCode'] != "00" ){
+            return [
+               "status" => "failed",
+               "msg" => SherlockResponse::responseCode[$t->response['responseCode']]
+            ]; 
+         }
 
          if ($subscription->type == "CLICK_GAMES_PLUS_TRIAL") {
             $subscription->type = 'CLICK_GAMES_PLUS';
@@ -212,7 +218,7 @@ class SherlocksController extends Controller
       $data['orderInput']['ref'] = 'CU' .  $stripeSession->created_at->format('dm') .  $stripeSession->created_at->format("Y") . $stripeSession->id;
       $stripeSession->data = $data;
       $stripeSession->save();
-      $amount = round($data['orderInput']['paid_total'], 2) * 100;
+      $amount = strval(round($data['orderInput']['paid_total'], 2) * 100);
       $type = "payement_order";
       $sherlock = new Sherlocks();
       $dataSherlock = [
@@ -228,9 +234,10 @@ class SherlocksController extends Controller
          "fraudData" => ["challengeMode3DS" => "CHALLENGE_MANDATE"],
          "orderChannel" => "INTERNET",
          "orderId" =>    $data['orderInput']['ref'],
-         "transactionReference" => "TREFEXA2015",
       ];
+     
       $res = $sherlock->cardCheckEnrollment($dataSherlock, $user);
+   
       $data["cardCheckEnrollment"] = $res->id;
       $stripeSession->data = $data;
       $stripeSession->save();
@@ -295,6 +302,7 @@ class SherlocksController extends Controller
 
    public function valideOrder($session_id, $payment_card)
    {
+      $now = Carbon::now();
       $session = StripeSession::find($session_id);
       $data = $session['data'];
       $data['orderInput']['customer_contact'] = 0;
@@ -309,12 +317,15 @@ class SherlocksController extends Controller
          "order_ref" => $order->ref,
          "order_id" => $order->id
       ];
-
-      if ($order->credit) {
+//on doit faire if  $order->credit, mais la on force l'utilisateur de s'abonnée toujours
+      if (true) {
          $user = $order->customer;
          if ($user->stripe_subscription_id == null) {
             $subscription = StripeSubscription::create([
                'type' => 'CLICK_GAMES_PLUS_TRIAL',
+               'current_period_start'=>$now,
+               'current_period_end'=>Carbon::createFromDate($now)->addDay(3),
+               'time'=>1,
                "status" => 1,
                "credit" => 2
             ]);

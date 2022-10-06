@@ -101,12 +101,12 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
     }
   }
   const handlePay = () => {
-    if(erroredInputs.cardNumber||erroredInputs.cvc||erroredInputs.expiryDate){
+    if(erroredInputs.cvc||erroredInputs.expiryDate){
       return;
     }
     setProcessing(true);
-    
     http.post("/sherlocks/payment-product", { ...cardInput,
+      cardNumber:cardInput.cardNumber.replace(/\s/g, ''),
       cardExpiry:"20"+cardInput.cardExpiry.split("  ")[1]+cardInput.cardExpiry.split("  ")[0],
       data: { ...data, clickGamePlus: true } }).then((response) => {
       setResponse(response.data);
@@ -131,7 +131,6 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
       toast.error("Une erreur est survenue");
       setProcessing(false);
     })
-    console.log("test", { ...cardInput, ...data });
   }
   const { price } = usePrice({
     amount: amount,

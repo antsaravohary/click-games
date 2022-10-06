@@ -68,6 +68,7 @@ class Sherlocks
         $data["merchantId"] = $this->merchantId;
         ksort($data);
         $dataStr = $this->flatten_to_sips_payload($data);
+
         $seal = $this->compute_seal('HMAC-SHA-256', $dataStr, $this->secretKey);
         $data["keyVersion"] = "1";
         $data["seal"] = $seal;
@@ -115,7 +116,7 @@ class Sherlocks
         $data["keyVersion"] = "1";
         $data["seal"] = $seal;
         $t->data = $data;
-        $t->response= $this->send($data, "https://office-server-sherlocks.test.sips-services.com/rs-services/v2/checkout/walletOrder");
+        $t->response = $this->send($data, "https://office-server-sherlocks.test.sips-services.com/rs-services/v2/checkout/walletOrder");
         $t->save();
         return $t;
     }
@@ -128,8 +129,6 @@ class Sherlocks
         $data["keyVersion"] = "1";
         $data["seal"] = $seal;
         return $this->send($data, "https://office-server-sherlocks.test.sips-services.com/rs-services/v2/checkout/cardOrder");
-
-       
     }
     function compute_seal_from_string($sealAlgorithm, $data, $secretKey)
     {
