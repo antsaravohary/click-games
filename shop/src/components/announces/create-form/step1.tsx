@@ -45,7 +45,6 @@ const Step1 = ({ nextStep, previousStep, update, product }: props) => {
     nextStep();
   };
 //  const categories = watch("categories");
- 
   console.log("is valide", isValid);
   return (
     <>

@@ -1,3 +1,4 @@
+import ErrorMessage from "@components/ui/error-message";
 import BakeryCategoryLoader from "@components/ui/loaders/bakery-category-loader";
 import { useCategoriesQuery } from "@data/category/use-categories.query";
 import { useTranslation } from "next-i18next";

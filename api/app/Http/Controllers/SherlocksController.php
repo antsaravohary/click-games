@@ -7,6 +7,7 @@ use App\Models\PaymentInfo;
 use App\Models\SherlockTransaction;
 use App\Models\StripeSession;
 use App\Models\StripeSubscription;
+use App\Models\Transaction;
 use App\Repositories\OrderRepository;
 use App\Sherlock\SherlockResponse;
 use App\Utility\Sherlocks;
@@ -74,6 +75,25 @@ class SherlocksController extends Controller
    }
    public function test()
    {
+      $data=[
+         
+            "amount"=> "0",
+            "captureDay"=> "0",
+            "captureMode"=> "AUTHOR_CAPTURE", 
+            "cardCSCValue"=> "123",
+            "cardExpiryDate"=> "202212",
+            "cardNumber"=> "5017679110380921",
+            "currencyCode"=> "978",
+            "interfaceVersion"=> "IR_WS_2.3",
+            "orderChannel"=> "INTERNET",
+            "orderId"=> " ORD101",
+            "returnContext"=> " ReturnContext",
+            "transactionOrigin"=> " SO_WEBAPPLI",
+            "transactionReference"=> "146",
+         
+      ];
+      $sherlock = new Sherlocks();
+      return $sherlock->test($data);
 
       return view("sherlock.error_payment", ["code" => 50, "msg" => "hello world"]);
    }
@@ -94,33 +114,83 @@ class SherlocksController extends Controller
 
    public function sherlockSubscriptionPay(Request $request, $id)
    {
+
       $sherlock = new Sherlocks();
+      $now = Carbon::now();
       $subscription = StripeSubscription::find($id);
+
+      $payment_card = PaymentCard::where('paymentMeanId',  $subscription->payment_method_id)->first();
       $data = [
-
-       
-            "interfaceVersion"=> "WR_WS_2.3",
-            "merchantWalletId"=> " 13",
-
-          
+         "amount" => "5900",
+         "captureDay" => "0",
+         "captureMode" => "AUTHOR_CAPTURE",
+         "currencyCode" => "978",
+         // "customerIpAddress"=> "127.0.0.1",
+         "interfaceVersion" => "IR_WS_2.3",
+         "invoiceReference" => "FAC007NB",
+         "merchantTransactionDateTime" =>  Carbon::now()->toDateTimeLocalString(),
+         "orderChannel" => "INTERNET",
+         "merchantWalletId" => $subscription->user->id,
+         "paymentMeanId" => $subscription->payment_method_id,
+         "paymentPattern" => "RECURRING_" . $subscription->time,
+         "cardCSCValue" => $payment_card->cvc,
+         "transactionOrigin" => "CLICK_INC",
+         "transactionReference" => "TREFEXA201212",
 
       ];
-      /* $data=[
-            "amount"=> "25000",
-            "captureDay"=> "0",
-            "captureMode"=> "AUTHOR_CAPTURE",
-            "cardCSCValue"=> "123",
-            "cardExpiryDate"=> "202212",
-            "cardNumber"=> "5017679110320521",
-            "currencyCode"=> "978",
-            "interfaceVersion"=> "IR_WS_2.3",
-            "orderChannel"=> "INTERNET",
-            "orderId"=> " ORD101",
-            "returnContext"=> " ReturnContext",
-            "transactionOrigin"=> " SO_WEBAPPLI",
-            "transactionReference"=> "TREFE2XA2012F",
-      ];*/
-      return $sherlock->walletOrder($data);
+       $t = $sherlock->walletOrder($data, $subscription->time, $subscription->user->id);
+      //$t = SherlockTransaction::find(155);
+
+      $object = "";
+      if ($t->response['acquirerResponseCode'] == "00" && $t->response['responseCode'] == "00") {
+
+         if ($subscription->type == "CLICK_GAMES_PLUS_TRIAL") {
+            $subscription->type = 'CLICK_GAMES_PLUS';
+            $object = "Activation  abonnement ClickGames+ ";
+            $data_transaction["click_games_plus"] = "NEW";
+         } else {
+            $object = "Reconduire  abonnement ClickGames+ " . Carbon::now()->format("MM");
+            $subscription->credit = 2;
+            $data_transaction["click_games_plus"] = "RENEW";
+         }
+
+         if (Carbon::createFromDate($subscription->current_period_end)->diffInDays($now) > 0) {
+            $subscription->current_period_start = $subscription->current_period_end;
+            $subscription->current_period_end = Carbon::createFromDate($subscription->current_period_end)->addMonth(1);
+         } else {
+            $subscription->current_period_start = $now;
+            $subscription->current_period_end = $now->addMonth(1);
+         }
+
+         $subscription->status = true;
+         $subscription->time = $subscription->time + 1;
+         $subscription->save();
+         $payment_info = PaymentInfo::create([
+            "amount" => $t->data["amount"],
+            "payment_method_details" => [],
+            "status" => "paid",
+         ]);
+         $transaction = Transaction::create([
+            "object" => $object,
+            "type" => "CGP_PAID",
+            "amount" => $data['amount'] / 100,
+            "obs" => "",
+            "data" => $data_transaction,
+            "user_id" => $subscription->user->id,
+            "subscription_id" => $subscription->id,
+            "payment_info_id" => $payment_info->id
+         ]);
+
+         return [
+            "status" => "success"
+         ];
+      } else {
+         return [
+            "status" => "failed",
+            "msg" => SherlockResponse::responseCode[$t->response['responseCode']]
+         ];
+      }
+
       //  return $subscription;
 
    }
@@ -164,7 +234,12 @@ class SherlocksController extends Controller
       $data["cardCheckEnrollment"] = $res->id;
       $stripeSession->data = $data;
       $stripeSession->save();
-
+      if($res->response["redirectionStatusCode"]!="00"){
+         return [
+            "status" => "failed",
+            "msg" => SherlockResponse::responseCode[$res->response["redirectionStatusCode"]]
+         ];
+      }
       if (isset($res->response['redirectionUrl'])) {
          $res = $res->response;
          if ($res["redirectionStatusCode"] == "00") {

@@ -14,6 +14,7 @@ import http from "@utils/api/http";
 import { toast } from "react-toastify";
 import { useQueryClient } from "react-query";
 import { API_ENDPOINTS } from "@utils/api/endpoints";
+import dayjs from "dayjs";
 
 type IProps = {
   subscriptions: SubscriptionPaginator | null | undefined;
@@ -73,15 +74,20 @@ const SubscriptionList = ({ subscriptions, onPagination }: IProps) => {
       render: (id, subscription) => {
         const [loading, setLoading] = useState(false);
         const queryClient = useQueryClient();
-        if (!subscription?.subscription_id) {
+        if (dayjs(subscription.current_period_end).diff(dayjs(new Date()), 'days') < 3) {
           return (<Button onClick={() => {
             console.log(subscription);
             setLoading(true);
-            http.post("/sherlock/subscription/active/" + subscription.id).then(() => {
-              toast.success("Prélèvement avec succcès");
+            http.post("/sherlocks/subscription-pay/" + subscription.id).then((res) => {
+              if (res.data.status == "success") {
+                toast.success("Prélèvement avec succcès");
+              } else {
+                toast.error(res.data?.msg);
+
+              }
               queryClient.invalidateQueries(API_ENDPOINTS.SUBSCRIPTION);
             }).catch(() => {
-              toast.error("Il y a une erreur est survenue veuillez consulter votre compte stripe pour en savoir rplus")
+              toast.error("Il y a une erreur est survenue")
             }).finally(() => {
               setLoading(false);
 

@@ -563,5 +563,14 @@
   "text-all-rights-reserved": "tous les droits sont réservés",
   "placeholder-email-subscribe": "Ecrivez votre e-mail ici",
   "text-about-us":"A propos de nous",
-  "widget-title-link-utils":"Liens utiles"
+  "widget-title-link-utils":"Liens utiles",
+  "Enter a card number": "Entrez un numéro de carte",
+  "Enter an expiry date": "Entrez une date de péremption",
+  "Enter a CVC": "Saisir un CVC",
+  "Card number is invalid":  "Le numéro de carte est invalide",
+  "Expiry date is invalid":  "La date d'expiration n'est pas valide",
+  "CVC is invalid":"CVC n'est pas valide",
+  "Expiry month must be between 01 and 12":"Le mois d'expiration doit être compris entre 01 et 12",
+  "Expiry year cannot be in the past": "L'année d'expiration ne peut pas être dans le passé",
+  "Expiry date cannot be in the past":"La date d'expiration ne peut pas être dans le passé"
 }

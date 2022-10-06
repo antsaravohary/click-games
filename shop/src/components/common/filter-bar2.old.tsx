@@ -6,15 +6,14 @@ import "nouislider/distribute/nouislider.css";
 import classNames from 'classnames'
 import { FilterIcon } from '@components/icons/filter-icon'
 import { useRouter } from 'next/router';
-import { useCategoriesQuery } from '@data/category/use-categories.query';
 
 
 const filters = {
   price: [
-    { value: '0', label: '0€ - $25', range: ['0', '25'] },
-    { value: '25', label: '25€ - 50€', range: ['25', '50'] },
-    { value: '50', label: '50€ - 75€', range: ['50', '75'] },
-    { value: '75', label: '75€+', range: ['75', '1000'] },
+    { value: '0', label: '0€ - $25', checked: false },
+    { value: '25', label: '25€ - 50€', checked: false },
+    { value: '50', label: '50€ - 75€', checked: false },
+    { value: '75', label: '75€+', checked: false },
   ],
   color: [
     { value: 'white', label: 'White', checked: false },
@@ -41,10 +40,10 @@ const filters = {
   ],
 }
 const sortOptions = [
-  { name: 'Meilleure note', orderBy: 'note_admin', sortedBy: 'DESC' },
-  { name: 'Le plus récent', orderBy: 'created_at', sortedBy: 'DESC' },
-  { name: 'Prix ​croissant', orderBy: 'price', sortedBy: 'ASC' },
-  { name: 'Prix ​decroissant', orderBy: 'price', sortedBy: 'DESC' },
+  { name: 'Meilleure note', orderBy:'note_admin',sortedBy:'DESC' },
+  { name: 'Le plus récent',  orderBy:'created_at',sortedBy:'DESC' },
+  { name: 'Prix ​croissant', orderBy:'price',sortedBy:'ASC' },
+  { name: 'Prix ​decroissant',  orderBy:'price',sortedBy:'DESC' },
 ]
 const products = [
   {
@@ -117,65 +116,11 @@ const footerNavigation = {
   ],
 }
 export default function FilterBar2() {
-  const [princeRange, setPrinceRange] = useState(-1);
+  const [princeRange, setPrinceRange] = useState(['0', '500']);
+
   const router = useRouter();
   const { pathname, query } = router;
-  const {
-    data,
-    isLoading: loading,
-    error,
-  } = useCategoriesQuery({
-    type: router.pathname === "/grocery-two" ? "grocery" : "furniture",
-  });
-  const onCategoryClick = (slug: string) => {
-    if (selectedQueries === slug) {
-      const { category, ...rest } = query;
-      router.push(
-        {
-          pathname,
-          query: { ...rest },
-        },
-        {
-          pathname,
-          query: { ...rest },
-        },
-        {
-          scroll: false,
-        }
-      );
-      return;
-    }
-    router.push(
-      {
-        pathname,
-        query: { ...query, category: slug },
-      },
-      {
-        pathname,
-        query: { ...query, category: slug },
-      },
-      {
-        scroll: false,
-      }
-    );
-  };
-  const handlePriceChange = (idx: number) => {
-    setPrinceRange(idx);
-    router.push(
-      {
-        pathname,
-        query: { ...query, price: filters.price[idx].range.join(",") },
-      },
-      {
-        pathname,
-        query: { ...query, price: filters.price[idx].range.join(",") },
-      },
-      {
-        scroll: true,
-      });
-    
-  }
-  const selectedQueries = query.category;
+
   return (
     <Disclosure
       as="section"
@@ -199,7 +144,7 @@ export default function FilterBar2() {
           <div className="pl-6">
             <button type="button" className="text-gray-500"
               onClick={() => {
-                setPrinceRange(-1);
+                setPrinceRange([0,500]);
                 router.push(
                   {
                     pathname,
@@ -220,50 +165,39 @@ export default function FilterBar2() {
         </div>
       </div>
       <Disclosure.Panel className="border-t border-gray-200 py-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 gap-x-4 px-4 text-sm sm:px-6 md:gap-x-6 lg:px-8">
+        <div className="mx-auto grid grid-cols-2 gap-x-4 px-4 text-sm sm:px-6 md:gap-x-6 lg:px-8">
           <div className="grid grid-cols-1 gap-y-10 auto-rows-min md:grid-cols-2 md:gap-x-6">
             <fieldset>
-              <legend className="block font-medium">Prix</legend>
+              <legend className="block font-medium">Price</legend>
               <div className="pt-6 space-y-6 sm:pt-4 sm:space-y-4">
-                {filters.price.map((option, optionIdx) => (
-                  <div key={option.value} className="flex items-center text-base sm:text-sm">
-                    <input
-                      id={`price-${optionIdx}`}
-                      name="price[]"
-                      onChange={() => handlePriceChange(optionIdx)}
-                      type="checkbox"
-                      className="flex-shrink-0 h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                      checked={princeRange == optionIdx}
-                    />
-                    <label htmlFor={`price-${optionIdx}`} className="ml-3 min-w-0 flex-1 text-gray-600">
-                      {option.label}
-                    </label>
-                  </div>
-                ))}
+                <Nouislider accessibility={true} range={{ min: 0, max: 500 }} start={[0, 500]} connect={true} onUpdate={(e) => {
+                  setPrinceRange(e);
+                  router.push(
+                    {
+                      pathname,
+                      query: { ...query, price: e.join(",") },
+                    },
+                    {
+                      pathname,
+                      query: { ...query, price: e.join(",") },
+                    },
+                    {
+                      scroll: false,
+                    });
+                }} />
+              </div>
+              <div className="flex justify-between mt-2">
+                <div>
+                  {princeRange[0]} €
+                </div>
+                <div>
+                  {princeRange[1]} €
+                </div>
               </div>
             </fieldset>
-            <fieldset>
-              <legend className="block font-medium">Categories</legend>
-              <div className="space-y-6 sm:pt-4 grid grid-cols-2 sm:space-y-4">
-                {data?.categories?.data.map((category, index) => (
-                  <div key={category.id} className="flex items-center text-base sm:text-sm">
-                    <input
-                      id={`category-${index}`}
-                      name="category"
-                      type="checkbox"
-                      className="flex-shrink-0 h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                      onClick={() => onCategoryClick(category?.slug!)}
-                      checked={ selectedQueries === category.slug}
-                    />
-                    <label htmlFor={`color-${index}`} className="ml-3 min-w-0 flex-1 text-gray-600">
-                      {category.name}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            </fieldset>
+
           </div>
-      
+
         </div>
       </Disclosure.Panel>
       <div className="col-start-1 row-start-1 py-4">
@@ -290,15 +224,15 @@ export default function FilterBar2() {
                     <Menu.Item key={option.name}>
                       {({ active }) => (
                         <a
-                          onClick={() => {
+                          onClick={()=>{
                             router.push(
                               {
                                 pathname,
-                                query: { ...query, orderBy: option.orderBy, sortedBy: option.sortedBy },
+                                query: { ...query, orderBy: option.orderBy,sortedBy:option.sortedBy },
                               },
                               {
                                 pathname,
-                                query: { ...query, orderBy: option.orderBy, sortedBy: option.sortedBy },
+                                query: { ...query, orderBy: option.orderBy,sortedBy:option.sortedBy },
                               },
                               {
                                 scroll: false,

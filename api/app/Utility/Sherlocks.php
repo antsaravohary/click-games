@@ -17,7 +17,8 @@ class Sherlocks
         $this->merchantId = "201040040170001";
     }
 
-    public function cardOrder($data, $user_id){
+    public function cardOrder($data, $user_id)
+    {
         $t = new SherlockTransaction();
         $t->method = "cardOrder";
         $t->status = "pending";
@@ -31,14 +32,13 @@ class Sherlocks
         $data["keyVersion"] = "1";
         $data["seal"] = $seal;
         $t->data = $data;
-        $t->response=$this->send($data,"https://office-server-sherlocks.test.sips-services.com/rs-services/v2/checkout/cardOrder");
+        $t->response = $this->send($data, "https://office-server-sherlocks.test.sips-services.com/rs-services/v2/checkout/cardOrder");
         $t->status = "terminate";
         $t->save();
         return $t;
-
     }
 
-    public function addCard($data,$user_id)
+    public function addCard($data, $user_id)
     {
         $t = new SherlockTransaction();
         $t->method = "addCard";
@@ -52,7 +52,7 @@ class Sherlocks
         $data["keyVersion"] = "1";
         $data["seal"] = $seal;
         $t->data = $data;
-        $t->response=$this->send($data,"https://office-server-sherlocks.test.sips-services.com/rs-services/v2/wallet/addCard");
+        $t->response = $this->send($data, "https://office-server-sherlocks.test.sips-services.com/rs-services/v2/wallet/addCard");
         $t->status = "terminate";
         $t->save();
         return $t;
@@ -72,13 +72,14 @@ class Sherlocks
         $data["keyVersion"] = "1";
         $data["seal"] = $seal;
         $t->data = $data;
-        $t->response=$this->send($data,"https://office-server-sherlocks.test.sips-services.com/rs-services/v2/checkout/cardCheckEnrollment");
+        $t->response = $this->send($data, "https://office-server-sherlocks.test.sips-services.com/rs-services/v2/checkout/cardCheckEnrollment");
         $t->status = "terminate";
         $t->save();
         return $t;
     }
 
-    public function cardValidateAuthenticationAndOrder($data,$user_id,$ref){
+    public function cardValidateAuthenticationAndOrder($data, $user_id, $ref)
+    {
         $t = new SherlockTransaction();
         $t->method = "cardValidateAuthenticationAndOrder";
         $t->status = "pending";
@@ -92,20 +93,43 @@ class Sherlocks
         $data["keyVersion"] = "1";
         $data["seal"] = $seal;
         $t->data = $data;
-        $t->response=$this->send($data,"https://office-server-sherlocks.test.sips-services.com/rs-services/v2/checkout/cardValidateAuthenticationAndOrder");
+        $t->response = $this->send($data, "https://office-server-sherlocks.test.sips-services.com/rs-services/v2/checkout/cardValidateAuthenticationAndOrder");
         $t->status = "terminate";
         $t->save();
         return $t;
     }
 
-    public function walletOrder($data){
+    public function walletOrder($data, $time, $user_id)
+    {
+
+        $t = new SherlockTransaction();
+        $t->method = "walletOrder";
+        $t->status = "pending";
+        $t->user_id = $user_id;
+        $t->save();
+        $data["merchantId"] = $this->merchantId;
+        $data["transactionReference"] = $t->id;
+        ksort($data);
+        $dataStr = $this->flatten_to_sips_payload($data);
+        $seal = $this->compute_seal('HMAC-SHA-256', $dataStr, $this->secretKey);
+        $data["keyVersion"] = "1";
+        $data["seal"] = $seal;
+        $t->data = $data;
+        $t->response= $this->send($data, "https://office-server-sherlocks.test.sips-services.com/rs-services/v2/checkout/walletOrder");
+        $t->save();
+        return $t;
+    }
+    public function test($data)
+    {
         $data["merchantId"] = $this->merchantId;
         ksort($data);
         $dataStr = $this->flatten_to_sips_payload($data);
         $seal = $this->compute_seal('HMAC-SHA-256', $dataStr, $this->secretKey);
         $data["keyVersion"] = "1";
         $data["seal"] = $seal;
-        return $this->send($data,"https://office-server-sherlocks.test.sips-services.com/rs-services/v2/wallet/getWalletData");
+        return $this->send($data, "https://office-server-sherlocks.test.sips-services.com/rs-services/v2/checkout/cardOrder");
+
+       
     }
     function compute_seal_from_string($sealAlgorithm, $data, $secretKey)
     {
@@ -219,8 +243,7 @@ class Sherlocks
         } finally {
 
             curl_close($ch);
-            return (json_decode($response,true));
-
+            return (json_decode($response, true));
         }
     }
 }

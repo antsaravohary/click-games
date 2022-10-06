@@ -230,5 +230,24 @@
   "PICKBAZAR_MESSAGE.EMAIL_SENT_SUCCESSFUL": "Email successfully sent",
   "text-more-info": "More Info",
   "text-price": "Price",
-  "text-no-order-found": "Sorry, No Order Found :("
+  "text-no-order-found": "Sorry, No Order Found :(",
+  "Enter a card number": "Entrez un numéro de carte",
+  "Enter an expiry date": "Entrez une date de péremption",
+ "Enter a CVC": "Saisir un CVC",
+  "Card number is invalid":  "Le numéro de carte est invalide",
+  "Expiry date is invalid":  "La date d'expiration n'est pas valide",
+  "CVC is invalid":"CVC n'est pas valide",
+  "Expiry month must be between 01 and 12":"Le mois d'expiration doit être compris entre 01 et 12",
+  "Expiry year cannot be in the past": "L'année d'expiration ne peut pas être dans le passé",
+  "Expiry date cannot be in the past":"La date d'expiration ne peut pas être dans le passé"
+  
+ 
+ 
+
+
+
+  
+  
+ 
+  
 }

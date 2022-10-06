@@ -13,7 +13,7 @@ class CronJob extends Command
      *
      * @var string
      */
-    protected $signature = 'click-univers:cron';
+    protected $signature = 'click-games:cron';
 
     /**
      * The console command description.

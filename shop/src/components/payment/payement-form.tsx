@@ -28,6 +28,9 @@ import Payment3Dsecure from "./payment-3dsecure";
 import { apiBaseUrl } from "next-auth/client/_utils";
 import { Dialog, Transition } from "@headlessui/react";
 import ModalP from "./paymentModal";
+import { useCreditCardValidator } from "react-creditcard-validator";
+import { useTranslation } from "next-i18next";
+import { toast } from "react-toastify";
 
 type Iprops = {
   amount: number;
@@ -36,11 +39,26 @@ type Iprops = {
   click_game_plus?: boolean;
 };
 const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => {
+  function expDateValidate(month: string, year: string) {
+    if (Number(year) > 2035) {
+      return 'Expiry Date Year cannot be greater than 2035';
+    }
+    return;
+  }
+
+  const {
+    getCardNumberProps,
+    getCardImageProps,
+    getCVCProps,
+    getExpiryDateProps,
+    meta: { erroredInputs }
+  } = useCreditCardValidator();
+  const { t } = useTranslation("common");
   const [future_use, setFutureUse] = useState(false);
 
   const [preview, setpreview] = useState(false);
   const [issuer, setissuer] = useState("");
-  const [name, setname] = useState("SOANY");
+  const [name, setname] = useState("");
   const [focused, setfocused] = useState("number");
   const [error, setError] = useState<string | null>(null);
   const [errorCard, setErrorCard] = useState<string | null>(null);
@@ -83,24 +101,36 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
     }
   }
   const handlePay = () => {
+    if(erroredInputs.cardNumber||erroredInputs.cvc||erroredInputs.expiryDate){
+      return;
+    }
     setProcessing(true);
-    http.post("/sherlocks/payment-product", { ...cardInput, data: { ...data, clickGamePlus: true } }).then((response) => {
+    
+    http.post("/sherlocks/payment-product", { ...cardInput,
+      cardExpiry:"20"+cardInput.cardExpiry.split("  ")[1]+cardInput.cardExpiry.split("  ")[0],
+      data: { ...data, clickGamePlus: true } }).then((response) => {
       setResponse(response.data);
       switch (response.data["status"]) {
         case "failed":
-          console.log("failed", response.data["msg"]);
+          toast.error( response.data["msg"]);
+          setProcessing(false);
+          setProcessing(false);
+          break;
         case "redirect_3dsecure":
           setAuth(true);
           break;
 
         default:
-        
+          setProcessing(false);
           break;
       }
       /* setAuth(true);
        */
     }
-    ).catch((err) => console.error(err))
+    ).catch((err) => {
+      toast.error("Une erreur est survenue");
+      setProcessing(false);
+    })
     console.log("test", { ...cardInput, ...data });
   }
   const { price } = usePrice({
@@ -118,7 +148,7 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
     }
   };
   return (
-    <div className="pt-8 " id="stripe-paiement">
+    <div className="pt-8 max-w-2xl mx-auto" id="stripe-paiement">
       <div className="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-700">
         <div className="w-full pt-1 pb-5">
           <div className="bg-accent text-white overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg flex justify-center items-center">
@@ -173,37 +203,36 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
               </label>
               <div>
                 <Input
+                  {...getCardNumberProps({ onChange: (e) => setCardInput({ ...cardInput, cardNumber: e.target.value }), onFocus: () => setfocused("number") })}
                   disabled={processing}
-                  className="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors"
-                  onFocus={() => setfocused("number")}
-                  placeholder="Numéro de carte"
+                  variant="outline"
+                  className="w-full my-2 flex-1"
                   name="cardNumber"
-                  value={cardInput.cardNumber}
-                  onChange={(e) => setCardInput({ ...cardInput, cardNumber: e.target.value })}
+                  error={erroredInputs.cardNumber && t(erroredInputs.cardNumber)}
+
                 />
               </div>
             </div>
-            <div className="mb-3 -mx-2 flex items-end">
-              <div className="px-2 w-1/2">
+            <div className="mb-3 -mx-2 flex items-start">
+              <div className="px-2 flex-1">
                 <Input
                   disabled={processing}
-                  value={cardInput.cardExpiry}
-                  className="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors  flex-1"
+                  {...getExpiryDateProps({ onChange: (e) => setCardInput({ ...cardInput, cardExpiry: e.target.value.replace("/","") }), onFocus: () => setfocused("expiry") })}
+                  variant="outline"
+                  className="w-full my-2 flex-1"
                   name="CardExpiry"
-                  placeholder="Date d’éxpiration"
-                  onChange={(e) => setCardInput({ ...cardInput, cardExpiry: e.target.value })}
-                  onFocus={() => setfocused("expiry")}
+                  error={erroredInputs.expiryDate && t(erroredInputs.expiryDate)}
                 />
               </div>
-              <div className="px-2 w-1/2">
+              <div className="px-2 flex-1">
                 <Input
                   disabled={processing}
+                  {...getCVCProps({ onChange: (e) => setCardInput({ ...cardInput, cardCvc: e.target.value }), onFocus: () => setfocused("cvc") })}
                   name="cardCvc"
-                  placeholder="code cvc"
-                  className="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors  flex-1"
-                  onChange={(e) => setCardInput({ ...cardInput, cardCvc: e.target.value })}
-                  value={cardInput.cardCvc}
-                  onFocus={() => setfocused("cvc")}
+                  variant="outline"
+                  className="w-full my-2 flex-1"
+                  error={erroredInputs.cvc && t(erroredInputs.cvc)}
+                
                 />
               </div>
             </div>
@@ -249,7 +278,7 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
           </div>
         )}
       </div>
-      {auth && <Payment3Dsecure url={response.url}/>}
+      {auth && <Payment3Dsecure url={response.url} />}
     </div >
   );
 };
