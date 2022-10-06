@@ -13,8 +13,8 @@ class Sherlocks
 
     public function __construct()
     {
-        $this->secretKey = "rxSP61eeP_oNi5TxCD7Ngy9YcwC8MLw6OlmFGGcsY54";
-        $this->merchantId = "201040040170001";
+        $this->secretKey = env("SHERLOCK_SECRET_KEY");
+        $this->merchantId = env("SHERLOCK_MERCHANT_ID");
     }
 
     public function cardOrder($data, $user_id)
