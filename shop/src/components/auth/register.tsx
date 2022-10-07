@@ -74,6 +74,7 @@ const RegisterForm = () => {
             const ReactPixel=require("react-facebook-pixel").default;
             ReactPixel.trackSingle(`${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL}`,'Subscribe',null);
             authorize();
+            router.push("/");
             closeModal();
             return;
           }

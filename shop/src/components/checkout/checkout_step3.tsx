@@ -35,6 +35,7 @@ const CheckoutStep3 = ({ me, shipping_class, setStep }: props) => {
         default:
             break;
     }
+    console.log("shipping_class",shipping_class);
     return (
         <div className="p-5 md:p-4 h-full flex flex-col">
             <ShippingMode disabled={false} />
@@ -51,10 +52,15 @@ const CheckoutStep3 = ({ me, shipping_class, setStep }: props) => {
             </div>
             <div className="mt-auto flex justify-between">
                 <Button onClick={() => {
+               
                     setStep(2);
                 }}>Retour</Button>
-                <Button
+                <Button disabled={shipping_class==null}
+                
                     onClick={() => {
+                        if(shipping_class==null){
+                            return;
+                        }
                         setStep(4);
                     }}
                 >Suivant</Button>

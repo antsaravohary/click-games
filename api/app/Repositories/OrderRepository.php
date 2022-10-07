@@ -138,7 +138,7 @@ class OrderRepository extends BaseRepository
         $discount = $this->calculateDiscount($orderInput);
         if ($discount) {
             $orderInput['paid_total'] = $orderInput['amount'] + $orderInput['sales_tax'] + $orderInput['delivery_fee'] - $orderInput;
-            $orderInput['total'] = $orderInput['amount'] + $orderInput['sales_tax'] + $orderInput['delivery_fee'] - $orderInput;
+            $orderInput['total'] = $orderInput['amount'] +$orderInput['sales_tax']+ $orderInput['delivery_fee'] - $orderInput;
             $orderInput['discount'] =  $discount;
         } else {
             $orderInput['paid_total'] = $orderInput['amount'] + $orderInput['sales_tax'] + $orderInput['delivery_fee'];

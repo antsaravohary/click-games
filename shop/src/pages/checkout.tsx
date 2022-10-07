@@ -247,13 +247,15 @@ export default function CheckoutPage() {
   return (
     <div className="py-8 px-4 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20" >
       <div className="grid grid-cols-4 gap-4">
-        <div className="col-span-4 md:col-span-1"> <RadioGroup value={selected} onChange={setSelected}>
+        <div className="col-span-4 md:col-span-1"> <RadioGroup value={selected}    onChange={setSelected}>
           <RadioGroup.Label className="sr-only">Server size</RadioGroup.Label>
           <div className="space-y-4">
             {plans.map((plan) => (
               <RadioGroup.Option
+              disabled={true}
                 key={plan.name}
                 value={plan}
+                
                 className={({ checked, active }) =>
                   classNames(
                     checked ? 'border-transparent border-accent' : 'border-gray-300  hidden md:flex',

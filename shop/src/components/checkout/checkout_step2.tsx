@@ -27,7 +27,9 @@ const CheckoutStep2 = ({ me, setStep }: props) => {
                     setStep(1);
                 }}>Retour</Button>
                 <Button
+                    disabled={me?.address?.length == 0}
                     onClick={() => {
+                       if(me?.address?.length == 0) {return;}
                         setStep(3);
                     }}
                 >Suivant</Button>

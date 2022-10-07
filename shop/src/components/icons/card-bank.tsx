@@ -1,6 +1,6 @@
 export const CardBank = ({ ...props }) => {
   return (
-<svg version="1.1" id="Warstwa_3" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 430 430" style={{enableBackground: 'new 0 0 430 430'}} xmlSpace="preserve">
+<svg { ...props } version="1.1" id="Warstwa_3" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 430 430" style={{enableBackground: 'new 0 0 430 430'}} xmlSpace="preserve">
   <style type="text/css" dangerouslySetInnerHTML={{__html: "\n\t.st0{fill:#5c94d0;}\n\t.st1{fill:#121331;}\n\t.st2{fill:none;}\n\t.st3{fill:#5c94d0;fill-opacity:0;}\n" }} />
   <g>
     <path className="st0" d="M326.13,356.34c-1.63,0-3.27-0.17-4.91-0.52L68.16,302.04c-3.05-0.65-5.9-1.88-8.49-3.67v0
