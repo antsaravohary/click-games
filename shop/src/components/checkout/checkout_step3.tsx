@@ -39,7 +39,7 @@ const CheckoutStep3 = ({ me, shipping_class, setStep }: props) => {
     return (
         <div className="p-5 md:p-4 h-full flex flex-col">
             <ShippingMode disabled={false} />
-            <div className="flex mt-8 items-center">
+            <div className="flex mt-8 items-center hidden">
                 <DeliveryIcon height="42" width="42" />
                 <div className="ml-4 flex">
                     <p>

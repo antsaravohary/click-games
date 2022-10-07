@@ -148,7 +148,7 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
   };
   return (
     <div className="pt-8 max-w-2xl mx-auto" id="stripe-paiement">
-      <div className="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-700">
+      <div className="w-full mx-auto rounded-lg bg-white shadow-lg p-2 md:p-5 sm:p-0 text-gray-700">
         <div className="w-full pt-1 pb-5">
           <div className="bg-accent text-white overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg flex justify-center items-center">
             <Lock width="48" heigth="48" />
@@ -175,16 +175,21 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
                 </label>
               </div>
             </div>
+            <div className="max-w-16">
             <Card
+              
               name={name}
               placeholders={{ name: "NOM Prénom" }}
               number={cardInput.cardNumber}
               expiry={cardInput.cardExpiry}
               cvc={cardInput.cardCvc}
+              
               preview={false}
               issuer={issuer}
               focused={focused}
             />
+            </div>
+           
             <div className="mb-3">
               <Input
                 disabled={processing}

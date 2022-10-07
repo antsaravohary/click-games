@@ -246,7 +246,7 @@ export default function CheckoutPage() {
     return <Loader />;
   }
   return (
-    <div className="py-8 px-4 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20" >
+    <div className="py-8 px-2 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20" >
       <div className="grid grid-cols-4 gap-4">
         <div className="col-span-4 md:col-span-1"> <RadioGroup value={selected} onChange={setSelected}>
           <RadioGroup.Label className="sr-only">Server size</RadioGroup.Label>
@@ -300,7 +300,7 @@ export default function CheckoutPage() {
             ))}
           </div>
         </RadioGroup></div>
-        <div className="col-span-4 md:col-span-3 bg-white p-4 rounded">
+        <div className="col-span-4 md:col-span-3 bg-white p-1 md:p-4 rounded">
           {selected?.step == 1 && <CheckoutCart setStep={(e: number) => setSelected(plans[e])} setClickGamePlus={setClickGamePlus} />}
           {selected?.step == 2 && <CheckoutStep1 setStep={(e: number) => setSelected(plans[e])} setClickGamePlus={setClickGamePlus} />}
           {selected?.step == 3 && <CheckoutStep2 setStep={(e: number) => setSelected(plans[e])} me={data?.me} />}

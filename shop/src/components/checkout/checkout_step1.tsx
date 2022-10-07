@@ -10,7 +10,7 @@ type props = {
 const CheckoutStep1 = ({ setStep, setClickGamePlus }: props) => {
     return (
         <div className=" flex flex-col h-full">
-            <img className="mx-auto" style={{ maxWidth: "520px" }} src="/click_games_plus_detail.png" />
+            <img className="mx-auto"  src="/click_games_plus_detail.png" />
            {/**<div className=" text-lg font-medium text-gray-900 mx-auto">  <AnimatePresence>
               <ClickGamePlus
                 disabled={false}
@@ -26,7 +26,7 @@ const CheckoutStep1 = ({ setStep, setClickGamePlus }: props) => {
                 }}>
                     <span className="mb-1">Suivant</span> <ArrowNext /></Button>
             </div>
-            <div className="mt-auto ml-auto mb-8">
+            <div className="mt-8 ml-auto mb-0">
                 <button onClick={() => {
                     setClickGamePlus(false);
                     setStep(2);
