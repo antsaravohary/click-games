@@ -145,7 +145,7 @@ export default function HomePage() {
       <div className="w-fulll overflow-hidden lock lg:mt-6">
         <BannerShort banner={getPageData.banner} preview={2} className="max-h-140" />
         <BannerShort banner={getPageData.banner1} preview={3} className="max-h-160 mt-4" />
-        <BannerShort banner={getPageData.banner2} preview={3} className="max-h-160 mt-4" />
+       
         {/*<FeatureGrid className="" />*/}
       </div>
       {/*width > 1280 && <BakeryCategory />*/}
