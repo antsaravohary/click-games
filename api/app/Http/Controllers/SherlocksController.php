@@ -93,7 +93,7 @@ class SherlocksController extends Controller
          
       ];
       $sherlock = new Sherlocks();
-      return $sherlock->test($data);
+      return["test"=> $sherlock->test($data)];
 
       return view("sherlock.error_payment", ["code" => 50, "msg" => "hello world"]);
    }
