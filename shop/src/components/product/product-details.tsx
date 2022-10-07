@@ -41,6 +41,7 @@ import { Lock } from "@components/icons/lock";
 import VisaIcon from "@components/icons/icons/visa";
 import MasterIcon from "@components/icons/icons/master";
 import AmericanExpressIcon from "@components/icons/icons/american_express";
+import CarteBleuIcon from "@components/icons/icons/carbe-bleu";
 
 type Props = {
   product: any;
@@ -298,6 +299,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                         <VisaIcon />
                         <MasterIcon />
                         <AmericanExpressIcon />
+                        <CarteBleuIcon/>
                       </div>
                     </div>
                   )}

@@ -154,7 +154,7 @@ export default function CheckoutPage() {
     return {
       orderInput: {
         status: orderStatusData?.order_statuses?.data[0]?.id ?? 1,
-        amount: subtotal,
+        amount: subtotal-checkoutData?.total_tax,
         coupon_id: coupon?.id,
         discount: discount ?? 0,
         paid_total: totalF,

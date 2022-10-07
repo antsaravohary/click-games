@@ -71,7 +71,7 @@ export const sitePages: Record<PageName, PageInfo> = {
         {
           id: 2,
           title: "Buy One Get One Free",
-          image: "/banner/banner-5.png",
+          image: "/banner/banner-6.png",
         },
         {
           id: 3,

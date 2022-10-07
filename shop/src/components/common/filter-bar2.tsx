@@ -220,9 +220,9 @@ export default function FilterBar2() {
         </div>
       </div>
       <Disclosure.Panel className="border-t border-gray-200 py-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 gap-x-4 px-4 text-sm sm:px-6 md:gap-x-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-y-10 auto-rows-min md:grid-cols-2 md:gap-x-6">
-            <fieldset>
+        <div className="max-w-7xl mx-auto  px-4 text-sm sm:px-6 md:gap-x-6 lg:px-8">
+          <div className="grid w-full grid-cols-1 gap-y-5  md:grid-cols-3 md:gap-x-6">
+            <fieldset className="">
               <legend className="block font-medium">Prix</legend>
               <div className="pt-6 space-y-6 sm:pt-4 sm:space-y-4">
                 {filters.price.map((option, optionIdx) => (
@@ -242,7 +242,7 @@ export default function FilterBar2() {
                 ))}
               </div>
             </fieldset>
-            <fieldset>
+            <fieldset  className="">
               <legend className="block font-medium">Categories</legend>
               <div className="space-y-6 sm:pt-4 grid grid-cols-2 sm:space-y-4">
                 {data?.categories?.data.map((category, index) => (

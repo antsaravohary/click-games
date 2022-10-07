@@ -8,6 +8,11 @@ import { CardIcon } from '@components/icons/CardIcon';
 import { GuranteeIcon } from '@components/icons/gurantee-icon';
 import Image from 'next/image';
 import { useArticlesQuery } from '@data/article/use-articles.query';
+import VisaIcon from '@components/icons/icons/visa';
+import MasterIcon from '@components/icons/icons/master';
+import AmericanExpressIcon from '@components/icons/icons/american_express';
+import CarteBleuIcon from '@components/icons/icons/carbe-bleu';
+import { CardBank } from '@components/icons/card-bank';
 const { widgets, payment } = footer;
 const FooterItems = ({ children, title, description, Icon }: PropsFooter) => (
   <div className="lg:col-span-2 md:col-span-4 col-span-8 flex justify-start flex-col items-center max-w-xs">
@@ -34,10 +39,16 @@ const Footer: React.FC = () => {
           <FooterItems
             title="Paiement sécurisé"
             description="Paiement sécurisé par Carte bancaire"
-            //Icon={<CardIcon width="32" height="32" color='#000' />}
-            Icon={<img src="/icons/gif/coins.gif" className='w-16 h-16' style={{marginBottom:"-20px"}} />}
+            //Icon={<CardIcon width="32" height="32" color='#000' />}/
+            Icon={<CardBank/>}
           >
-            <ul className="flex flex-wrap mt-2 justify-center items-center space-s-4 sm:space-s-5 lg:space-s-7 -mb-1.5 md:mb-0 mx-auto md:mx-0 pt-3.5 md:pt-0">
+             <div className="flex flex-wrap mt-2 justify-center items-center space-s-1 sm:space-s-1 lg:space-s-1 -mb-1.5 md:mb-0 mx-auto md:mx-0 pt-3.5 md:pt-0">
+                        <VisaIcon />
+                        <MasterIcon />
+                        <AmericanExpressIcon />
+                        <CarteBleuIcon/>
+                      </div>
+            {/*<ul className="flex flex-wrap mt-2 justify-center items-center space-s-4 sm:space-s-5 lg:space-s-7 -mb-1.5 md:mb-0 mx-auto md:mx-0 pt-3.5 md:pt-0">
               {payment?.map((item) => (
                 <li
                   className="mb-2 md:mb-0 transition hover:opacity-80 inline-flex"
@@ -58,7 +69,7 @@ const Footer: React.FC = () => {
                   </a>
                 </li>
               ))}
-            </ul>
+              </ul>*/}
           </FooterItems>
           <FooterItems
             title="Protection acheteur"

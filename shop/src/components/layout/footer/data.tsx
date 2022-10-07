@@ -27,11 +27,6 @@ export const footer = {
         title: 'C\est quoi le ClickGames+',
         path: '/terms/what_is_clickgames_plus',
       },
-      {
-        id: 6,
-        title: 'C\est quoi le ClickGames+',
-        path: '/Orders',
-      },
       
         /* {
            id: 3,

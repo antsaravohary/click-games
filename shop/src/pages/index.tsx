@@ -150,12 +150,7 @@ export default function HomePage() {
       {/*width > 1280 && <BakeryCategory />*/}
       {width > 1280 && <CategoryCloud/>}
       
-      <div className="flex flex-1 bg-gray-100">
-
-        {/**  <div className="sticky top-22 h-full lg:w-[380px] hidden xl:block bg-gray-100 hidden">
-          <BoxCategory />
-        </div>*/}
-
+      <div className=" bg-gray-100">
         <main className="w-full mx-4 overflow-hidden block lg:mt-6">
           {width < 1280 && width > 684 && <FilterBarLayoutTwo />}
           <FilterBar2/>

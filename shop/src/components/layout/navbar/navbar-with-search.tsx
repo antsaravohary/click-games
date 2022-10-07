@@ -13,6 +13,8 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { PlusIcon } from "@components/icons/plus-icon";
 import CartCounterTop from "@components/cart/cart-counter-top";
+import { PhoneIcon } from "@components/icons/phone";
+import { useSettings } from "@contexts/settings.context";
 
 const AuthorizedMenu = dynamic(
   () => import("@components/layout/navbar/authorized-menu"),
@@ -25,6 +27,7 @@ const NavbarWithSearch = () => {
   const { t } = useTranslation("common");
   const { asPath } = useRouter();
   const { data } = useTypesQuery();
+  const settings=useSettings();
 
   const slugs = data?.types?.map((item) => item.slug);
   const currentPath = asPath
@@ -73,14 +76,15 @@ const NavbarWithSearch = () => {
                   }
                 )}
               >
-                <Link href={"/announce/create"} className="hidden inline-flex items-center justify-center px-2 bg-yellow-500 rounded mr-2 ">
-                  <span className='border border-2 border-whhite mr-2'>
-                    <PlusIcon width="32" color="white" />
+              
+                <Search label={t("text-search-label")} variant="minimal" />
+                <div  className=" inline-flex items-center justify-center px-2  rounded mr-2 ">
+                  <span className=' mr-2'>
+                  <PhoneIcon height="32" width="32" />
                   </span>
 
-                  <span className="font-bold une annonce text-lg whitespace-nowrap">Deposer une annonce</span>
-                </Link>
-                <Search label={t("text-search-label")} variant="minimal" />
+                  <span className="font-bold une annonce text-lg whitespace-nowrap">{settings?.contact}</span>
+                </div>
               </div>
             </div>
             <ul className="hidden lg:flex items-center flex-shrink-0 space-s-10">

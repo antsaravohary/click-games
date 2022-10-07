@@ -33,7 +33,7 @@ const Widgets: React.FC<WidgetsProps> = ({ widgets }) => {
        */}
        </div>
       
-      <div className='d-flex justify-content-center'>
+      <div className='d-flex justify-content-center hidden'>
         <img className="mt-2" style={{ width: '200px' }} src='/logo/logo-stripe.png' />
       </div>
     </Container>

@@ -60,7 +60,7 @@ const BannerShort: React.FC<BannerProps> = ({ banner, className,preview}) => {
             {banner?.gallery?.map((item) => (
               <SwiperSlide className="mx-2 cursor-pointer" key={item.id} onClick={()=>{if(item?.url)router.push(item?.url)}}>
                 <img
-                  className="w-full h-auto"
+                  className="w-full h-auto rounded-lg"
                   src={item.image ?? "/banner/grocery.png"}
                   alt={item.title}
                 />

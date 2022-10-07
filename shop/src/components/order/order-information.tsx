@@ -36,7 +36,7 @@ const OrderInformation = (props: Props) => {
   const base_amount = calculateTotal(available_items);
   const { price: sub_total } = usePrice(
     checkoutData && {
-      amount: base_amount,
+      amount: base_amount-checkoutData?.total_tax,
     }
   );
   const { price: discountPrice } = usePrice(

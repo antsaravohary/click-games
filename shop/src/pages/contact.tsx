@@ -11,6 +11,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { SEO } from "@components/seo";
 import FooterOne from "@components/layout/footer-one";
+import { useSettings } from "@contexts/settings.context";
 
 const contactFormSchema = yup.object().shape({
   name: yup.string().required("error-name-required"),
@@ -35,6 +36,7 @@ export const ContactPage = () => {
     mutate(values);
     reset();
   }
+  const settings=useSettings();
   return (
     <>
       <SEO title="Contact" />
@@ -71,7 +73,7 @@ export const ContactPage = () => {
               </span>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-body">
-                +33 6 60 94 24 96
+                {settings?.contact}
                 </span>
               </div>
             </div>

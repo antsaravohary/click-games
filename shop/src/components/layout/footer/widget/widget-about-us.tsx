@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Text from '@components/ui/text';
 import { PhoneIcon } from '@components/icons/phone';
 import { EmailIcon } from '@components/icons/sidebar';
+import { useSettings } from '@contexts/settings.context';
 
 interface AboutProps {
   className?: string;
@@ -21,7 +22,7 @@ interface AboutProps {
 }
 const WidgetAbout: React.FC<AboutProps> = ({ social, className }) => {
   const { t } = useTranslation();
-
+const settings=useSettings();
   return (
     <div className={`pb-10 sm:pb-0 ${className}`}>
       <div className="flex flex-col text-center sm:text-start max-w-[350px] mx-auto sm:ms-0 pb-6 sm:pb-5">
@@ -32,7 +33,7 @@ const WidgetAbout: React.FC<AboutProps> = ({ social, className }) => {
         
         <div className='mt-2 text-sm flex items-center'>
           <div>  <PhoneIcon width="15" height="15" /></div>
-          <div className='ml-2'>+33 6 60 94 24 96</div></div>
+          <div className='ml-2'>{settings?.contact}</div></div>
 
         <div className=' text-sm flex items-center'>
           <div>  <EmailIcon width="15" height="15" /></div>
