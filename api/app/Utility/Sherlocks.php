@@ -122,6 +122,27 @@ class Sherlocks
         $t->save();
         return $t;
     }
+    public function duplicate($data, $time, $user_id)
+    {
+
+        $t = new SherlockTransaction();
+        $t->method = "duplicate";
+        $t->status = "pending";
+        $t->user_id = $user_id;
+        $t->save();
+        $data["merchantId"] = $this->merchantId;
+        $data["transactionReference"] = $t->id;
+        ksort($data);
+        $dataStr = $this->flatten_to_sips_payload($data);
+        $seal = $this->compute_seal('HMAC-SHA-256', $dataStr, $this->secretKey);
+        $data["keyVersion"] = "1";
+        $data["seal"] = $seal;
+        $t->data = $data;
+        $t->response = $this->send($data, $this->url_server."/rs-services/v2/cashManagement/duplicate");
+        $t->status = "terminate";
+        $t->save();
+        return $t;
+    }
     public function test($data)
     {   
 
