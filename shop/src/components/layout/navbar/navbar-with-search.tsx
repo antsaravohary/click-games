@@ -78,7 +78,7 @@ const NavbarWithSearch = () => {
               >
               
                 <Search label={t("text-search-label")} variant="minimal" />
-                <div  className=" inline-flex items-center justify-center px-2  rounded mr-2 ">
+                <div  className=" inline-flex items-center justify-center px-2  ml-4 rounded mr-2 ">
                   <span className=' mr-2'>
                   <PhoneIcon height="32" width="32" />
                   </span>

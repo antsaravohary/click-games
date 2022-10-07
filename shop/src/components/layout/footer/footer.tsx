@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
                         <VisaIcon />
                         <MasterIcon />
                         <AmericanExpressIcon />
-                        <CarteBleuIcon/>
+                        <CarteBleuIcon  className='w-10'/>
                       </div>
             {/*<ul className="flex flex-wrap mt-2 justify-center items-center space-s-4 sm:space-s-5 lg:space-s-7 -mb-1.5 md:mb-0 mx-auto md:mx-0 pt-3.5 md:pt-0">
               {payment?.map((item) => (

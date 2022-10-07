@@ -299,7 +299,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                         <VisaIcon />
                         <MasterIcon />
                         <AmericanExpressIcon />
-                        <CarteBleuIcon/>
+                        <CarteBleuIcon   className='w-10'/>
                       </div>
                     </div>
                   )}
