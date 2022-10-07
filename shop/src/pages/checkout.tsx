@@ -44,12 +44,13 @@ import CheckoutStep4 from "@components/checkout/checkout_step4";
 import { getIcon } from "@utils/get-icon";
 import * as listIcon from "@components/icons";
 import CheckoutCart from "@components/checkout/checkout_cart";
+import { CardBank } from "@components/icons/card-bank";
 const plans = [
-  { name: 'Panier', step: 1, icon: '  <lord-icon style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/zzcjjxew.json"trigger="loop-on-hover" colors="primary:#1e1c3a" class="lord-icon"></lord-icon>' },
-  { name: 'Bonus ClickGames+', step: 2, icon: ' <lord-icon  style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/nkmsrxys.json" trigger="loop-on-hover" colors="primary:#1e1c3a,secondary:#109121,tertiary:#ebe6ef,quaternary:#646e78"  className="lord-icon"> </lord-icon>' },
-  { name: 'Adresse de livraison', step: 3, icon: '  <lord-icon style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/zzcjjxew.json"trigger="loop-on-hover" colors="primary:#1e1c3a" class="lord-icon"></lord-icon>' },
-  { name: 'Modes de livraison', step: 4, icon: '    <lord-icon style="width:70px;height:70px" target=".nav-item" src="https://cdn.lordicon.com/uetqnvvg.json"trigger="loop-on-hover"colors="primary:#1e1c3a,secondary:#109121,tertiary:#ebe6ef,quaternary:#646e78"  class="lord-icon"> </lord-icon>' },
-  { name: 'Paiement', step: 5, icon: '   <lord-icon style="width:70px;height:70px"  target=".nav-item" src="https://cdn.lordicon.com/qhviklyi.json" trigger="loop-on-hover" colors="primary:#1e1c3a,secondary:#109121" class="lord-icon"> </lord-icon>' },
+  { name: 'Panier', step: 1, icon: ' <img class="w-12" src="/icons/panier.png"/>' },
+  { name: 'Bonus ClickGames+', step: 2, icon: '<img class="w-16" src="/icons/gif/confetti.gif"/>' },
+  { name: 'Adresse de livraison', step: 3, icon: ' <img class="w-16" src="/icons/gif/location-pin-outline.gif"/>' },
+  { name: 'Modes de livraison', step: 4, icon: '<img class="w-16" src="/icons/gif/truck-delivery.gif"/>' },
+  { name: 'Paiement', step: 5, iconComponentd: <CardBank height="60" /> },
 ]
 declare namespace JSX {
   interface IntrinsicElements {
@@ -154,7 +155,7 @@ export default function CheckoutPage() {
     return {
       orderInput: {
         status: orderStatusData?.order_statuses?.data[0]?.id ?? 1,
-        amount: subtotal-checkoutData?.total_tax,
+        amount: subtotal - checkoutData?.total_tax,
         coupon_id: coupon?.id,
         discount: discount ?? 0,
         paid_total: totalF,
@@ -185,7 +186,7 @@ export default function CheckoutPage() {
       ),
     };
   };
-  
+
   const onPaySuccess = (data: any) => {
     const ReactPixel = require("react-facebook-pixel").default;
     ReactPixel.trackSingle(
@@ -247,20 +248,20 @@ export default function CheckoutPage() {
   return (
     <div className="py-8 px-4 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20" >
       <div className="grid grid-cols-4 gap-4">
-        <div className="col-span-4 md:col-span-1"> <RadioGroup value={selected}    onChange={setSelected}>
+        <div className="col-span-4 md:col-span-1"> <RadioGroup value={selected} onChange={setSelected}>
           <RadioGroup.Label className="sr-only">Server size</RadioGroup.Label>
           <div className="space-y-4">
             {plans.map((plan) => (
               <RadioGroup.Option
-              disabled={true}
+                disabled={true}
                 key={plan.name}
                 value={plan}
-                
+
                 className={({ checked, active }) =>
                   classNames(
                     checked ? 'border-transparent border-accent' : 'border-gray-300  hidden md:flex',
                     active ? 'ring-2 ring-indigo-500' : '',
-                    'relative block bg-white border rounded-lg shadow-sm px-6 py-4 cursor-pointer   sm:flex sm:justify-between focus:outline-none'
+                    'relative block bg-white border rounded-lg shadow-sm px-6 py-4 cursor-pointer   flex justify-between focus:outline-none'
                   )
                 }
               >
@@ -280,9 +281,10 @@ export default function CheckoutPage() {
 
                     </div>
                     <RadioGroup.Description as="div" className="">
-                      <div
+                      {plan?.icon ? <div
                         dangerouslySetInnerHTML={{ __html: plan.icon }}
-                      />
+                      /> : plan.iconComponentd}
+
                     </RadioGroup.Description>
                     <div
                       className={classNames(

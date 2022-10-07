@@ -22,7 +22,7 @@ const CheckoutStep2 = ({ me, setStep }: props) => {
                 type="billing"
             />
 
-            <div className="mt-auto flex justify-between">
+            <div className=" mt-4 flex justify-between">
                 <Button onClick={() => {
                     setStep(1);
                 }}>Retour</Button>

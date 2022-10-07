@@ -107,7 +107,7 @@ export const calculatePaidTotal = (
   discount?: number
 ) => {
   //let paidTotal = totalAmount +/* tax */ shipping_charge;
-  let paidTotal = totalAmount + shipping_charge;
+  let paidTotal = totalAmount +/* tax */ shipping_charge;
   if (discount) {
     paidTotal = paidTotal - discount;
   }

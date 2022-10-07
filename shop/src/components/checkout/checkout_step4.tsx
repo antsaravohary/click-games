@@ -23,7 +23,7 @@ const CheckoutStep4 = ({ me, shipping_class, clickGamePlus, dataCreateOrder, tot
   return (
     <div className="py-8 px-4 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20" >
       <div className="grid grid-cols-4 gap-4">
-        <div className="col-span-4 md:col-span-3">
+        <div className="col-span-4 order-2 md:col-span-3 md:order-1">
           {<PaymentForm
             click_game_plus={
               clickGamePlus && !me?.subscription?.status
@@ -36,7 +36,7 @@ const CheckoutStep4 = ({ me, shipping_class, clickGamePlus, dataCreateOrder, tot
             amount={totalF}
           />}
         </div>
-        <div className="w-full col-span-4 md:col-span-1 ">
+        <div className="w-full order-1 col-span-4 md:col-span-1 md:order-1">
           <OrderInformation />
         </div>
       </div>

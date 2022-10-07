@@ -50,7 +50,7 @@ const CheckoutStep3 = ({ me, shipping_class, setStep }: props) => {
                 </div>
                 <Tooltip tooltipText={"Les délais de livraison sont indicatifs de certaines commandes, susceptibles d'avoir des délais de livraison plus longs"} children={<InfoIcon height="16" width="16" />} />
             </div>
-            <div className="mt-auto flex justify-between">
+            <div className="mt-4 flex justify-between">
                 <Button onClick={() => {
                
                     setStep(2);
