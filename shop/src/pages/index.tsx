@@ -152,7 +152,7 @@ export default function HomePage() {
       {width > 1280 && <CategoryCloud/>}
       
       <div className=" bg-gray-100">
-        <main className="w-full mx-4 overflow-hidden block lg:mt-6">
+        <main className="w-full lg:px-4 overflow-hidden block lg:mt-6">
           {width < 1280 && width > 684 && <FilterBarLayoutTwo />}
           <FilterBar2/>
           <Element name="grid">

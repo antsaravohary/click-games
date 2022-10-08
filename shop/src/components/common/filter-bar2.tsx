@@ -180,7 +180,7 @@ export default function FilterBar2() {
     <Disclosure
       as="section"
       aria-labelledby="filter-heading"
-      className="relative z-10 border-t border-b border-gray-200 bg-white grid items-center mx-2"
+      className="relative z-10 border-t mt-2 rounded border-b border-gray-200 bg-white grid items-center mx-2"
     >
       <h2 id="filter-heading" className="sr-only">
         Filters
