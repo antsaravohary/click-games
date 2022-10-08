@@ -93,7 +93,7 @@ export const ContactPage = () => {
               </span>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-body">
-                Click Games 70 rue Pierre Marti, 25462 Étupes
+                Click Games 26 Rue Arbues, 25400 Aundicourt
                 </span>
               </div>
             </div>

@@ -6,6 +6,8 @@ import { useTranslation } from "next-i18next";
 import { useArticleQuery } from "@data/article/use-article.query";
 import Loader from "@components/ui/loader/loader";
 import { SEO } from "@components/seo";
+import PageHeroSection from "@components/ui/page-hero-section";
+import { useSettings } from "@contexts/settings.context";
 
 function makeTitleToDOMId(title: string) {
   return title.toLowerCase().split(" ").join("_");
@@ -14,22 +16,17 @@ function makeTitleToDOMId(title: string) {
 export default function PrivacyPage() {
   const { t } = useTranslation("policy");
   const { data, isLoading } = useArticleQuery("politique-de-remboursement");
+  const settings=useSettings();
   if (isLoading) {
     return (<Loader />);
   }
 
   return (
     <>
-      <SEO title="Conditions de retour et de remboursement" />
-      <section className="max-w-1920 w-full mx-auto py-8 px-4 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20">
-        <header className="sm:mt-2 xl:mt-4 mb-10 lg:mb-14">
-          <h1 className="text-xl md:text-2xl sm:text-3xl 2xl:text-4xl text-heading font-bold mb-4 sm:mb-5 2xl:mb-7">
-            Livraison & Expéditions
-          </h1>
-          <p className="text-sm md:text-base text-body-dark 2xl:text-lg px-0++.5">
-
-          </p>
-        </header>
+      <SEO title="Livraison & Expéditions" />
+      <PageHeroSection heroTitle={"Livraison & Expéditions"} />
+      <section className="max-w-7xl w-full mx-auto py-8 px-4 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20">
+       
         {/* End of page header */}
 
         <div className="flex flex-col">
@@ -47,9 +44,9 @@ export default function PrivacyPage() {
           <div>
             <div className="p-4 border rounded-sm text-lg w-96 border-dark">
               <p>CLICK GAMES </p>
-              <p>70 rue Pierre Marti, 25462 Étupes</p>
+              <p>26 Rue Arbues, 25400 Aundicourt</p>
               <p>Adresse email : support@click-game­s.fr</p>
-              <p>Numéro de téléphone : +33 6 60 94 24 96</p>
+              <p>Numéro de téléphone : {settings?.contact}</p>
             </div>
           </div>
 

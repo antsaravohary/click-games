@@ -5,6 +5,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useArticleQuery } from "@data/article/use-article.query";
 import Loader from "@components/ui/loader/loader";
+import { SEO } from "@components/seo";
+import PageHeroSection from "@components/ui/page-hero-section";
 
 function makeTitleToDOMId(title: string) {
   return title.toLowerCase().split(" ").join("_");
@@ -18,6 +20,9 @@ export default function PrivacyPage() {
   }
 
   return (
+    <>
+      <SEO title="Conditions de retour et de remboursement"/>
+    <PageHeroSection heroTitle={"Conditions de retour et de remboursement"} />
     <section className="max-w-1920 w-full mx-auto py-8 px-4 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20">
       <header className="sm:mt-2 xl:mt-4 mb-10 lg:mb-14">
         <h1 className="text-xl md:text-2xl sm:text-3xl 2xl:text-4xl text-heading font-bold mb-4 sm:mb-5 2xl:mb-7">
@@ -29,7 +34,7 @@ export default function PrivacyPage() {
       </header>
       {/* End of page header */}
 
-      <div className="flex flex-col md:flex-row">
+      <div className="flex max-w-7xl mx-auto flex-col md:flex-row">
         <nav className="md:w-72 xl:w-3/12 mb-8 md:mb-0">
           <ol className="sticky md:top-16 lg:top-22 bg-gray-100 z-10">
             {data?.items?.map((item) => (
@@ -71,6 +76,7 @@ export default function PrivacyPage() {
         {/* End of content */}
       </div>
     </section>
+    </>
   );
 }
 
