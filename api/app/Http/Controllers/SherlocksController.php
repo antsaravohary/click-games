@@ -129,7 +129,7 @@ class SherlocksController extends Controller
 
       $payment_card = PaymentCard::where('paymentMeanId',  $subscription->payment_method_id)->first();
       $data = [
-         "amount" => "200",
+         "amount" => "5999",
          "captureDay" => "0",
          "captureMode" => "AUTHOR_CAPTURE",
          "currencyCode" => "978",
