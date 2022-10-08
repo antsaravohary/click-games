@@ -65,7 +65,17 @@ class SherlocksController extends Controller
 
          return view("sherlock.redirect", ["url" => env("SHOP_URL") . "/orders\/" . $order->ref]);
       } else {
-         return view("sherlock.error_payment", ["code" => $t2->response["responseCode"], "msg" => SherlockResponse::responseCode[$t2->response["responseCode"]]]);
+         $message = SherlockResponse::responseCode[$t2->response["responseCode"]];
+         $code = $t2->response["responseCode"];
+         if (isset($t2->response["acquirerResponseCode"]) && $t2->response["acquirerResponseCode"] != "00") {
+            $message = SherlockResponse::acquirerResponseCode[$t2->response["acquirerResponseCode"]];
+            $code = $t2->response["acquirerResponseCode"];
+         }
+         if ($t2->response["holderAuthentStatus"] != "SUCCESS") {
+            $code = "3D SECURE ERROR";
+            $message = "Authentification 3D secure n'est pas validée";
+         }
+         return view("sherlock.error_payment", ["code" => $code, "msg" => $message]);
          /*return [
             "status" => "failed",
             "code" => $t2->response["responseCode"],
@@ -318,6 +328,7 @@ class SherlocksController extends Controller
          "cardCSCValue" => $request->cardCvc,
          "cardExpiryDate" => $request->cardExpiry,
          "cardNumber" =>  $request->cardNumber,
+         "customerIpAddress" => $this->getIPAddress(),
          "currencyCode" => "978",
          "interfaceVersion" => "IR_WS_2.9",
          "merchantTransactionDateTime" => Carbon::now()->toDateTimeLocalString(),
@@ -327,8 +338,12 @@ class SherlocksController extends Controller
       ];
 
       $res = $sherlock->cardCheckEnrollment($dataSherlock, $user);
-
+      $d=$res->data;
+      $d["name"]=$request->name;
+      $res->data=$d;
+      $res->save();
       $data["cardCheckEnrollment"] = $res->id;
+      
       $stripeSession->data = $data;
       $stripeSession->save();
       if ($res->response["redirectionStatusCode"] != "00") {
@@ -359,6 +374,7 @@ class SherlocksController extends Controller
             $data3 = [
                "cardExpiryDate" => $res->data["cardExpiryDate"],
                "cardNumber" => $res->data["cardNumber"],
+               "name" => $res->data["name"],
                "interfaceVersion" => "WR_WS_2.3",
                "merchantWalletId" => $res->user_id,
                "paymentMeanAlias" => "mycard"
@@ -395,7 +411,7 @@ class SherlocksController extends Controller
       $now = Carbon::now();
       $session = StripeSession::find($session_id);
       $data = $session['data'];
-      $data['orderInput']['customer_contact'] = 0;
+      //$data['orderInput']['customer_contact'] = 0;
       $order = $this->orderRepository->createOrder($data);
       $payment_info = PaymentInfo::find($data['payment_info_id']);
       $payment_info->payment_intent_id = $payment_card->id;

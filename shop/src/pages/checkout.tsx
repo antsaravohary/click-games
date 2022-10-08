@@ -123,7 +123,7 @@ export default function CheckoutPage() {
     }
   }
   useEffect(() => {
-    handleVerifyCheckout();
+   // handleVerifyCheckout();
   }, [
     billing_address,
     shipping_address,

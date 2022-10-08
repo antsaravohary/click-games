@@ -106,6 +106,7 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
     }
     setProcessing(true);
     http.post("/sherlocks/payment-product", { ...cardInput,
+      name:name,
       cardNumber:cardInput.cardNumber.replace(/\s/g, ''),
       cardExpiry:"20"+cardInput.cardExpiry.split("  ")[1]+cardInput.cardExpiry.split("  ")[0],
       data: { ...data, clickGamePlus: true } }).then((response) => {
@@ -122,6 +123,7 @@ const StripeForm = ({ amount, data, onPaySuccess, click_game_plus }: Iprops) => 
 
         default:
           setProcessing(false);
+          toast.error( response.data);
           break;
       }
       /* setAuth(true);
