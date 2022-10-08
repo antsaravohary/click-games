@@ -145,7 +145,7 @@ const LoginForm = () => {
           {t("text-login-facebook")}
         </Button>
         <Button
-          className="!bg-social-google hover:!bg-social-google-hover"
+          className="!bg-social-google hidden hover:!bg-social-google-hover"
           // loading={loading}
           disabled={loading}
           onClick={() => {

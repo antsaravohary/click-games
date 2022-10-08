@@ -11,6 +11,7 @@ import {
   calculatePaidTotal,
   calculateTotal,
 } from "@contexts/quick-cart/cart.utils";
+import { formatAddress } from "@utils/format-address";
 interface Props {
   className?: string;
 }
@@ -19,8 +20,8 @@ const OrderInformation = (props: Props) => {
   const { t } = useTranslation("common");
   const { items, isEmpty } = useCart();
 
-  const { checkoutData, discount, removeCoupon, coupon } = useCheckout();
-  const available_items = items?.filter(
+  const { checkoutData, discount, removeCoupon, coupon,shipping_address } = useCheckout();
+   const available_items = items?.filter(
     (item: any) => !checkoutData?.unavailable_products?.includes(item.id)
   );
   const { price: tax } = usePrice(
@@ -90,6 +91,7 @@ const OrderInformation = (props: Props) => {
           <p className="text-sm text-body">{t("text-shipping")}</p>
           <span className="text-sm text-body">{shipping}</span>
         </div>
+        
         {discount ? (
           <div className="flex justify-between mb-4">
             <p className="text-sm text-body me-4">{t("text-discount")}</p>
@@ -111,6 +113,10 @@ const OrderInformation = (props: Props) => {
             {t("text-total-ttc")}
           </p>
           <span className="text-base font-semibold text-heading">{total}</span>
+        </div>
+        <div className="flex flex-col justify-between mt-4 border-2 p-2 border-border-200  mb-3">
+          <p className="text-sm text-body">Adresse de livraison:</p>
+          <p className="text-sm text-body">{formatAddress(shipping_address?.address)}</p>
         </div>
       </div>
     </div>
