@@ -14,28 +14,30 @@ import ShippingMode from "./shipping-mode";
 type props = {
     me: User;
     shipping_class: number;
-    setStep: (e:number) => {};
+    setStep: (e: number) => {};
 }
 const CheckoutStep3 = ({ me, shipping_class, setStep }: props) => {
-    let dateDelivery = new Date(new Date().getTime() + shipping_class * 24 * 60 * 60 * 1000);
-    switch (dateDelivery.getDay()) {
-        case 0:
-            dateDelivery = new Date(dateDelivery.getTime() + 2 * 24 * 60 * 60 * 1000);
-            break;
-        case 1:
-            dateDelivery = new Date(dateDelivery.getTime() + 1 * 24 * 60 * 60 * 1000);
-            break;
-        case 2:
-            dateDelivery = new Date(dateDelivery.getTime() + 1 * 24 * 60 * 60 * 1000);
-            break;
-        case 6:
-            dateDelivery = new Date(dateDelivery.getTime() + 2 * 24 * 60 * 60 * 1000);
-            break;
+    const getDeliveryDate=(delay: number) => {
+        let dateDelivery = new Date(new Date().getTime() + delay * 24 * 60 * 60 * 1000);
+        switch (dateDelivery.getDay()) {
+            case 0:
+                dateDelivery = new Date(dateDelivery.getTime() + 2 * 24 * 60 * 60 * 1000);
+                break;
+            case 1:
+                dateDelivery = new Date(dateDelivery.getTime() + 1 * 24 * 60 * 60 * 1000);
+                break;
+            case 2:
+                dateDelivery = new Date(dateDelivery.getTime() + 1 * 24 * 60 * 60 * 1000);
+                break;
+            case 6:
+                dateDelivery = new Date(dateDelivery.getTime() + 2 * 24 * 60 * 60 * 1000);
+                break;
 
-        default:
-            break;
+            default:
+                break;
+        }
+        return dateDelivery;
     }
-    console.log("shipping_class",shipping_class);
     return (
         <div className="p-5 md:p-4 h-full flex flex-col">
             <ShippingMode disabled={false} />
@@ -45,20 +47,20 @@ const CheckoutStep3 = ({ me, shipping_class, setStep }: props) => {
                     <p>
                         Livraison estimée le </p>
                     <p className=" ml-2 font-bold first-letter:capitalize">
-                        {formatDateCompletWithDay(dateDelivery.toDateString())}
+                        {formatDateCompletWithDay(getDeliveryDate(2).toDateString())}
                     </p>
                 </div>
                 <Tooltip tooltipText={"Les délais de livraison sont indicatifs de certaines commandes, susceptibles d'avoir des délais de livraison plus longs"} children={<InfoIcon height="16" width="16" />} />
             </div>
             <div className="mt-4 flex justify-between">
                 <Button onClick={() => {
-               
+
                     setStep(2);
                 }}>Retour</Button>
-                <Button disabled={shipping_class==null}
-                
+                <Button disabled={shipping_class == null}
+
                     onClick={() => {
-                        if(shipping_class==null){
+                        if (shipping_class == null) {
                             return;
                         }
                         setStep(4);

@@ -27,24 +27,27 @@ const ShippingMode = ({ count, disabled }: Props) => {
     setSelected(data?.shippings.find((s) => s.id == shipping_class));
   }, [data]);
 
-  let dateDelivery = new Date(new Date().getTime() + shipping_class * 24 * 60 * 60 * 1000);
-  switch (dateDelivery.getDay()) {
-    case 0:
-      dateDelivery = new Date(dateDelivery.getTime() + 2 * 24 * 60 * 60 * 1000);
-      break;
-    case 1:
-      dateDelivery = new Date(dateDelivery.getTime() + 1 * 24 * 60 * 60 * 1000);
-      break;
-    case 2:
-      dateDelivery = new Date(dateDelivery.getTime() + 1 * 24 * 60 * 60 * 1000);
-      break;
-    case 6:
-      dateDelivery = new Date(dateDelivery.getTime() + 2 * 24 * 60 * 60 * 1000);
-      break;
+  const getDeliveryDate=(delay: number) => {
+    let dateDelivery = new Date(new Date().getTime() + delay * 24 * 60 * 60 * 1000);
+    switch (dateDelivery.getDay()) {
+        case 0:
+            dateDelivery = new Date(dateDelivery.getTime() + 2 * 24 * 60 * 60 * 1000);
+            break;
+        case 1:
+            dateDelivery = new Date(dateDelivery.getTime() + 1 * 24 * 60 * 60 * 1000);
+            break;
+        case 2:
+            dateDelivery = new Date(dateDelivery.getTime() + 1 * 24 * 60 * 60 * 1000);
+            break;
+        case 6:
+            dateDelivery = new Date(dateDelivery.getTime() + 2 * 24 * 60 * 60 * 1000);
+            break;
 
-    default:
-      break;
-  }
+        default:
+            break;
+    }
+    return dateDelivery;
+}
   const { total } = useCart();
   function handleSelect(item: any) {
     setSelected(item);
@@ -100,7 +103,7 @@ const ShippingMode = ({ count, disabled }: Props) => {
                   className={classNames(
                     checked ? 'text-indigo-700' : 'text-gray-500',
                     'ml-6 pl-1 text-lg md:ml-0 md:pl-0 md:text-right')}>
-                  {formatDateCompletWithDay(dateDelivery.toDateString())}
+                  {formatDateCompletWithDay(getDeliveryDate(s.delay as number).toDateString())}
                 </RadioGroup.Description>
               </>
             )}
