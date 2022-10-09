@@ -237,7 +237,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                   <p>
                     Livraison estimée {product.price - product.discount > 35 && ""}{"le"}</p>
                   <p className=" ml-2 font-bold first-letter:capitalize">
-                    {formatDateCompletWithDay(dateDelivery.toDateString())}
+                    {formatDateCompletWithDay(product.pre_order?product.release_date: dateDelivery.toDateString())}
                   </p>
                 </div>
               </div>

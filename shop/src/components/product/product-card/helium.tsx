@@ -118,7 +118,7 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
               <p>Livraison estimée {product.price-product.discount > 35 && ""}{"le"}</p>  
  
                 
-  <p className="first-letter:capitalize ml-1"> <span className="font-bold"> {formatDateCompletWithDay(dateDelivery.toDateString())}</span></p>
+  <p className="first-letter:capitalize ml-1"> <span className="font-bold"> {formatDateCompletWithDay(product.pre_order?product.release_date: dateDelivery.toDateString())}</span></p>
               </div>
            </div>
          
