@@ -70,7 +70,7 @@ export default function CategoryCloud() {
           </p>
           <div className="mt-2 grid grid-cols-2 gap-2  md:grid-cols-6 lg:mt-4">
           {data?.categories?.data.map((category, idx) => (
-            <div className="col-span-1 flex justify-center py-2 px-2 bg-gray-50 cursor-pointer  shadow-lg rounded-lg "
+            <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 cursor-pointer  shadow-lg rounded-lg "
             role="button"
             onClick={() => onCategoryClick(category?.slug)}
             >
