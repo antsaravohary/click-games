@@ -23,7 +23,7 @@ class CheckoutRepository
         $tax = $this->calculateTax($request, $shipping_charge, $amount);
         return [
             'total_tax'            => $tax,
-            'shipping_charge'      =>(($amount>35&&$request['shipping_class_id']==2)||$clickCollect=="full")?0:$shipping_charge,
+            'shipping_charge'      =>(($amount>30&&$request['shipping_class_id']==2)||$clickCollect=="full")?0:$shipping_charge,
             'unavailable_products' => $unavailable_products
         ];
     }
