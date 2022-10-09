@@ -243,7 +243,7 @@ export default function FilterBar2() {
               </div>
             </fieldset>
             <fieldset  className="">
-              <legend className="block font-medium">Categories</legend>
+              <legend className="block font-medium">Catégories</legend>
               <div className="space-y-6 sm:pt-4 grid grid-cols-2 sm:space-y-4">
                 {data?.categories?.data.map((category, index) => (
                   <div key={category.id} className="flex items-center text-base sm:text-sm">

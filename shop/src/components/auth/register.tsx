@@ -13,6 +13,7 @@ import { useTranslation } from "next-i18next";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useModalAction } from "@components/ui/modal/modal.context";
+import storage from "@utils/storage";
 
 type FormValues = {
   first_name: string;
