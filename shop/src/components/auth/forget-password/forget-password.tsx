@@ -116,7 +116,7 @@ const ForgotPassword = () => {
       <div className="text-sm sm:text-base text-body text-center">
         {t("text-back-to")}{" "}
         <button
-          onClick={() => /*openModal("LOGIN_VIEW")*/router.push("/login");}
+          onClick={() => /*openModal("LOGIN_VIEW")*/router.push("/login")}
           className="ms-1 underline text-accent font-semibold transition-colors duration-200 focus:outline-none hover:text-accent-hover focus:text-accent-hover hover:no-underline focus:no-underline"
         >
           {t("text-login")}
