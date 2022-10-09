@@ -2,6 +2,7 @@ import ErrorMessage from "@components/ui/error-message";
 import BakeryCategoryLoader from "@components/ui/loaders/bakery-category-loader";
 import { useCategoriesQuery } from "@data/category/use-categories.query";
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 export default function CategoryCloud() {
@@ -70,18 +71,26 @@ export default function CategoryCloud() {
           </p>
           <div className="mt-2 grid grid-cols-2 gap-2  md:grid-cols-6 lg:mt-4">
           {data?.categories?.data.map((category, idx) => (
-            <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 cursor-pointer  shadow-lg rounded-lg "
+            <div className="text-center rounded bg-light py-2 flex flex-col items-center justify-start relative overflow-hidden cursor-pointer border-2"
             role="button"
             onClick={() => onCategoryClick(category?.slug)}
             >
-              <img
-                className="max-h-12"
-                src={
-                    category?.image?.original! ??
-                    "/product-placeholder.svg"
-                  }
-                alt={category?.name}
-              />
+             <div className="w-full h-20 flex items-center justify-center">
+                  <span className="w-10 h-10 inline-block">
+                    <Image
+                      src={category?.image?.thumbnail ?? "http://api.click-univers.local/1258.jpg"}
+                      alt={category?.slug}
+
+                      priority={true}
+                      height={250}
+                      width={250} />
+
+                  </span>
+                </div>
+
+                <span className="text-sm font-semibold text-heading text-center px-2.5 block">
+                  {category.name}
+                </span>
             </div>))}
           </div>
         </div>
