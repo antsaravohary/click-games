@@ -17,6 +17,7 @@ import { FacebookIcon } from "@components/icons/facebook";
 import { useModalAction } from "@components/ui/modal/modal.context";
 import { useRouter } from "next/router";
 import { GoogleIcon } from "@components/icons/google";
+import storage from "@utils/storage";
 
 type FormValues = {
   email: string;
@@ -64,7 +65,12 @@ const LoginForm = () => {
             Cookies.set("auth_token", data.token);
             Cookies.set("auth_permissions", data.permissions);
             authorize();
-            router.push("/dashboard");
+            if (storage.get("redirect")) {
+              router.push(storage.get("redirect"));
+              storage.remove("redirect")
+            } else { router.push("/dashboard"); }
+
+
             closeModal();
             return;
           }

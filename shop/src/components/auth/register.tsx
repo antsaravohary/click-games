@@ -74,7 +74,12 @@ const RegisterForm = () => {
             const ReactPixel=require("react-facebook-pixel").default;
             ReactPixel.trackSingle(`${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL}`,'Subscribe',null);
             authorize();
-            router.push("/");
+            if (storage.get("redirect")) {
+              router.push(storage.get("redirect"));
+              storage.remove("redirect")
+            } else {   router.push("/"); }
+
+          
             closeModal();
             return;
           }

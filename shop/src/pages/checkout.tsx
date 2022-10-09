@@ -45,6 +45,7 @@ import { getIcon } from "@utils/get-icon";
 import * as listIcon from "@components/icons";
 import CheckoutCart from "@components/checkout/checkout_cart";
 import { CardBank } from "@components/icons/card-bank";
+import storage from "@utils/storage";
 const plans = [
   { name: 'Panier', step: 1, icon: ' <img class="w-12" src="/icons/panier.png"/>' },
   { name: 'Bonus ClickGames+', step: 2, icon: '<img class="w-16" src="/icons/gif/confetti.gif"/>' },
@@ -122,6 +123,9 @@ export default function CheckoutPage() {
       }
     }
   }
+  if(isEmpty){
+    router.push("/");
+  }
   useEffect(() => {
  handleVerifyCheckout();
   }, [
@@ -145,6 +149,7 @@ export default function CheckoutPage() {
   );
   useEffect(() => {
     if (!isAuthorize) {
+      storage.set({key:"redirect",value:"/checkout"});
       router.push("/login");
       //return openModal("LOGIN_VIEW");
     }
