@@ -10,10 +10,20 @@ const MyCookieConsent = () => {
                     <div className="w-16 mx-auto relative -mt-10 mb-3">
                         <img className="-mt-1" src="https://www.svgrepo.com/show/30963/cookie.svg" alt="Cookie Icon SVG" />
                     </div>
-                    <span className="w-full  block leading-normal text-justify text-gray-800 text-md mb-3">Nous utilisons des cookies pour vous garantir la meilleure expérience sur notre site web. Si vous continuez à utiliser ce site, nous supposerons que vous en êtes satisfait.</span>
+                    <span className="w-full  block leading-normal text-justify text-gray-800 text-md ">Nous utilisons des cookies pour vous garantir une expérience optimale sur notre site Internet.</span>
+                    <a className="text-xs text-gray-400 mr-1 hover:text-gray-800 mb-4" href="/terms/politique-de-confidentialité">Politique de confidentialité</a>
                     <div className="flex items-center justify-between">
-                        <a className="text-xs text-gray-400 mr-1 hover:text-gray-800" href="/terms/politique-de-confidentialité">Politique de confidentialité</a>
-                        <div className="w-1/2">
+                        <div className="w-1/2 mx-4">
+
+                            <button
+                                onClick={() => {
+                                    storage.set({ key: "cookie_consent", value: "none" });
+                                    setState(false);
+                                }}
+                                type="button" className="py-2 px-4  bg-red-600 hover:bg-red-800 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">Refuser</button>
+                        </div>
+                        <div className="w-1/2 mx-4">
+
                             <button
                                 onClick={() => {
                                     storage.set({ key: "cookie_consent", value: "all" });
@@ -25,7 +35,7 @@ const MyCookieConsent = () => {
                 </div>
             </div>
         </div>)
-    }else{
+    } else {
         return null;
     }
 
