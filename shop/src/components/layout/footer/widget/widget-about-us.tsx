@@ -28,7 +28,7 @@ const settings=useSettings();
       <div className="flex flex-col text-center sm:text-start max-w-[350px] mx-auto sm:ms-0 pb-6 sm:pb-5">
         <Logo href={ROUTES.HOME} className="mb-3 lg:mb-5 mx-auto sm:ms-0" />
         <p className='text-left text-xs'>
-          Click Games | E-commerce spécialiste du jeux vidéos | Livraison gratuite à partir de 35€ | Click sur ton jeu
+          Click Games | E-commerce spécialiste du jeux vidéos | Livraison gratuite à partir de 30€ | Click sur ton jeu
         </p>
         
         <div className='mt-2 text-sm flex items-center'>

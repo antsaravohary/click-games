@@ -81,7 +81,7 @@ export default function CheckoutPage() {
     isEmpty,
     totalClickCollectActive,
     totalItems,
-    totalClickCollect,
+    totalClickCollect,v
   } = useCart();
   const { isAuthorize } = useUI();
   const { openModal } = useModalAction();

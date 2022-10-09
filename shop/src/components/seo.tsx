@@ -13,7 +13,7 @@ type SeoProps = {
 
 export const SEO: React.FC<SeoProps> = ({
   title,
-  description = "Click Games | E-commerce spécialiste du jeux vidéos  | Choisissez votre univers | Des nombreuses promotions jusqu’à -70% | Livraison gratuite à partir de 35€ | Click sur ton Univers.",
+  description = "Click Games | E-commerce spécialiste du jeux vidéos  | Choisissez votre univers | Des nombreuses promotions jusqu’à -70% | Livraison gratuite à partir de 30€ | Click sur ton Univers.",
   canonical,
   css,
   js,

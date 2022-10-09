@@ -20,8 +20,8 @@ const OrderInformation = (props: Props) => {
   const { t } = useTranslation("common");
   const { items, isEmpty } = useCart();
 
-  const { checkoutData, discount, removeCoupon, coupon,shipping_address } = useCheckout();
-   const available_items = items?.filter(
+  const { checkoutData, discount, removeCoupon, coupon, shipping_address } = useCheckout();
+  const available_items = items?.filter(
     (item: any) => !checkoutData?.unavailable_products?.includes(item.id)
   );
   const { price: tax } = usePrice(
@@ -37,7 +37,7 @@ const OrderInformation = (props: Props) => {
   const base_amount = calculateTotal(available_items);
   const { price: sub_total } = usePrice(
     checkoutData && {
-      amount: base_amount-checkoutData?.total_tax,
+      amount: base_amount - checkoutData?.total_tax,
     }
   );
   const { price: discountPrice } = usePrice(
@@ -79,7 +79,7 @@ const OrderInformation = (props: Props) => {
       </div>
 
       <div className="mt-4">
-         <div className="flex justify-between mb-3">
+        <div className="flex justify-between mb-3">
           <p className="text-sm text-body">{t("text-sub-total")}</p>
           <span className="text-sm text-body">{sub_total}</span>
         </div>
@@ -91,7 +91,7 @@ const OrderInformation = (props: Props) => {
           <p className="text-sm text-body">{t("text-shipping")}</p>
           <span className="text-sm text-body">{shipping}</span>
         </div>
-        
+
         {discount ? (
           <div className="flex justify-between mb-4">
             <p className="text-sm text-body me-4">{t("text-discount")}</p>
@@ -114,10 +114,10 @@ const OrderInformation = (props: Props) => {
           </p>
           <span className="text-base font-semibold text-heading">{total}</span>
         </div>
-        <div className="flex flex-col justify-between mt-4 border-2 p-2 border-border-200  mb-3">
+        {  /*<div className="flex flex-col justify-between mt-4 border-2 p-2 border-border-200  mb-3">
           <p className="text-sm text-body">Adresse de livraison:</p>
           <p className="text-sm text-body">{formatAddress(shipping_address?.address)}</p>
-        </div>
+        </div>*/}
       </div>
     </div>
   );

@@ -95,7 +95,7 @@ const ShippingMode = ({ count, disabled }: Props) => {
                 </div>
                 <RadioGroup.Description className="ml-6 pl-1 text-lg md:ml-0 md:pl-0 md:text-center">
                   <span className={classNames(checked ? 'text-indigo-900' : 'text-gray-900', 'font-medium')}>
-                    Frais de livraison:     {((total > 35 && s.id == 2) || s.type === "free_shipping") ? "Gratuit" : `${s.amount} €`}
+                    Frais de livraison:     {((total > 30 && s.id == 2) || s.type === "free_shipping") ? "Gratuit" : `${s.amount} €`}
                   </span>{' '}
 
                 </RadioGroup.Description>

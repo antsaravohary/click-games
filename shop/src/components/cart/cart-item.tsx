@@ -61,9 +61,9 @@ const CartItem = ({ item }: CartItemProps) => {
       </div>
       <div>
         <h3 className="font-bold text-heading">{item.name}</h3>
-        <p className="my-2.5 font-semibold text-accent">{price}</p>
+        <p className="my-2.5 font-semibold text-accent"></p>
         <span className="text-xs text-body">
-          {item.quantity} X {item.unit}
+          {item.quantity} x {price} {/*item.unit*/}
         </span>
       </div>
       <span className="ms-auto font-bold text-heading">{itemPrice}</span>
