@@ -36,8 +36,8 @@ export default function HelpPage() {
   return (
     <>
       <SEO title="Centre d’aide" />
-      <div className="flex  justify-beetwen flex-col h-full hidden bg-white">
-        <div className="flex mx-auto my-8"> <PhoneIcon height="100px" width="100px"/>
+      <div className="flex  justify-beetwen flex-col h-full  bg-white">
+        <div className="flex mx-auto my-8 hidden"> <PhoneIcon height="100px" width="100px"/>
           <div className="flex flex-col justify-center ml-4 ">
             <h4 className="text-muted text-4xl font-bold">24/7 Livraison</h4>
             <h4 className="text-4xl font-bold mt-auto">{settings?.contact}</h4>

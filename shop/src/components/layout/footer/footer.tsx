@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-8 gap-4 w-max">
           <FooterItems
             title="Livraison"
-            description="Livraison gratuite à partir de 35 € d’achat"
+            description="Livraison gratuite à partir de 30 € d’achat"
             // Icon={<DeliveryTruckIcon color='#000' width="32" height="32" />}
             Icon={<img src="/icons/gif/truck-delivery.gif" className='w-16 h-16' style={{marginBottom:"-20px"}} />}
 
