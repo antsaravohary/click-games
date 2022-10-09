@@ -145,7 +145,8 @@ export default function CheckoutPage() {
   );
   useEffect(() => {
     if (!isAuthorize) {
-      return openModal("LOGIN_VIEW");
+      router.push("/login");
+      //return openModal("LOGIN_VIEW");
     }
     if (isAuthorize) {
       refetch();
@@ -244,6 +245,9 @@ export default function CheckoutPage() {
     totalItems > 0 && totalItems === totalClickCollectActive;
   if (isLoading) {
     return <Loader />;
+  }
+  if(!isAuthorize){
+    return <Loader />
   }
   return (
     <div className="py-8 px-2 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20" >
