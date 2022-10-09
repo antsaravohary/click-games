@@ -16,6 +16,7 @@ import { useUI } from "@contexts/ui.context";
 import { useModalAction } from "@components/ui/modal/modal.context";
 import LinkButton from "@components/ui/link-button";
 import { PhoneIcon } from "@components/icons/phone";
+import { useRouter } from "next/router";
 
 
 export default function HelpPage() {
@@ -25,9 +26,11 @@ export default function HelpPage() {
   const { openModal } = useModalAction();
   const { isAuthorize } = useUI();
   const { t } = useTranslation();
+  const router=useRouter();
   const onContact = () => {
     if (!isAuthorize) {
-      return openModal("LOGIN_VIEW");
+      router.push("/login") ;   //return openModal("LOGIN_VIEW");
+    
     }
     if (isAuthorize) {
       setShowContactForm(true)

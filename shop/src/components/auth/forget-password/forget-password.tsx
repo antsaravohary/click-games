@@ -7,6 +7,7 @@ import { useResetPasswordMutation } from "@data/auth/use-reset-password.mutation
 import { useTranslation } from "next-i18next";
 import dynamic from "next/dynamic";
 import { useModalAction } from "@components/ui/modal/modal.context";
+import { useRouter } from "next/router";
 const EnterEmailView = dynamic(() => import("./enter-email-view"));
 const EnterTokenView = dynamic(() => import("./enter-token-view"));
 const EnterNewPasswordView = dynamic(() => import("./enter-new-password-view"));
@@ -22,7 +23,7 @@ const ForgotPassword = () => {
   const [errorMsg, setErrorMsg] = useState<string | null | undefined>("");
   const [verifiedEmail, setVerifiedEmail] = useState("");
   const [verifiedToken, setVerifiedToken] = useState("");
-
+  const router=useRouter();
   function handleEmailSubmit({ email }: { email: string }) {
     forgetPassword(
       {
@@ -66,7 +67,8 @@ const ForgotPassword = () => {
       {
         onSuccess: (data) => {
           if (data.success) {
-            openModal("LOGIN_VIEW");
+            router.push("/login") ;   //return openModal("LOGIN_VIEW");
+    
           } else {
             setErrorMsg(data?.message);
           }
@@ -114,7 +116,7 @@ const ForgotPassword = () => {
       <div className="text-sm sm:text-base text-body text-center">
         {t("text-back-to")}{" "}
         <button
-          onClick={() => openModal("LOGIN_VIEW")}
+          onClick={() => /*openModal("LOGIN_VIEW")*/router.push("/login");}
           className="ms-1 underline text-accent font-semibold transition-colors duration-200 focus:outline-none hover:text-accent-hover focus:text-accent-hover hover:no-underline focus:no-underline"
         >
           {t("text-login")}

@@ -28,7 +28,8 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
     return openSidebar();
   }
   function handleAuthModal() {
-    return openModal("LOGIN_VIEW");
+    router.push("/login") ;   //return openModal("LOGIN_VIEW");
+    
   }
 
   return (
