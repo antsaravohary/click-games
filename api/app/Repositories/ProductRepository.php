@@ -123,6 +123,7 @@ class ProductRepository extends BaseRepository
             $product->information = $product->information;
             $product->type = $product->type;
             $product->tags = $product->tags;
+            
             return $product;
         } catch (ValidatorException $e) {
             throw new PickbazarException('PICKBAZAR_ERROR.SOMETHING_WENT_WRONG');
@@ -168,6 +169,9 @@ class ProductRepository extends BaseRepository
             $data = $request->only($this->dataArray);
             $data['sale_price'] = $data['price'] - $data['discount'];
             $product->update($data);
+            $ps=$product->productAds;
+            $ps->google_merchant_need_update=true;
+            $ps->save();
             if ($product->product_type === ProductType::SIMPLE) {
                 $product->variations()->delete();
                 $product->variation_options()->delete();
@@ -178,6 +182,7 @@ class ProductRepository extends BaseRepository
 
             $product->type = $product->type;
             $product->tags = $product->tags;
+           
             return $product;
         } catch (ValidatorException $e) {
             throw new PickbazarException('PICKBAZAR_ERROR.SOMETHING_WENT_WRONG');

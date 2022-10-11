@@ -21,6 +21,7 @@ import { useShopQuery } from "@data/shop/use-shop.query";
 import Checkbox from "@components/ui/checkbox/checkbox";
 import { useState } from "react";
 import Loader from "@components/ui/loader/loader";
+import GoogleMerchantAddButton from "@components/google-merchant/google-merchant-add-button";
 
 export type IProps = {
   products?: ProductPaginator;
@@ -219,6 +220,14 @@ const ProductList = ({ products, onPagination }: IProps) => {
           }
         />
       ),
+    },
+    {
+      title: "Google Marchand",
+      dataIndex: "status",
+      key: "status",
+      align: "center",
+      width: 100,
+      render: (status: string,record: Product) => <GoogleMerchantAddButton product={record}/>
     },
     {
       title: t("table:table-item-actions"),

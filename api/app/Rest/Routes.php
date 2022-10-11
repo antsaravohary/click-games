@@ -29,6 +29,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ModelMessageController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\PlatformController;
+use App\Http\Controllers\ProductAdsController;
 use App\Http\Controllers\promotionController;
 use App\Http\Controllers\PromotionTypeController;
 use App\Http\Controllers\PurchaseController;
@@ -261,6 +262,7 @@ Route::group(
 
 
 Route::group(['middleware' => ['permission:' . Permission::SUPER_ADMIN, 'auth:sanctum']], function () {
+
     Route::apiResource('types', TypeController::class, [
         'only' => ['store', 'update', 'destroy']
     ]);
@@ -296,6 +298,7 @@ Route::group(['middleware' => ['permission:' . Permission::SUPER_ADMIN, 'auth:sa
     ]);
     Route::apiResource('users', UserController::class);
     Route::post('users/ban-user', 'App\Http\Controllers\UserController@banUser');
+    Route::post('product-ads/google-merchant/add/{id}',[ProductAdsController::class,'add_product_to_google_merchant']);
     Route::post('users/active-user', 'App\Http\Controllers\UserController@activeUser');
     Route::post('refunds/finish', 'App\Http\Controllers\RefundController@finishRefund');
     Route::apiResource('taxes', TaxController::class);

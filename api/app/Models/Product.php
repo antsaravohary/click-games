@@ -83,11 +83,20 @@ class Product extends Model
     /**
      * @return BelongsTo
      */
+    public function productAds(): BelongsTo
+    {
+        return $this->BelongsTo(ProductAds::class, 'product_ads_id');
+    }
+
+
+    /**
+     * @return BelongsTo
+     */
     public function shop(): BelongsTo
     {
         return $this->belongsTo(Shop::class, 'shop_id');
     }
-    
+
     /**
      * @return BelongsTo
      */
