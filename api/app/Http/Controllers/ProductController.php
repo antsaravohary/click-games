@@ -34,7 +34,7 @@ class ProductController extends CoreController
         $limit = $request->limit ?   $request->limit : 15;
         $user = $request->user();
         if ($user != null && ($user->hasPermissionTo(Permission::SUPER_ADMIN) || $user->hasPermissionTo(Permission::STORE_OWNER) || $user->hasPermissionTo(Permission::STAFF))) {
-            return $this->repository->with(['type', 'shop', 'categories', 'tags', 'variations.attribute'])->paginate($limit);
+            return $this->repository->with(['type', 'shop', 'categories', 'tags', 'variations.attribute','productAds'])->paginate($limit);
         } else {
             return $this->repository->with(['type', 'shop', 'categories', 'tags', 'variations.attribute'])->where('status', '=', 'publish')->paginate($limit);
         }

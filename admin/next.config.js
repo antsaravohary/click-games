@@ -29,6 +29,7 @@ module.exports = withPWA({
       "test.api.click-univers.com",
        "api.click-univers.com",
        "api.click-univers.local",
+       "test.api.click-games.local",
       "click-univers.com",
       "18.141.64.26",
       "dev.api.click-univers.com",
