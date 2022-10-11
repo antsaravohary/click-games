@@ -48,10 +48,10 @@ import { CardBank } from "@components/icons/card-bank";
 import storage from "@utils/storage";
 const plans = [
   { name: 'Panier', step: 1, icon: ' <img class="w-12" src="/icons/panier.png"/>' },
-  { name: 'Bonus ClickGames+', step: 2, icon: '<img class="w-16" src="/icons/gif/confetti.gif"/>' },
-  { name: 'Adresse de livraison', step: 3, icon: ' <img class="w-16" src="/icons/gif/location-pin-outline.gif"/>' },
-  { name: 'Modes de livraison', step: 4, icon: '<img class="w-16" src="/icons/gif/truck-delivery.gif"/>' },
-  { name: 'Paiement', step: 5, iconComponentd: <CardBank height="60" /> },
+  //{ name: 'Bonus ClickGames+', step: 2, icon: '<img class="w-16" src="/icons/gif/confetti.gif"/>' },
+  { name: 'Adresse de livraison', step: 2, icon: ' <img class="w-16" src="/icons/gif/location-pin-outline.gif"/>' },
+  { name: 'Modes de livraison', step: 3, icon: '<img class="w-16" src="/icons/gif/truck-delivery.gif"/>' },
+  { name: 'Paiement', step: 4, iconComponentd: <CardBank height="60" />},
 ]
 declare namespace JSX {
   interface IntrinsicElements {
@@ -311,10 +311,10 @@ export default function CheckoutPage() {
         </RadioGroup></div>
         <div className="col-span-4 md:col-span-3 bg-white p-1 md:p-4 rounded">
           {selected?.step == 1 && <CheckoutCart setStep={(e: number) => setSelected(plans[e])} setClickGamePlus={setClickGamePlus} />}
-          {selected?.step == 2 && <CheckoutStep1 setStep={(e: number) => setSelected(plans[e])} setClickGamePlus={setClickGamePlus} />}
-          {selected?.step == 3 && <CheckoutStep2 setStep={(e: number) => setSelected(plans[e])} me={data?.me} />}
-          {selected?.step == 4 && <CheckoutStep3 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} />}
-          {selected?.step == 5 && <CheckoutStep4 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} clickGamePlus={clickGamePlus} dataCreateOrder={dataCreateOrder} onPaySuccess={onPaySuccess} />}
+          {/*selected?.step == -10 && <CheckoutStep1 setStep={(e: number) => setSelected(plans[e])} setClickGamePlus={setClickGamePlus} />*/}
+          {selected?.step == 2 && <CheckoutStep2 setStep={(e: number) => setSelected(plans[e])} me={data?.me} />}
+          {selected?.step == 3 && <CheckoutStep3 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} />}
+          {selected?.step == 4 && <CheckoutStep4 setStep={(e: number) => setSelected(plans[e])} me={data?.me} shipping_class={shipping_class} clickGamePlus={clickGamePlus} dataCreateOrder={dataCreateOrder} onPaySuccess={onPaySuccess} />}
         </div>
       </div>
       <Script src="https://cdn.lordicon.com/xdjxvujz.js" />

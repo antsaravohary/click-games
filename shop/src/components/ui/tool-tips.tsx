@@ -17,7 +17,7 @@ export default function Tooltip({ children, tooltipText }) {
             onMouseLeave={handleMouseLeave}
         >
             <div
-                className="absolute w-96 whitespace-no-wrap bg-gradient-to-r from-black to-gray-700 text-white px-4 py-2 rounded flex items-center transition-all duration-150"
+                className="absolute w-24 text-xs md:w-96  bg-gradient-to-r from-black to-gray-700 text-white px-4 py-2 rounded flex items-center transition-all duration-150"
                 style={{ left: "100%", opacity: 0 }}
                 ref={tipRef}
             >

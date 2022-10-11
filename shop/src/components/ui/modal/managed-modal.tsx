@@ -5,6 +5,9 @@ import ShopProfileCard from "@components/profile/profile-card";
 const PurchasePurposeViewModal = dynamic(
   () => import("@components/purchase/purchase-purpose-view-modal")
 );
+const ClickGamesPlusModal = dynamic(
+  () => import("@components/checkout/click-games-plus-modal")
+);
 const PurchaseProductDetailModal = dynamic(
   () => import("@components/game/purchase-product-detail-modal")
 );
@@ -86,6 +89,7 @@ const ManagedModal = () => {
         <PurchaseProductDetailModal />
       )}
       {view === "PURCHASE_PURPOSE_VIEW" && <PurchasePurposeViewModal />}
+      {view === "CLICK_GAMES_PLUS_PURPOSE_VIEW" && <ClickGamesPlusModal />}
     </Modal>
   );
 };

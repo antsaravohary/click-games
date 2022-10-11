@@ -55,7 +55,7 @@ const CheckoutStep3 = ({ me, shipping_class, setStep }: props) => {
             <div className="mt-4 flex justify-between">
                 <Button onClick={() => {
 
-                    setStep(2);
+                    setStep(1);
                 }}>Retour</Button>
                 <Button disabled={shipping_class == null}
 
@@ -63,7 +63,7 @@ const CheckoutStep3 = ({ me, shipping_class, setStep }: props) => {
                         if (shipping_class == null) {
                             return;
                         }
-                        setStep(4);
+                        setStep(3);
                     }}
                 >Suivant</Button>
             </div>
