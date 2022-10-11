@@ -20,14 +20,17 @@ export default class CustomDocument extends Document {
     return (
       <Html>
         <Head>
-        {/** <link href="https://checkout.moneytigo.com/dist/css/app.css" rel="stylesheet"/> */} 
-            <script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-            />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
+          {/** <link href="https://checkout.moneytigo.com/dist/css/app.css" rel="stylesheet"/> */}
+
+          <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -35,11 +38,11 @@ export default class CustomDocument extends Document {
               page_path: window.location.pathname,
             });
           `,
-              }}
-            />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
+            }}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
               var callback = fonction () {
                 if (typeof(url) != 'undefined') {
                   window.location = url;
@@ -52,18 +55,21 @@ export default class CustomDocument extends Document {
               renvoyer false;
             }
           `,
-              }}
-            />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
+            }}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
               gtag('event', 'conversion', {'send_to': 'AW-575028874/D1cLCK3uw-gBEIr9mJIC'});
           `,
-              }}
-            />
+            }}
+          />
         </Head>
         <body dir={dir}>
           <Main />
+          <div className="trustpilot-widget" data-locale="fr-FR" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="63435434006f1a7199ce4a94" data-style-height="24px" data-style-width="100%" data-theme="light" data-min-review-count="10" data-style-alignment="center">
+            <a href="https://fr.trustpilot.com/review/www.click-games.fr" target="_blank" rel="noopener">Trustpilot</a>
+          </div>
           <NextScript />
         </body>
 

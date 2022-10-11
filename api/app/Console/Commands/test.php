@@ -16,7 +16,7 @@ class Test extends Command
      *
      * @var string
      */
-    protected $signature = 'click-univers:test {start} {end}';
+    protected $signature = 'click-games:add_product_google {start} {end}';
 
     /**
      * The console command description.
@@ -48,9 +48,11 @@ class Test extends Command
         foreach ($attributes as $key => $p) {
             echo "\n";
             echo $key . " - ";
+            
+            
             ProductApi::merchant([
                 'app_name' => 'click games',
-                'merchant_id' => '565781391',
+                'merchant_id' => '628792250',
                 'client_credentials_path' => storage_path('app/google-merchant-api/service-account-credentials.json')
             ])->insert(function ($product) use ($p) {
 
