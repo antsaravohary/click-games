@@ -28,6 +28,8 @@ import { InfoIcon } from "@components/icons/info";
 import Tooltip from "@components/ui/tool-tips";
 import { useUpdateOrderMutation } from "@data/order/use-mutation-order.mutation";
 import { formatDateCompletWithDay } from "@utils/format-date";
+import { useCustomerQuery } from "@data/customer/use-customer.query";
+import { useModalAction } from "@components/ui/modal/modal.context";
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
   const cookies = parseContextCookie(context?.req?.headers?.cookie);
@@ -49,13 +51,18 @@ export default function OrderPage() {
   const { updateSearchTerm } = useSearch();
   const { alignLeft, alignRight } = useIsRTL();
   const { mutate: updateOrder, isLoading } = useUpdateOrderMutation();
-
+  const { data: dataMe, isLoading: loadingMe } = useCustomerQuery();
+  const {openModal}=useModalAction();
   useEffect(() => {
     resetCart();
     clearCheckoutData();
     updateSearchTerm("");
   }, []);
-
+  useEffect(() => {
+    if(dataMe?.me?.subscription.type&&dataMe?.me?.subscription.type=="CLICK_GAMES_PLUS_TRIAL"){
+      openModal("CLICK_GAMES_PLUS_PURPOSE_VIEW");
+    }
+  }, [dataMe]);
   const { data, isLoading: loading } = useOrderQuery({
     ref: query.tracking_number as string,
   });
