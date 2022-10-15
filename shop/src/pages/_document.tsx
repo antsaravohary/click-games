@@ -64,12 +64,14 @@ export default class CustomDocument extends Document {
           `,
             }}
           />
+       
         </Head>
         <body dir={dir}>
           <Main />
           <div className="trustpilot-widget" data-locale="fr-FR" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="63435434006f1a7199ce4a94" data-style-height="24px" data-style-width="100%" data-theme="light" data-min-review-count="10" data-style-alignment="center">
             <a href="https://fr.trustpilot.com/review/www.click-games.fr" target="_blank" rel="noopener">Trustpilot</a>
           </div>
+          <script data-host="https://analytics.click-games.fr" data-dnt="false" src="https://analytics.click-games.fr/js/script.js" id="ZwSg9rf6GA" async defer></script>
           <NextScript />
         </body>
 

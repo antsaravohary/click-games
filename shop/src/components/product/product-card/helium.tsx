@@ -91,10 +91,10 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
           role="button"
           className="text-heading text-sm font-semibold truncate mb-2"
         >
-          {name} 
+          {name}
         </h3>
-        {product?.categories&& <div style={{backgroundColor:product?.categories[0]?.color,borderColor:product?.categories[0]?.color}} className="inline-flex shrink-0 items-center rounded border px-2 py-1 text-xs text-light">{product?.categories[0]?.name}</div>}
-      
+        {product?.categories && <div style={{ backgroundColor: product?.categories[0]?.color, borderColor: product?.categories[0]?.color }} className="inline-flex shrink-0 items-center rounded border px-2 py-1 text-xs text-light">{product?.categories[0]?.name}</div>}
+
         {/** <p className="text-muted text-xs">{unit}</p> */}
         {/* End of product info */}
         {/*loadingMe ? (
@@ -109,19 +109,20 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
             </div>
           </div>
         ) */}
-         {quantity > 0 && (
-           <div>
-              <div className="text-green-500 rounded text-xs text-light py-1 w-24">
-            {t("text-in-stock")}
+        {quantity > 0 && (
+          <div>
+            <div className="text-green-500 rounded text-xs text-light py-1 w-24">
+              {t("text-in-stock")}
+            </div>
+            {/**
+            <div className="text-[10px] flex">
+              <p>Livraison estimée {product.price - product.discount > 35 && ""}{"le"}</p>
+
+
+              <p className="first-letter:capitalize ml-1"> <span className="font-bold"> {formatDateCompletWithDay(product.pre_order ? product.release_date : dateDelivery.toDateString())}</span></p>
+            </div> */}
           </div>
-              <div className="text-[10px] flex">
-              <p>Livraison estimée {product.price-product.discount > 35 && ""}{"le"}</p>  
- 
-                
-  <p className="first-letter:capitalize ml-1"> <span className="font-bold"> {formatDateCompletWithDay(product.pre_order?product.release_date: dateDelivery.toDateString())}</span></p>
-              </div>
-           </div>
-         
+
         )}
         <div className="flex items-center flex-wrap md:flex-nowrap justify-between  mt-7 md:mt-8 relative">
           {quantity > 0 && (
@@ -143,7 +144,6 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
             </div>
           )}
           {/* End of product price */}
-
           {quantity > 0 ? (
             <>
               <AddToCart data={product} variant="single" isCard={true} />
@@ -154,7 +154,7 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
             </div>
           )}
         </div>
-       
+
       </header>
     </article>
   );

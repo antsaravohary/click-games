@@ -163,7 +163,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
               <h1 className="font-semibold  text-lg md:text-xl xl:text-2xl tracking-tight text-heading">
                 {name}
               </h1>
-              
+
               <div className="ml-8 hidden">
                 {product.product_condition === "new" && (
                   <Badge
@@ -192,9 +192,9 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
               </div>
             </div>
             <div className="flex justify-center justify-items-center items-center mt-4 ">
-            <div style={{ backgroundColor: product?.categories[0]?.color, borderColor: product?.categories[0]?.color }} className="inline-flex flex justify-center ml-4 shrink-0 items-center text-center rounded border px-2 py-1 text-xs text-light">{product?.categories[0]?.name}</div>
+              <div style={{ backgroundColor: product?.categories[0]?.color, borderColor: product?.categories[0]?.color }} className="inline-flex flex justify-center ml-4 shrink-0 items-center text-center rounded border px-2 py-1 text-xs text-light">{product?.categories[0]?.name}</div>
             </div>
-         
+
             {mode === "user-product" && (
               <span className="text-small text-gray-400">
                 Publier le {dayjs(updated_at).format("DD/MM/YYYY à HH:MM")}
@@ -229,6 +229,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                 </span>
               )}
             </div>
+            {/**   
             <div className="w-full flex  flex justify-center flex-row items-start ">
               <div className="flex items-center">
                 <Tooltip tooltipText={"Les délais de livraison sont indicatifs de certaines commandes, susceptibles d'avoir des délais de livraison plus longs"} children={<InfoIcon height="16" width="16" />} />
@@ -241,7 +242,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div>
               <ProductAttributes
                 variations={variations}
@@ -271,10 +272,11 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                   )}
                   {mode !== "user-product" && (
                     <div className="mb-3 lg:mb-0 justify-center  w-full lg:max-w-[400px]">
+                      {/** 
                       <div className="flex mx-auto justify-center space-x-1 mb-4">
                         <img className=" " src="/click_games+.png" style={{ width: "100px" }} />
                         <Tooltip tooltipText={" Cette mention signifie que le produit et éligible au programme ClickGames+. en savoirs plus"} children={<InfoIcon height="16" width="16" />} />
-                      </div>
+                      </div>*/}
                       <AddToCart
                         isCard={false}
                         data={product}
@@ -299,7 +301,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                         <VisaIcon />
                         <MasterIcon />
                         <AmericanExpressIcon />
-                        <CarteBleuIcon   className='w-10'/>
+                        <CarteBleuIcon className='w-10' />
                       </div>
                     </div>
                   )}
@@ -344,7 +346,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                 <li className="text-gray-600">Note de jeu: <span className="text-dark"> {product.note_admin}/10</span></li>
                 <li className="text-gray-600">Type de jeu: <span className="text-dark">{product?.tags?.map(tag => (tag?.name) + "  ")}</span></li>
                 <li className="text-gray-600">Compatibilité: <span className="text-dark">{categories[0].name}</span></li>
-                <li className="text-gray-600">Date de sortie: <span className="text-dark">{formatDateComplet(product?.release_date)}</span></li>
+             {!!product?.release_date&&<li className="text-gray-600">Date de sortie: <span className="text-dark">{formatDateComplet(product?.release_date)}</span></li>}   
               </ul>
             </div>
           </div>

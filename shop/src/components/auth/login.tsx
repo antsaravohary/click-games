@@ -136,7 +136,7 @@ const LoginForm = () => {
           {t("text-or")}
         </span>
       </div>*/}
-
+{/**
       <div className="grid grid-cols-1 gap-4 mt-2">
 
         <Button
@@ -161,7 +161,7 @@ const LoginForm = () => {
           <GoogleIcon className="w-4 h-4 mr-3" />
           {t("text-login-google")}
         </Button>
-      </div>
+      </div> */}
 
       <div className="flex flex-col items-center justify-center relative text-sm text-heading mt-8 sm:mt-11 mb-4 sm:mb-4">
         <hr className="w-full" />

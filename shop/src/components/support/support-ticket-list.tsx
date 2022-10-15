@@ -81,7 +81,7 @@ export const SupportTicketLit = ({ tickets, isLoading }: { tickets: Ticket[], is
             rowKey="id"
             columns={ColumnTable}
             data={tickets}
-            emptyText={() => (<div className="flex justify-center"> Vous avez auccun échange en cours</div>)}
+            emptyText={() => (<div className="flex justify-center"> Aucun échange en cours</div>)}
             className="orderDetailsTable w-full"
             scroll={{ x: 700, y: 500 }}
         />

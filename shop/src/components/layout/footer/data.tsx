@@ -4,11 +4,11 @@ export const footer = {
       id: 1,
       widgetTitle: 'widget-title-link-utils',
       lists: [
-        {
+       /* {
           id: 1,
           title: 'Supports',
           path: '/support',
-        },
+        },*/
         {
           id: 2,
           title: 'link-contact-us',
@@ -22,11 +22,11 @@ export const footer = {
         {id:4,
         title:"Conditions de retour et de remboursement",
       path:'/rules-return-back'},
-      {
+     /* {
         id: 5,
         title: 'C\est quoi le ClickGames+',
         path: '/terms/what_is_clickgames_plus',
-      },
+      },*/
       
         /* {
            id: 3,
@@ -138,7 +138,7 @@ export const footer = {
   social: [
     {
       id: 1,
-      path: 'https://www.facebook.com/ClickUniversFR',
+      path: 'https://www.facebook.com/profile.php?id=100084854575805',
       image: '/assets/images/social/facebook.svg',
       name: 'facebook',
       width: 20,
@@ -154,7 +154,7 @@ export const footer = {
     },
     {
       id: 3,
-      path: 'https://www.instagram.com/clickgamesfr/',
+      path: 'https://www.instagram.com/clickgamesfr_/',
       image: '/assets/images/social/instagram.svg',
       name: 'instagram',
       width: 20,

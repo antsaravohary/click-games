@@ -44,11 +44,25 @@ export default function PrivacyPage() {
 
       <div className="flex max-w-7xl mx-auto flex-col">
         <div className="flex flex-col space-y-4">
-          <p className="text-lg">Conformément à l'article L.121-21 et suivants du Code de la Consommation, vous disposez d'un délai de rétractation de quatorze jours à compter de la date de réception de votre commande, pour retourner les Produits commandés et/ou pour vous rétracter des contrats de prestation de service, sans avoir à en justifier de motif. Dans le cadre de l’exercice de votre droit de rétractation, les frais de renvoi des Produits sont à votre charge exclusive. Le droit de rétractation ne pourra pas s’appliquer en cas de fourniture d’enregistrements audio ou vidéo ou de logiciels informatiques lorsqu’ils ont été descellés après livraison. </p>
-          <p className="text-lg">Le remboursement interviendra 24 Heures après réception du colis retourné </p>
-          <p className="text-lg">Le présent formulaire doit être complété et renvoyé uniquement si le Client souhaite se rétracter de la commande passée sur https://www.click-games.fr sauf exclusions ou limites à l'exercice du droit de rétractation suivant les Conditions Générales de Vente applicables. A l'attention de Affaire personnelle commerçant, Click Games - CLICK GAMES 26 rue des arbues, 25400 AUDINCOURT.</p>
-          <p className="text-center"> <a className="btn bg-accent p-2 rounded text-white" href="https://api.click-games.fr/storage/formulaire_retractation.pdf" target="_blank">Formulaire de Rétractation</a></p>
+          <p className="text-lg">Si vous souhaitez nous retourner votre commande pour une raison quelconque. Notre équipe est à votre disposition par mail 7j/7 et par téléphone du Lundi au Samedi de 10h à 18h afin de vous assister dans votre démarche.</p>
+          <p className="text-lg">Après la réception de votre colis vous avez jusqu’à 14 jours pour nous faire savoir par mail à <a className="text-accent" href="mailto:support@click-games.fr">support@click-games.fr</a> ou depuis notre page de contact que vous souhaitez retourner votre colis.
+          </p>
+          <p className="text-lg">Selon votre préférence vous pourrez alors choisir l’une des options suivantes, sous conditions que l’article soit renvoyé dans un état neuf non endommagé identique à celui dans lequel il vous a été expédié :</p>
+          <ul className="list-disc ml-4">
+            <li >
+              Obtenir un bon d’achat d’une valeur équivalente sur la boutique pour de nouveaux achats.
+            </li>
          
+            <li> Obtenir un remboursement de votre commande.
+            </li>
+          </ul>
+          <p className="text-lg">Veuillez par ailleurs considérer avant de passer une commande sur notre boutique les exceptions auxquelles nous n’accordons pas de bon d’achat aux retours et aux échanges :</p>
+          <ul className="list-disc ml-4">
+            <li>Les articles retournés ne doivent avoir aucun signe d’usure d’utilisation apparente.</li>
+        
+            <li>Les frais retour sont à la charge du client</li>
+
+          </ul>
           <p>Mail: Support@click-games.fr
 
           </p>

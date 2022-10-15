@@ -96,7 +96,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   await queryClient.prefetchQuery("settings", fetchSettings);
 
   await queryClient.prefetchInfiniteQuery(
-    ["products", { type: params?.type}],
+    ["products", { type: params?.type }],
     fetchProducts,
     {
       staleTime: 60 * 1000,
@@ -142,26 +142,24 @@ export default function HomePage() {
       <SEO
         title="Click sur ton Univers"
       />
-      <div className="w-fulll overflow-hidden lock lg:mt-6">
+      {/**  <div className="w-fulll overflow-hidden lock lg:mt-6">
         <BannerShort banner={getPageData.banner} preview={2} className="max-h-140" />
-        <BannerShort banner={getPageData.banner1} preview={3} className="max-h-160 mt-4" />
-       
-        {/*<FeatureGrid className="" />*/}
-      </div>
+        <BannerShort banner={getPageData.banner1} preview={3} className="max-h-160 mt-4" />  
+      </div> */}
       {/*width > 1280 && <BakeryCategory />*/}
-      {width > 1280 && <CategoryCloud/>}
-      
+      {width > 1280 && <CategoryCloud />}
+
       <div className=" bg-gray-100">
         <main className="w-full lg:px-4 overflow-hidden block lg:mt-6">
           {width < 1280 && width > 684 && <FilterBarLayoutTwo />}
-          <FilterBar2/>
+          <FilterBar2 />
           <Element name="grid">
             <ProductFeed />
           </Element>
         </main>
       </div>
       {width > 1023 && <CartCounterButton />}
-      
+
       {/**   <Banner banner={getPageData?.banner} className="miiiin-h-screen" />
   
       <FilterBar />
@@ -183,7 +181,7 @@ export default function HomePage() {
       >
       </Element>
       {width > 1023 && <CartCounterButton />}*/}
-      <MyCookieConsent/>
+      <MyCookieConsent />
       {/** <CookieConsent buttonText="ok!" style={{ background: "white", color: "black", boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)", textAlign: "center" }}></CookieConsent> */}
 
     </>

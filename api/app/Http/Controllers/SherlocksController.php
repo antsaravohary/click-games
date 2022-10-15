@@ -85,27 +85,57 @@ class SherlocksController extends Controller
    }
    public function test()
    {
-      $data = [
+      return "testing ....";
+      $session = StripeSession::find(26);
+      $t1 = SherlockTransaction::find(50);
+      $t2 = SherlockTransaction::find(51);
+    //  return $t1;
+      if ($t2->response["responseCode"] == "00" && $t2->response["acquirerResponseCode"] == "00" && $t2->response["holderAuthentStatus"] == "SUCCESS") {
+         $data3 = [
+            "cardExpiryDate" => $t1->data["cardExpiryDate"],
+            "cardNumber" => $t1->data["cardNumber"],
+            "interfaceVersion" => "WR_WS_2.3",
+            "merchantWalletId" => $t1->user_id,
+            "paymentMeanAlias" => "mycard_",
+            "paymentMeanBrand" => $t2->response["paymentMeanBrand"]
+         ];
+         $payment_card = [
+            "number" => $t1->data["cardNumber"],
+            "expiry" => $t1->data["cardExpiryDate"],
+            "cvc" => $t1->data["cardCSCValue"],
+            "user_id" => $t1->user_id
+         ];
+      
+         //$t3 = $sherlock->addCard($data3, $t1->user_id);
 
-         "amount" => "0",
-         "captureDay" => "0",
-         "captureMode" => "AUTHOR_CAPTURE",
-         "cardCSCValue" => "123",
-         "cardExpiryDate" => "202212",
-         "cardNumber" => "5017679110380921",
-         "currencyCode" => "978",
-         "interfaceVersion" => "IR_WS_2.3",
-         "orderChannel" => "INTERNET",
-         "orderId" => " ORD101",
-         "returnContext" => " ReturnContext",
-         "transactionOrigin" => " SO_WEBAPPLI",
-         "transactionReference" => "146",
+         /*   if ($t3->response["walletResponseCode"] == "00") {
+            $payment_card["paymentMeanId"] = $t3->response["paymentMeanId"];
+         }*/
+         //$payment_card["data"] = $t3->response;
+         $payment_card = PaymentCard::create($payment_card);
+        
+         $order = $this->valideOrder($session->id, $payment_card, $t2);
 
-      ];
-      $sherlock = new Sherlocks();
-      return ["test" => $sherlock->test($data)];
+         return view("sherlock.redirect", ["url" => env("SHOP_URL") . "/orders\/" . $order->ref]);
+      } else {
+         $message = SherlockResponse::responseCode[$t2->response["responseCode"]];
+         $code = $t2->response["responseCode"];
+         if (isset($t2->response["acquirerResponseCode"]) && $t2->response["acquirerResponseCode"] != "00") {
+            $message = SherlockResponse::acquirerResponseCode[$t2->response["acquirerResponseCode"]];
+            $code = $t2->response["acquirerResponseCode"];
+         }
+         if ($t2->response["holderAuthentStatus"] != "SUCCESS") {
+            $code = "3D SECURE ERROR";
+            $message = "Authentification 3D secure n'est pas validée";
+         }
+         return view("sherlock.error_payment", ["code" => $code, "msg" => $message]);
+         /*return [
+            "status" => "failed",
+            "code" => $t2->response["responseCode"],
+            "msg" => SherlockResponse::responseCode[$t2->response["responseCode"]]
+         ];*/
+      }
 
-      return view("sherlock.error_payment", ["code" => 50, "msg" => "hello world"]);
    }
 
    public function sherlock_transaction($id)

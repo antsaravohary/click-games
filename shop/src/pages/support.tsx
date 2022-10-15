@@ -49,10 +49,10 @@ export default function HelpPage() {
         <div className="  md:mx-8 flex flex-col mt-8 md:flex-row">
           <div className="flex-1  m-4 p-4">
             {!showContactForm ? <>      <h3 className="border-l border-l-8 pl-2 text-2xl font-bold leading-6 border-yellow-600 mb-10">Vous êtes client ? Utilisez ce formulaire
-              Pour bénéficier d’une prise en charge plus rapide et efficace</h3>
+             </h3>
               <div className="flex flex-col w-72 justify-self-center md:ml-0 mx-auto">
                 <Button onClick={onContact} size="big">Ouvrir un ticket</Button>
-                <span className="text-xs text-center">Le délai de prémière reponse est entre 48h à 72h</span>
+                <span className="text-xs text-center"></span>
               </div>
               <h3 className="border-l border-l-8 pl-2 text-2xl font-bold leading-6 border-gray-600 mt-10 mb-10">Pas encore client ? besoin d’assistance ?
                 Contactez nous depuis ce formulaire</h3>
@@ -67,7 +67,7 @@ export default function HelpPage() {
 
 
           </div>
-          <div className="flex-1 m-4 p-4 ">
+          <div className="flex-1 m-4 p-4 hidden">
             <h3 className="border-l border-l-8 pl-2 text-2xl font-bold leading-6 border-red-600 mb-5">Centre d'aide</h3>
             <HelpCenterList />
           </div>

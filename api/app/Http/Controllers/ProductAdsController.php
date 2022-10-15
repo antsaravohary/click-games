@@ -19,7 +19,7 @@ class ProductAdsController extends Controller
         }
         ProductApi::merchant([
             'app_name' => 'click games',
-            'merchant_id' => '565781391',
+            'merchant_id' => '628792250',
             'client_credentials_path' => storage_path('app/google-merchant-api/service-account-credentials.json')
         ])->insert(function ($product) use ($p) {
 
@@ -35,12 +35,15 @@ class ProductAdsController extends Controller
             $productAds->google_merchant_state = "success";
             $productAds->google_merchant_at = Carbon::now();
             $productAds->google_merchant_need_update = false;
+            $productAds->save();
         })->otherwise(function () use ($productAds) {
             $productAds->google_merchant_state = "failed";
             $productAds->google_merchant_need_update = true;
+            $productAds->save();
         })->catch(function ($productAds) {
             $productAds->google_merchant_state = "failed";
             $productAds->google_merchant_need_update = true;
+            $productAds->save();
         });
         $productAds->save();
         $p->product_ads_id = $productAds->id;
