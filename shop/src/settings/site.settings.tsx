@@ -34,12 +34,12 @@ export const siteSettings = {
     phone: "",
     social: [
       {
-        link: "https://www.facebook.com/ClickGamesFr",
+        link: "https://www.facebook.com/profile.php?id=100084854575805",
         icon: <FacebookIcon width="16px" height="16px" />,
         hoverClass: "text-social-facebook",
       },
       {
-        link: "https://www.instagram.com/ClickGamesFr",
+        link: "https://www.instagram.com/clickgamesfr_/",
         icon: <InstagramIcon width="16px" height="16px" />,
         hoverClass: "text-social-instagram",
       },
