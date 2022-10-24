@@ -100,14 +100,7 @@ const NavbarWithSearch = () => {
                   </li>
 
                 </>
-              ) : <li key="supports">
-                <Link
-                  href={"/support"}
-                  className="font-semibold text-heading flex items-center transition duration-200 no-underline hover:text-accent focus:text-accent"
-                >
-                  {t("nav-menu-support")}
-                </Link>
-              </li>}
+              ) : <></>}
               {siteSettings.headerLinks.map(({ href, label, icon }) => (
                 <li key={`${href}${label}`}>
                   <Link

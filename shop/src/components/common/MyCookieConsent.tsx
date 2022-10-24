@@ -11,7 +11,7 @@ const MyCookieConsent = () => {
                         <img className="-mt-1" src="https://www.svgrepo.com/show/30963/cookie.svg" alt="Cookie Icon SVG" />
                     </div>
                     <span className="w-full  block leading-normal text-justify text-gray-800 text-md ">Nous utilisons des cookies pour vous garantir une expérience optimale sur notre site Internet.</span>
-                    <a className="text-xs text-gray-400 mr-1 hover:text-gray-800 mb-4" href="/terms/politique-de-confidentialité">Politique de confidentialité</a>
+                    <a className="text-xs text-gray-400 mr-1 hover:text-gray-800 mb-4" href="/terms/politique-de-confidentialite">Politique de confidentialité</a>
                     <div className="flex items-center justify-between">
                         <div className="w-1/2 mx-4">
 

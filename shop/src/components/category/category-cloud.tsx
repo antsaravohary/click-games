@@ -17,12 +17,12 @@ export default function CategoryCloud() {
       });
     
       if (loading) {
-        return (
-          <div className=" xl:block">
+        return null; (
+         {/**  <div className=" xl:block">
             <div className="w-full h-52 flex justify-center mt-8 px-2">
               <BakeryCategoryLoader />
             </div>
-          </div>
+          </div>*/}
         );
       }
       

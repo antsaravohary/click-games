@@ -253,7 +253,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
             <DeliveryOptionView product={product} />
 
             {quantity > 0 && (
-              <div className="flex items-center  justify-center hidden text-green-500 mt-2 ml-2">
+              <div className="flex items-center  justify-center text-green-500 mt-2 ml-2">
                 <CheckMark height="24" width="24" />
                 <div className="ml-4 ">En stock</div>
               </div>
@@ -310,11 +310,11 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
 
               {quantity > 0 ? (
                 <>
-                  {isEmpty(variations) && (
+                  {/*isEmpty(variations) && (
                     <span className="text-green-500 text-body whitespace-nowrap lg:ms-7">
-                      {/*t("text-in-stock")*/}
+                      {t("text-in-stock")}
                     </span>
-                  )}
+                  )*/}
                   {!isEmpty(selectedVariation) && (
                     <span className="text-base text-body whitespace-nowrap lg:ms-7">
                       {
@@ -340,6 +340,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
               basePath={`/${type?.slug}`}
             />
           ) : null*/}
+          {/*
           <div className=" md:mt-2  flex justify-center flex-col lg:flex-row items-center ">
             <div className="bg-gray-300 p-4 rounded-lg border-t border-border-200 border-opacity-60 lg:max-w-[400px] w-full">
               <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
@@ -349,10 +350,10 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
              {!!product?.release_date&&<li className="text-gray-600">Date de sortie: <span className="text-dark">{formatDateComplet(product?.release_date)}</span></li>}   
               </ul>
             </div>
-          </div>
+        </div>*/}
 
 
-          {shop?.name && (
+          {/*shop?.name && (
             <div className="flex items-center mt-2 hidden">
               <span className="text-sm font-semibold text-heading capitalize me-6 py-1">
                 {t("common:text-sellers")}
@@ -365,7 +366,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                 {shop?.name}
               </button>
             </div>
-          )}
+          )*/}
           <div>
             <NoticeView product_id={product?.id as string} />
             {/** <button
@@ -382,7 +383,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
       <div className="mx-16" >
         <div title="Détails">
           <h1 className="font-semibold  text-lg md:text-xl xl:text-2xl tracking-tight text-heading mt-2">
-            Details
+          Détails
           </h1>
           <Element
             name="details"

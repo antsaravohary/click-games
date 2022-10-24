@@ -47,12 +47,16 @@ class Test2 extends Command
         $attributes = Product::all();
 
         foreach ($attributes as $key => $p) {
-            $ps=ProductAds::create([
+           /* $ps=ProductAds::create([
                 "google_merchant_state"=>"success",
                 "google_merchant_at"=>Carbon::now(),
                 "google_merchant_need_update"=>false
             ]);
             $p->product_ads_id=$ps->id;
+            $p->save();*/
+            $price=$p->price+10;
+            $p->price=$price;
+            $p->sale_price=$price;
             $p->save();
         }
 
