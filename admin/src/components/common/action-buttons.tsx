@@ -15,6 +15,7 @@ type Props = {
   editUrl?: string;
   detailsUrl?: string;
   copyUrl?: string;
+  viewUrl?: string;
   isUserActive?: boolean;
   userStatus?: boolean;
   isShopActive?: boolean;
@@ -26,6 +27,7 @@ const ActionButtons = ({
   deleteModalView,
   editUrl,
   copyUrl,
+  viewUrl,
   detailsUrl,
   userStatus = false,
   isUserActive = false,
@@ -116,7 +118,8 @@ const ActionButtons = ({
           <Eye width={24} />
         </Link>
       )}
-          {copyUrl && (
+
+      {copyUrl && (
         <Link
           href={copyUrl}
           className="ml-2 text-base transition duration-200 hover:text-heading"
@@ -124,6 +127,16 @@ const ActionButtons = ({
         >
           <CopyIcon width={24} />
         </Link>
+      )}
+      {viewUrl && (
+        <a
+          target="_black"
+          href={viewUrl}
+          className="ml-2 text-base transition duration-200 hover:text-heading"
+          title={t("text-view")}
+        >
+          <Eye width={24} />
+        </a>
       )}
     </div>
   );

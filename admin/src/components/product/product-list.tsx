@@ -234,13 +234,15 @@ const ProductList = ({ products, onPagination }: IProps) => {
       dataIndex: "slug",
       key: "actions",
       align: "center",
-      width: 80,
+      width: 140,
       render: (slug: string, record: Product) => (
         <ActionButtons
           id={record?.id}
           copyUrl={`${router.asPath}/${slug}/copy`}
           editUrl={`${router.asPath}/${slug}/edit`}
           deleteModalView="DELETE_PRODUCT"
+          viewUrl={`${process.env.NEXT_PUBLIC_SHOP_URL}/product/${slug}`}
+
         />
       ),
     },

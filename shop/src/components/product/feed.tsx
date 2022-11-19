@@ -30,8 +30,8 @@ const Feed = () => {
     text: query?.text as string,
     category: query?.category as string,
     price:query?.price as string,
-    orderBy:query?.orderBy,
-    sortedBy:query?.sortedBy
+    orderBy:"updated_at",
+    sortedBy:"desc"
 
   });
 
@@ -82,7 +82,7 @@ const Feed = () => {
           </>
         )}
       </div>
-      {hasNextPage && (
+      {/*hasNextPage && (
         <div className="flex justify-center mt-8 lg:mt-12">
           <Button
             loading={loadingMore}
@@ -93,7 +93,7 @@ const Feed = () => {
             Découvrir d'autres articles
           </Button>
         </div>
-      )}
+      )*/}
     </div>
   );
 };
