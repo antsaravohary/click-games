@@ -150,12 +150,12 @@ export default function HomePage() {
         <BannerShort banner={getPageData.banner1} preview={3} className="max-h-160 mt-4" />  
       </div> */}
       {/*width > 1280 && <BakeryCategory />*/}
-      {width > 1280 && <CategoryCloud />}
+      {/*width > 1280 && <CategoryCloud />*/}
 
       <div className=" bg-gray-100">
         <main className="w-full lg:px-4 overflow-hidden block lg:mt-6">
-          {width < 1280 && width > 684 && <FilterBarLayoutTwo />}
-          <FilterBar2 />
+          {/*width < 1280 && width > 684 && <FilterBarLayoutTwo />*/}
+         {/* <FilterBar2 />*/}
           <Element name="grid">
             <ProductFeed />
           </Element>
