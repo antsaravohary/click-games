@@ -5,6 +5,7 @@ import { useCart } from "@contexts/quick-cart/cart.context";
 import { generateCartItem } from "@contexts/quick-cart/generate-cart-item";
 import { useModalAction } from "@components/ui/modal/modal.context";
 import { useCustomerQuery } from "@data/customer/use-customer.query";
+import { useRouter } from "next/router";
 
 interface Props {
   data: any;
@@ -35,6 +36,7 @@ export const AddToCart = ({
     addItemToCart,
     removeItemFromCart,
     isInStock,
+    resetCart,
     getItemFromCart,
     isInCart,
   } = useCart();
@@ -45,11 +47,13 @@ export const AddToCart = ({
     variation,
     true
   );
+  const router=useRouter();
   const handleAddClick = (
     e: React.MouseEvent<HTMLButtonElement | MouseEvent>
   ) => {
 
     e.stopPropagation();
+    resetCart();
     if (isCard && data.product_type !== "simple") {
       openModal("PRODUCT_DETAILS", data.slug);
     } else {
@@ -65,6 +69,7 @@ export const AddToCart = ({
         cartAnimation(e);
       }
     }
+    router.push("/checkout");
   };
   const handleRemoveClick = (e: any) => {
     e.stopPropagation();

@@ -19,6 +19,6 @@ export default function renderProductCard(product: any, className = "") {
       return <Neon product={product} className={className} />;
     default:
    
-      return <Helium product={product} className={className} />;
+      return <Krypton product={product} className={className} />;
   }
 }

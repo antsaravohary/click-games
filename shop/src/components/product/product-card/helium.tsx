@@ -144,7 +144,7 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
             </div>
           )}
           {/* End of product price */}
-          {quantity > 0 ? (
+          {/*quantity > 0 ? (
             <>
               <AddToCart data={product} variant="single" isCard={true} />
             </>
@@ -152,7 +152,7 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
             <div className="bg-red-500 rounded text-xs text-light px-2 py-1">
               {t("text-out-stock")}
             </div>
-          )}
+          )*/}
         </div>
 
       </header>

@@ -42,7 +42,7 @@ import VisaIcon from "@components/icons/icons/visa";
 import MasterIcon from "@components/icons/icons/master";
 import AmericanExpressIcon from "@components/icons/icons/american_express";
 import CarteBleuIcon from "@components/icons/icons/carbe-bleu";
-
+import CartIcon from "@components/icons/cart";
 type Props = {
   product: any;
   variant?: "defaultView" | "modalView";
@@ -285,7 +285,8 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                         variation={selectedVariation}
                         disabled={selectedVariation?.is_disable || !isSelected}
                       />
-                      {!!(product?.pre_order&& product?.release_date) && (
+                  
+                      {!!(product?.pre_order && product?.release_date) && (
                         <div className="border flex space-x-2 rounded p-2 mt-1">
                           <BoxImportantIcon className="w-6 h-6" />
                           <span className="">
@@ -384,7 +385,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
       <div className="mx-16" >
         <div title="Détails">
           <h1 className="font-semibold  text-lg md:text-xl xl:text-2xl tracking-tight text-heading mt-2">
-          Détails
+            Détails
           </h1>
           <Element
             name="details"
