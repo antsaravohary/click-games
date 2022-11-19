@@ -93,7 +93,7 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
         >
           {name}
         </h3>
-        {product?.categories && <div style={{ backgroundColor: product?.categories[0]?.color, borderColor: product?.categories[0]?.color }} className="inline-flex shrink-0 items-center rounded border px-2 py-1 text-xs text-light">{product?.categories[0]?.name}</div>}
+        {/*product?.categories && <div style={{ backgroundColor: product?.categories[0]?.color, borderColor: product?.categories[0]?.color }} className="inline-flex shrink-0 items-center rounded border px-2 py-1 text-xs text-light">{product?.categories[0]?.name}</div>*/}
 
         {/** <p className="text-muted text-xs">{unit}</p> */}
         {/* End of product info */}

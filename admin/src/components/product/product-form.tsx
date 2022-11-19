@@ -373,6 +373,7 @@ export default function CreateOrUpdateProductForm({
   const productTypeValue = watch("productTypeValue");
   const preOrderValue = watch("pre_order");
   const is_used = watch("is_used");
+  console.log("produit",initialValues);
 /*const image=watch("image");
   const gallery=watch("gallery");*/
   return (

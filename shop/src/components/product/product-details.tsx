@@ -191,9 +191,10 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                 )}
               </div>
             </div>
+            {/** 
             <div className="flex justify-center justify-items-center items-center mt-4 ">
               <div style={{ backgroundColor: product?.categories[0]?.color, borderColor: product?.categories[0]?.color }} className="inline-flex flex justify-center ml-4 shrink-0 items-center text-center rounded border px-2 py-1 text-xs text-light">{product?.categories[0]?.name}</div>
-            </div>
+            </div>*/}
 
             {mode === "user-product" && (
               <span className="text-small text-gray-400">
@@ -284,7 +285,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                         variation={selectedVariation}
                         disabled={selectedVariation?.is_disable || !isSelected}
                       />
-                      {product?.release_date && (
+                      {!!(product?.pre_order&& product?.release_date) && (
                         <div className="border flex space-x-2 rounded p-2 mt-1">
                           <BoxImportantIcon className="w-6 h-6" />
                           <span className="">

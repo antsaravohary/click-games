@@ -59,7 +59,7 @@ export default function PrivacyPage() {
           <p>Mail: Support@click-games.fr
 
           </p>
-          <p>Téléphone : 09 67 25 33 15</p>
+          <p>Téléphone : 07 56 82 74 47</p>
           <p>Nous vous remercions de votre compréhension.</p>
         </div>
 

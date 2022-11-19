@@ -54,7 +54,7 @@ class Test2 extends Command
             ]);
             $p->product_ads_id=$ps->id;
             $p->save();*/
-            $price=$p->price+10;
+            $price=$p->price-10;
             $p->price=$price;
             $p->sale_price=$price;
             $p->save();
