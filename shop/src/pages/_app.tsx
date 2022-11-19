@@ -125,6 +125,7 @@ function CustomApp({ Component, pageProps: { session, ...pageProps } }: AppProps
 
   useEffect(() => {
     const handleRouteChange = (url: any) => {
+      console.log("url",url);
       pageview(url);
     };
     //When the component is mounted, subscribe to router changes

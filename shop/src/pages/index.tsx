@@ -34,6 +34,7 @@ import BakeryCategory from "@components/category/bakery-category";
 import MyCookieConsent from "@components/common/MyCookieConsent";
 import FilterBar2 from "@components/common/filter-bar2";
 import CategoryCloud from "@components/category/category-cloud";
+import { fetchArticles } from "@data/article/use-articles.query";
 const banners = [
   {
     id: 1,
@@ -102,6 +103,8 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
       staleTime: 60 * 1000,
     }
   );
+  await queryClient.prefetchQuery(["articles", {
+  }], fetchArticles, { staleTime: 60 * 1000 });
   await queryClient.prefetchQuery(
     ["fetch-parent-category", { type: params?.type }],
     fetchCategories,

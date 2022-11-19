@@ -27,9 +27,9 @@ const settings=useSettings();
     <div className={`pb-10 sm:pb-0 ${className}`}>
       <div className="flex flex-col text-center sm:text-start max-w-[350px] mx-auto sm:ms-0 pb-6 sm:pb-5">
         <Logo href={ROUTES.HOME} className="mb-3 lg:mb-5 mx-auto sm:ms-0" />
-        <p className='text-left text-xs'>
+     {/**   <p className='text-left text-xs'>
           Click Games | E-commerce spécialiste du jeux vidéos | Livraison gratuite à partir de 30€ | Click sur ton jeu
-        </p>
+        </p>*/} 
         
         <div className='mt-2 text-sm flex items-center'>
           <div>  <PhoneIcon width="15" height="15" /></div>
@@ -39,7 +39,6 @@ const settings=useSettings();
           <div>  <EmailIcon width="15" height="15" /></div>
           <a href='mailto:support@click-games.fr' className='ml-2'>support@click-games.fr</a>
         </div>
-        <div className='text-sm'>Heure d'ouverture lundi au samedi de 10h à 18h</div>
       </div>
 
       {social && (

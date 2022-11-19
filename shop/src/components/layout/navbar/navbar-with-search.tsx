@@ -78,13 +78,13 @@ const NavbarWithSearch = () => {
               >
               
                 <Search label={t("text-search-label")} variant="minimal" />
-                <div  className=" inline-flex items-center justify-center px-2  ml-4 rounded mr-2 ">
+              {/**  <div  className=" inline-flex items-center justify-center px-2  ml-4 rounded mr-2 ">
                   <span className=' mr-2'>
                   <PhoneIcon height="32" width="32" />
                   </span>
 
                   <span className="font-bold une annonce text-lg whitespace-nowrap">{settings?.contact}</span>
-                </div>
+                </div>*/} 
               </div>
             </div>
             <ul className="hidden lg:flex items-center flex-shrink-0 space-s-10">
@@ -100,14 +100,7 @@ const NavbarWithSearch = () => {
                   </li>
 
                 </>
-              ) : <li key="supports">
-                <Link
-                  href={"/support"}
-                  className="font-semibold text-heading flex items-center transition duration-200 no-underline hover:text-accent focus:text-accent"
-                >
-                  {t("nav-menu-support")}
-                </Link>
-              </li>}
+              ) : <></>}
               {siteSettings.headerLinks.map(({ href, label, icon }) => (
                 <li key={`${href}${label}`}>
                   <Link
