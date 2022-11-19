@@ -40,24 +40,6 @@ export default class CustomDocument extends Document {
           `,
             }}
           />
-
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-              var callback = fonction () {
-                if (typeof(url) != 'undefined') {
-                  window.location = url;
-                }
-              };
-              gtag('event', 'conversion', {
-                  « send_to »: « AW-575028874/D1cLCK3uw-gBEIr9mJIC»,
-                  « event_callback »: rappel
-              });
-              renvoyer false;
-            }
-          `,
-            }}
-          />
           <script
             dangerouslySetInnerHTML={{
               __html: `
