@@ -1,0 +1,61 @@
+{
+    "seo": {
+        "ogImage": [],
+        "ogTitle": null,
+        "metaTags": null,
+        "metaTitle": null,
+        "canonicalUrl": null,
+        "ogDescription": null,
+        "twitterHandle": null,
+        "metaDescription": null,
+        "twitterCardType": null
+    },
+    "logo": {
+        "id": 1707,
+        "original": "https://api-test.click-games.fr//storage/1707/logo_click_game.png",
+        "thumbnail": "https://api-test.click-games.fr//storage/1707/conversions/logo_click_game-thumbnail.jpg"
+    },
+    "currency": "EUR",
+    "taxClass": 1,
+    "siteTitle": "CLICK GAMES",
+    "deliveryTime": [
+        {
+            "title": "2 à 5 Jours",
+            "description": null
+        }
+    ],
+    "signupPoints": 0,
+    "siteSubtitle": "E-COMMERCE",
+    "shippingClass": 1,
+    "contactDetails": {
+        "contact": "09 67 25 33 15",
+        "location": {
+            "lat": 42.9585979,
+            "lng": -76.90872019999999,
+            "zip": "25400",
+            "city": "Audincourt",
+            "state": "Doubs",
+            "country": "France",
+            "formattedAddress": "Click Games 26 Rue Arbues, 25400 Aundicourt"
+        },
+        "socials": [
+            {
+                "url": "https://www.facebook.com/profile.php?id=100084854575805",
+                "icon": "FacebookIcon"
+            },
+            {
+                "url": "https://www.instagram.com/clickgamesfr_/",
+                "icon": "InstagramIcon"
+            },
+            {
+                "url": "https://twitter.com/ClickGamesFr",
+                "icon": "TwitterIcon"
+            }
+        ],
+        "website": "www.click-games.fr",
+        
+    },
+    "minimumOrderAmount": null,
+    "maximumQuestionLimit": 1,
+    "currencyToWalletRatio": 0
+}
