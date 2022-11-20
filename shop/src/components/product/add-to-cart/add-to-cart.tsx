@@ -69,7 +69,7 @@ export const AddToCart = ({
         cartAnimation(e);
       }
     }
-    router.push("/checkout");
+   
   };
   const handleRemoveClick = (e: any) => {
     e.stopPropagation();

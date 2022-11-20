@@ -4,6 +4,7 @@ import { useTranslation } from "next-i18next";
 import cn from "classnames";
 import { Lock } from "@components/icons/lock";
 import Button from "@components/ui/button";
+import { useRouter } from "next/router";
 
 type Props = {
   variant?: "helium" | "neon" | "argon" | "oganesson" | "single" | "big";
@@ -15,13 +16,14 @@ type Props = {
 
 const AddToCartBtn: React.FC<Props> = ({ variant, onClick, disabled, pre_order, mode }) => {
   const { t } = useTranslation("common");
+  const router=useRouter();
   return (<div className="flex flex-col justify-center mt-5">
 
-    <Button className="flex flex "    onClick={onClick} >
+    <Button className="flex flex "    onClick={(e)=>{onClick(e); router.push("/checkout?subscribe=on");}} >
       <CartIcon className="w-4 h-4 me-2.5" />
       Achetez avec le ClickGames+
     </Button>
-    <Button className="flex flex mt-4 "   onClick={onClick} >   <CartIcon className="w-4 h-4 me-2.5" />  Achetez sans le ClickGames+</Button>
+    <Button className="flex flex mt-4 "  onClick={(e)=>{onClick(e); router.push("/checkout?subscribe=off");}}  >   <CartIcon className="w-4 h-4 me-2.5" />  Achetez sans le ClickGames+</Button>
   </div>)
 
   switch (variant) {

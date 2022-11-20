@@ -164,7 +164,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                 {name}
               </h1>
 
-              <div className="ml-8 hidden">
+              <div className="ml-8">
                 {product.product_condition === "new" && (
                   <Badge
                     text={`text-product-condition-${product.product_condition}`}

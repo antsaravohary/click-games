@@ -48,8 +48,8 @@ const CartItem2 = ({ item }: CartItemProps) => {
         <p className="text-lg">
           {item?.categories[0]?.name}
         </p>
-        {router?.query?.subscribe == "on" && <p className="text-lg">
-          Avec Arcansia Pass</p>}
+        {router?.query?.subscribe == "on" && <p className="text-lg p-2 bg-green-500 w-48 text-center rounded">
+          Avec ClickGames+</p>}
       </div>
 
     </div>
