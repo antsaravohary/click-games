@@ -259,6 +259,10 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                 <div className="ml-4 ">En stock</div>
               </div>
             )}
+             <div className="flex items-center  justify-center mt-2 ml-2">
+                <DeliveryTruckIcon height="24" width="24" />
+                <div className="ml-4 ">Expédier en 48 heures</div>
+              </div>
             <div className=" md:mt-2  flex justify-center flex-col lg:flex-row items-center ">
               {quantity > 0 && (
                 <>
@@ -335,6 +339,9 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
               )}
             </div>
           </div>
+          <div className="flex justify-center mt-16">  <div className="bg-accent p-4 rounded-md  text-white w-96">
+                        <p>Échange en illimité 49,99€ HT, par mois avec ClickGames+ 14 jours gratuit</p>
+                    </div> </div>
 
           {/*!!categories?.length ? (
             <ProductCategories
