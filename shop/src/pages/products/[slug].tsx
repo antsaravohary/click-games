@@ -61,7 +61,7 @@ export default function ProductSinglePage({ product }: any) {
         {product.mode==="user-product"?<ProductUserDetails product={product}/>:    <ProductDetails product={product} />}
     
 
-        {product?.related_products?.length > 1 && (
+        {/*product?.related_products?.length > 1 && (
           <div className="p-5 lg:p-14 xl:p-16">
             <RelatedProducts
               products={product?.related_products}
@@ -69,10 +69,10 @@ export default function ProductSinglePage({ product }: any) {
               gridClassName="lg:grid-cols-4 2xl:grid-cols-5 !gap-3"
             />
           </div>
-        )}
+        )*/}
       </div>
 
-      <CartCounterButton />
+     {/**  <CartCounterButton />*/}
     </>
   );
 }

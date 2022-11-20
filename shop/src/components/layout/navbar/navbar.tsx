@@ -57,7 +57,7 @@ const Navbar = () => {
               </NavLink>
             </li>
           ))}
-             <CartCounterTop />
+            {/**  <CartCounterTop />*/}
           {isAuthorize ? (
             <li>
               <AuthorizedMenu />

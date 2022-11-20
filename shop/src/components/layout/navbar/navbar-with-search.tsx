@@ -113,7 +113,7 @@ const NavbarWithSearch = () => {
                 </li>
               ))}
               <li>
-                <CartCounterTop />
+               {/** <CartCounterTop /> */}
               </li>
               {isAuthorize ? (
                 <li>

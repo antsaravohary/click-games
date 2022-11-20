@@ -120,8 +120,7 @@ const NavbarWithTypes: React.FC = () => {
                 </Link>
               </li>
             ))}
-            <CartCounterTop />
-            {isAuthorize ? (
+            {/** <CartCounterTop />*/}
               <li>
                 <AuthorizedMenu />
               </li>

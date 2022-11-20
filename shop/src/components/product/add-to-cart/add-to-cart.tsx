@@ -76,6 +76,12 @@ export const AddToCart = ({
     removeItemFromCart(item.id);
   };
   const outOfStock = isInCart(item?.id) && !isInStock(item.id);
+  return <AddToCartBtn
+  disabled={disabled || outOfStock}
+  variant={variant}
+  pre_order={item?.pre_order}
+  onClick={handleAddClick}
+/>
   return !isInCart(item?.id) ? (
     <AddToCartBtn
       disabled={disabled || outOfStock}

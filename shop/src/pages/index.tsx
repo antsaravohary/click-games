@@ -161,7 +161,7 @@ export default function HomePage() {
           </Element>
         </main>
       </div>
-      {width > 1023 && <CartCounterButton />}
+      {/*width > 1023 && <CartCounterButton />*/}
 
       {/**   <Banner banner={getPageData?.banner} className="miiiin-h-screen" />
   

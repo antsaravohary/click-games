@@ -64,7 +64,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           <HomeIcon />
         </motion.button>
 
-        <motion.button
+      {/**  <motion.button
           whileTap={{ scale: 0.88 }}
           onClick={() => handleSidebar("CART_VIEW")}
           className="flex p-2 product-cart h-full relative items-center justify-center focus:outline-none focus:text-accent"
@@ -76,7 +76,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
               {totalUniqueItems}
             </span>
           )}
-        </motion.button>
+        </motion.button> */}
 
         {isAuthorize ? (
           <motion.button

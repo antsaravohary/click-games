@@ -8,6 +8,9 @@ import usePrice from "@utils/use-price";
 import { useTranslation } from "next-i18next";
 import { useCart } from "@contexts/quick-cart/cart.context";
 import TrashIcon from "@components/icons/icons/trash-icon";
+import { useRouter } from "next/router";
+import PriceView from "@components/common/price-view";
+import { formatDateCompletWithDay } from "@utils/format-date";
 
 interface CartItemProps {
   item: any;
@@ -32,7 +35,26 @@ const CartItem2 = ({ item }: CartItemProps) => {
     e.stopPropagation();
     removeItemFromCart(item.id);
   };
+  const router=useRouter();
   const outOfStock = !isInStock(item.id);
+  return (<div className="mt-5 flex flex-col p-2 border">
+    <div className="flex">
+      <img className="w-24 h-auto" src={item?.image ?? siteSettings?.product?.placeholderImage} />
+      <div className="w-full p-4">
+        <div className="flex justify-between">
+          <h3 className="text-xl font-semibold">{item?.name}</h3>
+          <h3 className="text-xl font-semibold"><PriceView amount={item?.sale_price} /></h3>
+        </div>
+        <p className="text-lg">
+          {item?.categories[0]?.name}
+        </p>
+        {router?.query?.subscribe == "on" && <p className="text-lg">
+          Avec Arcansia Pass</p>}
+      </div>
+
+    </div>
+   
+  </div>)
   return (
     <motion.div
       layout
@@ -42,7 +64,7 @@ const CartItem2 = ({ item }: CartItemProps) => {
       variants={fadeInOut(0.25)}
       className="flex items-center py-4 px-4 sm:px-6 text-sm border-b border-solid border-border-200 border-opacity-75"
     >
-      
+
       <div className="w-10 sm:w-16 h-10 sm:h-16 flex items-center justify-center overflow-hidden bg-gray-100 mx-4 flex-shrink-0 relative">
         <Image
           src={item?.image ?? siteSettings?.product?.placeholderImage}
@@ -53,7 +75,7 @@ const CartItem2 = ({ item }: CartItemProps) => {
       </div>
       <div>
         <h3 className="font-bold text-heading">{item.name}</h3>
-        <div style={{backgroundColor:item?.categories[0]?.color,borderColor:item?.categories[0]?.color}} className="inline-flex shrink-0 mt-2 items-center rounded border px-2 py-1 text-xs text-light">{item?.categories[0]?.name}</div>
+        <div style={{ backgroundColor: item?.categories[0]?.color, borderColor: item?.categories[0]?.color }} className="inline-flex shrink-0 mt-2 items-center rounded border px-2 py-1 text-xs text-light">{item?.categories[0]?.name}</div>
 
       </div>
       <div className="mx-auto">
@@ -63,7 +85,7 @@ const CartItem2 = ({ item }: CartItemProps) => {
       <div className="mx-auto">
         <h3 className="font-bold text-heading">Quantité</h3>
         <Counter
-        className="my-2.5"
+          className="my-2.5"
           value={item.quantity}
           onDecrement={handleRemoveClick}
           onIncrement={handleIncrement}
@@ -76,13 +98,13 @@ const CartItem2 = ({ item }: CartItemProps) => {
         <p className=" my-2.5 font-bold text-heading">{itemPrice}</p>
       </div>
 
-    
+
       <button
         className="w-7 h-7 ms-3 -me-2 flex items-center text-red-500 justify-center rounded-full text-muted transition-all duration-200 focus:outline-none hover:bg-gray-100 focus:bg-gray-100 hover:text-red-600 focus:text-red-600"
         onClick={() => clearItemFromCart(item?.id)}
       >
         <span className="sr-only">{t("text-close")}</span>
-        <TrashIcon   height="32" width="32"/>
+        <TrashIcon height="32" width="32" />
       </button>
     </motion.div>
   );
