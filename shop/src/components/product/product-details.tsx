@@ -43,6 +43,7 @@ import MasterIcon from "@components/icons/icons/master";
 import AmericanExpressIcon from "@components/icons/icons/american_express";
 import CarteBleuIcon from "@components/icons/icons/carbe-bleu";
 import CartIcon from "@components/icons/cart";
+import ArticleL121 from "@components/text/Article-l121";
 type Props = {
   product: any;
   variant?: "defaultView" | "modalView";
@@ -259,10 +260,16 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                 <div className="ml-4 ">En stock</div>
               </div>
             )}
-             <div className="flex items-center  justify-center mt-2 ml-2">
-                <DeliveryTruckIcon height="24" width="24" />
-                <div className="ml-4 ">Expédier en 48 heures</div>
+            <div className="flex items-center  justify-center mt-2 ml-2">
+              <DeliveryTruckIcon height="24" width="24" />
+              <div className="ml-4 ">Expédier en 48 heures</div>
+            </div>
+            <div className="md:mt-2  flex justify-center flex-col lg:flex-row items-cente">
+              <div className="bg-accent p-4 rounded-md  text-white lg:max-w-[400px]">
+                <p>Échange en illimité 49,99€ HT, par mois avec ClickGames+ 14 jours gratuit</p>
               </div>
+            </div>
+
             <div className=" md:mt-2  flex justify-center flex-col lg:flex-row items-center ">
               {quantity > 0 && (
                 <>
@@ -289,7 +296,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                         variation={selectedVariation}
                         disabled={selectedVariation?.is_disable || !isSelected}
                       />
-                  
+
                       {!!(product?.pre_order && product?.release_date) && (
                         <div className="border flex space-x-2 rounded p-2 mt-1">
                           <BoxImportantIcon className="w-6 h-6" />
@@ -339,9 +346,6 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
               )}
             </div>
           </div>
-          <div className="flex justify-center mt-16">  <div className="bg-accent p-4 rounded-md  text-white w-96">
-                        <p>Échange en illimité 49,99€ HT, par mois avec ClickGames+ 14 jours gratuit</p>
-                    </div> </div>
 
           {/*!!categories?.length ? (
             <ProductCategories
@@ -376,6 +380,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
               </button>
             </div>
           )*/}
+          <ArticleL121/>
           <div>
             <NoticeView product_id={product?.id as string} />
             {/** <button

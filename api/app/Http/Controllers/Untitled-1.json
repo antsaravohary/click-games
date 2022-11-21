@@ -1,0 +1,56 @@
+{
+    "order": {
+        "products": [
+            {
+                "product_id": 8,
+                "order_quantity": 1,
+                "unit_price": 2.5,
+                "subtotal": 2.5
+            },
+            {
+                "product_id": 6,
+                "order_quantity": 1,
+                "unit_price": 2.5,
+                "subtotal": 2.5
+            }
+        ],
+        "status": "1",
+        "amount": 5,
+        "coupon_id": null,
+        "discount": 0,
+        "paid_total": 7.1,
+        "sales_tax": 0.1,
+        "delivery_fee": 2,
+        "total": 7.1,
+        "delivery_time": "Morning",
+        "customer_contact": "+11111111111",
+        "payment_gateway": "STRIPE",
+        "use_wallet_points": false,
+        "billing_address": {
+            "country": "france",
+            "city": "france",
+            "state": "9760",
+            "zip": "20001",
+            "street_address": "fsdfdfdfs"
+        },
+        "shipping_address": {
+            "country": "0454",
+            "city": "97600",
+            "state": "201",
+            "zip": "201",
+            "street_address": "test"
+        },
+        "ref": "CU2110202217"
+    },
+    "type": "payment_order",
+    "card": {
+        "cardNumber": "5017679110380400",
+        "cardExpiry": "202212",
+        "cardCvc": "123",
+        "focus": null,
+        "name": "soanuy"
+    },
+    "language": "fr",
+    "payment_info_id": 17,
+    "cardCheckEnrollment": 15
+}
