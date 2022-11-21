@@ -31,13 +31,15 @@ export default function PrivacyPage() {
 
         <div className="flex flex-col">
           <div className="flex flex-col space-y-4">
-            <p className="text-lg">Nous expéditions les commandes de notre entrepôt 24 à 48 heures après l’achat.</p>
-            <p className="text-lg">La livraison est offerte à partir de 30 € d’achat ! Nous livrons partout en France.</p>
-            <p className="text-lg">Vous recevez automatiquement un e-mail avec un numéro de suivi des colis dès l’expédition de votre commande(24 à 48 heures après votre achat.)</p>
-            <p className="text-lg">Le délai de livraison moyen est de 2 à 5 jours ouvrés.</p>
-            <p className="text-lg">Si votre commande ne vous parvient pas dans un délai de plus de Si les Produits commandés n'ont pas été livrés dans un délai de 72 heures après la date indicative de livraison. N’hésitez pas à nous contacter à l’adresse : support@click-games.fr</p>
-            <p className="text-lg">Contacter La Poste - Colis suivi</p>
-            <p className="text-lg">Vous avez besoin de conseils et d'informations, contactez La Poste au 3631 du lundi au vendredi de 8h30 à 19h00 et le samedi de 8h30 à 13h00. Ce service est accessible pour tous les appels émis depuis la France métropolitaine. (L'appel est non surtaxé hors surcoût éventuel selon votre opérateur).</p>
+          <p className="text-lg font-bold">DÉLAIS D'EXPÉDITION</p>
+            <p className="text-lg">Les frais d'expédition sont indiqués à la caisse une fois que l'option d'expédition et la destination ont été choisies. </p>
+            <p className="text-lg">Veuillez prévoir 1 à 2 jours ouvrables pour que notre équipe traite votre commande. Une fois votre commande traitée et confirmée, vous recevrez un numéro de suivi.</p>
+            <p className="text-lg">Toutes les commandes sont expédiées avec un numéro de suivi afin que vous puissiez suivre leur évolution à chaque étape du processus !</p>
+            <p className="text-lg">Nous offrons les options de livraison suivantes:</p>
+            <p className="text-lg ml-4">* Livraison en France Métropolitaine : Livraison Standard (2 à 5  jours ouvrables à compter de l'expédition en fonction des produits)</p>
+            <p className="text-lg ml-4">* Livraison Express (48h uniquement pour certains produits)</p>
+            <p className="text-lg">Veuillez noter que toutes les méthodes d'expédition indiquées ci-dessus sont une estimation du délai de livraison. </p>
+            <p className="text-lg mt-4">Les colis peuvent être confrontés à des retards indépendants de notre volonté, tels que des retards liés aux douanes ou à la poste. Dans une commande à plusieurs articles, vous pourrez recevoir des colis séparément.</p>
           </div>
 
 

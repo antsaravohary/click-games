@@ -33,6 +33,7 @@ const Krypton: FC<KryptonProps> = ({ product, className }) => {
           <Image
             src={image?.original ?? siteSettings?.product?.placeholderImage}
             alt={name}
+            priority={true}
             layout="fill"
             objectFit="contain"
             className="product-image"

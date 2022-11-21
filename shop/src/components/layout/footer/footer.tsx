@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
           />
           <FooterItems
             title="Centre d’aide"
-            description="support@click-games.fr | 0 967 253 315"
+            description="support@click-games.fr | 07 56 82 74 47"
            // Icon={<HelpCenterIcon width="32" height="32" color='#000' />}
            Icon={<img src="/icons/gif/consultation.gif" className='w-16 h-16' style={{marginBottom:"-20px"}} />}
           ></FooterItems>

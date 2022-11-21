@@ -20,8 +20,11 @@ export const footer = {
           path: '/shipping',
         },
         {id:4,
-        title:"Conditions de retour et de remboursement",
+        title:"Politique de retour",
       path:'/rules-return-back'},
+      {id:4,
+        title:"Politique de remboursement",
+      path:'/rules-refund'},
      /* {
         id: 5,
         title: 'C\est quoi le ClickGames+',
