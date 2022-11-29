@@ -260,6 +260,7 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
                 <div className="ml-4 ">En stock</div>
               </div>
             )}
+<<<<<<< HEAD
             <div className="flex items-center  justify-center mt-2 ml-2">
               <DeliveryTruckIcon height="24" width="24" />
               <div className="ml-4 ">Expédier en 48 heures</div>
@@ -270,6 +271,8 @@ const ProductDetails: React.FC<Props> = ({ product }) => {
               </div>
             </div>
 
+=======
+>>>>>>> parent of 540cbd9 (fix)
             <div className=" md:mt-2  flex justify-center flex-col lg:flex-row items-center ">
               {quantity > 0 && (
                 <>

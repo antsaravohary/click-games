@@ -1,40 +1,25 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { GetStaticPathsContext, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import { scroller, Element } from "react-scroll";
 import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
 import dynamic from "next/dynamic";
-import Banner from "@components/common/banner";
 import HomeLayout from "@components/layout/home-layout";
-import PromotionSlider from "@components/common/promotion-slider";
 import ProductFeed from "@components/product/feed";
-import CategoryDropdownSidebar from "@components/category/category-dropdown-sidebar";
-import FilterBar from "@components/common/filter-bar";
 import { useWindowSize } from "@utils/use-window-size";
-import { sitePages, PageName } from "@settings/site-pages.settings";
+import { sitePages } from "@settings/site-pages.settings";
 import { getKeyValue } from "@utils/get-key-value";
 import { fetchProducts } from "@data/product/use-products.query";
 import { fetchCategories } from "@data/category/use-categories.query";
 import { fetchTypes } from "@data/type/use-types.query";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { fetchSettings } from "@data/settings/use-settings.query";
-import FooterOne from "@components/layout/footer-one";
-import CookieConsent, { Cookies } from "react-cookie-consent";
-import { NextSeo } from "next-seo";
 import { SEO } from "@components/seo";
-import Container from "@components/ui/container";
-import BannerGridTwo from "@components/common/banner-grid-two";
-import FeatureGrid from "@components/common/featured-grid";
-import BannerShort from "@components/common/banner-short";
-import BoxCategory from "@components/category/box-category";
-import FilterBarLayoutTwo from "@components/common/filter-bar-layout-two";
-import FeedLayoutTwo from "@components/product/feed-layout-two";
-import BakeryCategory from "@components/category/bakery-category";
 import MyCookieConsent from "@components/common/MyCookieConsent";
-import FilterBar2 from "@components/common/filter-bar2";
-import CategoryCloud from "@components/category/category-cloud";
 import { fetchArticles } from "@data/article/use-articles.query";
+import Banner from "@components/common/banner-short";
+import EksBannerOne from "@components/common/eks-banner-1";
 const banners = [
   {
     id: 1,
@@ -145,13 +130,13 @@ export default function HomePage() {
       <SEO
         title="Click sur ton Univers"
       />
-      {/**  <div className="w-fulll overflow-hidden lock lg:mt-6">
-        <BannerShort banner={getPageData.banner} preview={2} className="max-h-140" />
+          {/**  <div className="w-fulll overflow-hidden lock lg:mt-6">
+       
         <BannerShort banner={getPageData.banner1} preview={3} className="max-h-160 mt-4" />  
       </div> */}
       {/*width > 1280 && <BakeryCategory />*/}
       {/*width > 1280 && <CategoryCloud />*/}
-
+    
       <div className=" bg-gray-100">
         <main className="w-full lg:px-4 overflow-hidden block lg:mt-6">
           {/*width < 1280 && width > 684 && <FilterBarLayoutTwo />*/}
